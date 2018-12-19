@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+import os
+import sys
+import time
+import numpy as np
+import pylab as py
+import pandas as pd
+import tools
+from tools.tools import load, save
+from tools.config import load_config,conf
+from tools.inputmod import INPUTMOD
+from tools.mcstat import chi2hist,parhist 
+import argparse
+
+
+ap = argparse.ArgumentParser()
+ap.add_argument('path', help='path to *.mc file')
+args = ap.parse_args()
+
+runs=load('%s/summary.mcp'%args.path)
+load_config('%s/input.py'%args.path)
+#inputmod=INPUTMOD('%s/input.py'%args.path)
+chi2hist(runs)
+ph=parhist(runs)
+ph.hist_widths(isave=True)
+ph.hist_shape(isave=True)
+ph.hist_norm(isave=True)
+#inputmod.gen_input()
+
+
+
+

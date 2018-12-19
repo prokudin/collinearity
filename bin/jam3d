@@ -1,0 +1,72 @@
+#!/usr/bin/env python
+import logging
+import os
+import argparse
+import sys
+import time
+import logging
+
+from fitlab.parman import PARMAN
+from fitlab.mcsamp import MCSAMP
+from fitlab.maxlike import ML
+from tools.config import load_config, conf
+from tools.tools import checkdir
+from fitlab.resman import RESMAN
+
+
+ap = argparse.ArgumentParser()
+ap.add_argument('config', help='config file (e.g. input.py)')
+msg = " 1: minimize"
+msg+= " 2: leastsq"
+msg+= " 3: mcsamp"
+ap.add_argument('-t', '--task', type=int, default=0, help=msg)
+#ap.add_argument('-o', '--outdir', type=str, default='.',help="output directory (default: %(default)s)")
+#ap.add_argument('-f', '--fname', type=str, default=None,help="optional path to file")
+#ap.add_argument('-i', '--idx', type=int, default=0,help="index to label nestout")
+
+group = ap.add_mutually_exclusive_group()
+group.add_argument('-m', '--master'  , help='run parallel master with broker at BROKER-IP',nargs=1, metavar=('BROKER-IP'))
+group.add_argument('-s', '--slave'   , help='run parallel slave with broker at BROKER-IP',nargs=1, metavar=('BROKER-IP'))
+group.add_argument('-b', '--broker'  , help='run parallel broker with partition size PART-SIZE', type=int)
+group.add_argument('-p', '--parallel', help='run parallel slave, broker and master optimally on this machine', action='store_true')
+args = ap.parse_args()
+
+load_config(args.config)
+conf['args'] = args
+mode = 'solo'
+ip = None
+nworkers = None
+
+if args.master:
+    mode = 'master'
+    ip = args.master[0]
+elif args.slave:
+    mode = 'slave'
+    ip = args.slave[0]
+elif args.broker:
+    parallel.Broker(int(args.broker)).run()
+    sys.exit(0)
+elif args.parallel:
+    mode = 'parallel'
+    ip = 'localhost'
+
+try:
+  import mkl
+except:
+  if args.parallel:
+      sys.exit('mkl lib not found. please remove -p argument')
+
+
+resman = RESMAN(mode=mode, ip=ip, nworkers=nworkers)
+conf['resman'] = resman
+
+if mode == 'slave':
+    resman.run_worker()
+    sys.exit(0)
+
+if   args.task == 1: ML().run_minimize()
+elif args.task == 2: ML().run_leastsq()
+elif args.task == 3: MCSAMP().run()
+elif args.task == 4: ML().run_leastsq2()
+
+resman.shutdown()

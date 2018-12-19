@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+import os
+import sys
+import time
+import argparse
+from tools.tools import load, save
+from tools.mcproc import get_runs, get_ordered_samples,impose_cdf_cut
+import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
+
+
+ap = argparse.ArgumentParser()
+ap.add_argument('path2mc', help='path to *.mc files')
+ap.add_argument('-v','--veto', help='idx of vetoed runs. e.g 3,4,5',type=str,default='')
+ap.add_argument('-c','--cdfcut', help='cdf cut ',default=None)
+args = ap.parse_args()
+
+if args.veto!='': 
+  veto=[int(_) for _ in args.veto.split(',')]
+else:
+  veto=[]
+
+runs=get_runs(args.path2mc,veto)
+for k in runs:
+  nap=runs[k]['num active points']
+  samples=runs[k]['samples']
+  active_p=runs[k]['active p']
+  name=runs[k]['name']
+  nll=runs[k]['nll']
+  nll,weights,samples = get_ordered_samples(nap,nll,samples)
+
+  runs[k]={'nap':nap,'nll':nll,'samples':samples,'weights':weights,'active p':active_p}
+  chi2s=2*np.sort(runs[k]['nll'])[:5]
+  try: 
+    msg ='run = %2d '%k
+  except: 
+    msg = 'run = %2s '%k
+  msg+='%5s '%name
+  msg+='size = %5d '%float(len(runs[k]['nll']))
+  msg+='chi2 ='
+  for _ in chi2s: msg+='%5.2e,'%_
+  msg+='...'
+  print msg
+
+if args.cdfcut==None:
+  if veto==[]:
+    print 'final size ',len(runs['all']['weights'])
+    fname='summary.mcp'
+    print 'creating %s'%fname
+    save(runs,fname)
+  else:
+    fname='summary-veto-%s.mcp'%(args.veto)
+    print 'creating %s'%fname
+    save(runs,fname)
+elif args.cdfcut!=None:
+    weights,samples= impose_cdf_cut(runs['all'],float(args.cdfcut))
+    print 'final size ',len(weights)
+    fname='final.mcp'
+    print 'creating %s'%fname
+    save({'weights':weights,'samples':samples},fname)
+
+
+
+
+
+
+

@@ -11,14 +11,14 @@ import qcdlib.alphaS
 import qcdlib.interpolator
 import obslib.sidis.residuals
 import obslib.sidis.reader
-import obslib.sia.stfuncs
-import obslib.sia.residuals
-import obslib.sia.reader
-import obslib.moments.reader
-import obslib.moments.residuals
-import obslib.AN_pp.AN_theory
-import obslib.AN_pp.residuals
-import obslib.AN_pp.reader
+#import obslib.sia.stfuncs
+#import obslib.sia.residuals
+#import obslib.sia.reader
+#import obslib.moments.reader
+#import obslib.moments.residuals
+#import obslib.AN_pp.AN_theory
+#import obslib.AN_pp.residuals
+#import obslib.AN_pp.reader
 from parman import PARMAN
 from tools.config import load_config, conf
 

@@ -5,9 +5,8 @@ import sys
 # =======
 
 # Set FITPACK_DIR to local fitpack root directory.
-#FITPACK_DIR = r"/home/avp5627/GIT/fitpack"
-FITPACK_DIR = r"/home/avp5627/GIT/jam3d"
-
+FITPACK_DIR = os.path.abspath("../")
+print FITPACK_DIR
 
 # =======
 

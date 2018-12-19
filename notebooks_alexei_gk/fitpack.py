@@ -16,7 +16,8 @@ if not os.path.exists(FITPACK_DIR):
 
 # Add the FITPACK environmental variable.
 if "FITPACK" not in os.environ:
-    os.environ["FITPACK"] = FITPACK_DIR
+#    os.environ["FITPACK"] = FITPACK_DIR
+    os.environ["JAM3D"] = FITPACK_DIR
 
 # Add FITPACK_DIR to the PYTHONPATH.
 if FITPACK_DIR not in sys.path:

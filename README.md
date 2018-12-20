@@ -7,7 +7,7 @@ do the following:
 
 source setup.bash, or source setup.csh
 
-jam3d -t 1 inputs/<inputname>.py
+jam3d -t 1 inputs/(inputname).py
   
 (see list of awailable inputs in the directory ./input)
   
@@ -16,7 +16,7 @@ The input file will be automatically rewritten with new parameters.
 
 Proceed with Monte Carlo runs
 
-jam3d -t 3 -p inputs/<inputname>.py
+jam3d -t 3 -p inputs/(inputname).py
   
 mc runs will be created in the directory mcdata
 
@@ -32,8 +32,8 @@ cd ..
 
 copy all final runs into the desired directory:
 
-cp ../<final name>.mcp ./samples/<yoour desired final name>.mcp
-cp ../<summary name>.mcp ./samples/<yoour desired summary name>.mcp  
+cp ../(final name).mcp ./samples/(yoour desired final name).mcp
+cp ../(summary name).mcp ./samples/(yoour desired summary name>).mcp  
   
 clean up
 

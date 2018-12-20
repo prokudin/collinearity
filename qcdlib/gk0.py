@@ -15,7 +15,7 @@ class GK:
     def __init__(self):
         self.aux = conf['aux']
         self.set_default_params()
-#        self.setup()
+        self.setup()
  
     def set_default_params(self):
         # free params
@@ -28,7 +28,7 @@ class GK:
         self.beta0 = (33.-2.*self.Nf)/(12.*np.pi)
         self.CF = 4./3.
 
-        pass
+#        pass
 #        self.gk = self._gk
 #        self.Q0 = self._Q0
 

@@ -33,6 +33,7 @@ cd ..
 copy all final runs into the desired directory:
 
 cp ../(final name).mcp ./samples/(yoour desired final name).mcp
+
 cp ../(summary name).mcp ./samples/(yoour desired summary name>).mcp  
   
 clean up

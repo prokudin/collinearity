@@ -19,8 +19,8 @@ class GK:
  
     def set_default_params(self):
         # free params
-        self.gk  = 0.1
-        self.Q0  = 1.
+        self.gk  = -0.3
+        self.Q0  = 1.3
  
     def setup(self):
         self.lam  = 0.25

@@ -311,19 +311,38 @@ One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applic
 Apart from kinematical variables and transverse momentum TMD functions depend on the scale of the reaction, $Q^2$.
 The dependence of functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} in Fourier conjugate to $k_{\perp}$ space $b_T$. In this analysis we study the separation of beam and target fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations, thus we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region. We will start from the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
 \begin{eqnarray}
-&&\tilde f_{a/p} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/p} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, Q_0, \mu_0)/2}\,,
+&&\tilde f_{a/p} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/p} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:PDF_ansatz}\\[0.3cm]
-&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, Q_0, \mu_0)/2}\,,
+&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:FF_ansatz0}
 \end{eqnarray}
 where $b_T$ is Fourier conjugate variable to $k_\perp$; $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$). The evolution factor is $e^{-S(b_T, Q, Q_0, \mu_0)/2}$, where
 \begin{eqnarray}
-S(b_T, Q, Q_0, \mu_0) = \tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} - \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
+S(b_T, Q, \mu_Q, Q_0, \mu_0) = \tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} - \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
 -2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))
  \right]
  \label{e:FF_ansatz}
 \end{eqnarray}
 and the first term on the RHS is the non-perturbative evolution factor, while the second term is perturbative evolution factor for which we will choose $\mu_Q = Q$. $\gamma_i$ and $\gamma_K$ are anomalous dimensions of the TMD and $\tilde K$ accordingly and can be calculated perturbatively provided $\alpha_s$ is small enough.
+
+The next step is to choose $b_T$ parameterization of TMDs at the initial scale $Q_0$. In this study the parameterization can be chosen arbitrary provided an analytical FT transform is possible for the sake of numerical computation speed. Low $Q^2$ data is known \cite{Schweitzer:2010tt} to have an approximate Gaussian dependence and we will follow a very simple analytical form used in Refs~\cite{Anselmino:2013lza,Signori:2013mda}, and choose a Gaussian ansatz for $b_T$ dependence (note that we also allow for a flavor dependence in the widths of the Gaussians):
+\begin{eqnarray}
+&&\tilde f_{a/p} (x,b_T; Q_0^2, \mu_0)\simeq f_{a/p} (x; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,,
+\nonumber \\[0.3cm]
+&&\tilde D_{h/a}(z,b_T; Q_0^2, \mu_0)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}.
+\label{e:FF_ansatz1}
+\end{eqnarray}
+The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that we can make a connection of $\tilde f_{a/p} (x; Q_0^2, \mu_0)$ and $\tilde D_{h/a}(z; Q_0^2, \mu_0)$ to the usual collinear PDF and FF functions. Indeed, using result of Ref.~\cite{Collins:2016hqq} we know that at leading order in $\alpha_s$, the collinear integrated cross-section corresponds to the integral in $P_{hT}$ of the TMD approximated cross-section. Using $S(b_T, Q_0, \mu_0, Q_0, \mu_0) = 0$ we obtain:
+\begin{eqnarray}
+&&\tilde f_{a/p} (x; Q_0^2, \mu_0) = f_{a/p} (x, Q_0)\,,
+\\[0.3cm]
+&&\tilde D_{h/a}(z; Q_0^2, \mu_0) = D_{h/a}(z, Q_0)\,,
+\label{e:FF_ansatz2}
+\end{eqnarray}
+where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
+
+
+
 Let us denote
 \begin{eqnarray}
 S_{pert} \equiv \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
@@ -363,21 +382,6 @@ call this constant $g_{K_0}\equiv \lim_{b_T\to \infty} \tilde K(b_T,\mu_0)$, suc
 Our result suggests that in the region of its applicability TMD evolution accounts to the shift of normalization in $Q^2$ and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of HERMES collaboration: no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is a very crude one, so we do not expect the result to hold generically; in particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT. This simplification is taken deliberately to be able to speed up the numerical computations, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used and it should satisfy the following criteria:
 $\lim_{b_T\to \infty} \tilde K(b_T,\mu_0) = const$, $\lim_{b_T\to 0} \tilde K(b_T,\mu_0) = 0$. Ref.~\cite{Collins:2014jpa} suggests high $b_T$ limit of $\tilde K(b_T,\mu_0)$ should be negative, we will be able to phenomenologically test this assumption.
 
-The next step is to choose $b_T$ parameterization of TMDs at the initial scale $Q_0$. In this study the parameterization can be chosen arbitrary provided an analytical FT transform is possible for the sake of numerical computation speed. Low $Q^2$ data is known \cite{Schweitzer:2010tt} to have an approximate Gaussian dependence and we will follow a very simple analytical form used in Refs~\cite{Anselmino:2013lza,Signori:2013mda}, and choose a Gaussian ansatz for $b_T$ dependence (note that we also allow for a flavor dependence in the widths of the Gaussians):
-\begin{eqnarray}
-&&\tilde f_{a/p} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/p} (x; Q_0^2, \mu_0) {e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
-\nonumber \\[0.3cm]
-&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} \tilde D_{h/a}(z; Q_0^2, \mu_0) {e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}}\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,.
-\label{e:FF_ansatz1}
-\end{eqnarray}
-The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that we can make a connection of $\tilde f_{a/p} (x; Q_0^2, \mu_0)$ and $\tilde D_{h/a}(z; Q_0^2, \mu_0)$ to the usual collinear PDF and FF functions. Indeed, using result of Ref.~\cite{Collins:2016hqq} we know that at leading order in $\alpha_s$, the collinear integrated cross-section corresponds to the integral in $P_{hT}$ of the TMD approximated cross-section. The caveat of our parameterization is that the non perturbative Sudakov does not vanish at $b_T\to 0$, so we can only use this result at $Q=Q_0$ and obtain:
-\begin{eqnarray}
-&&\tilde f_{a/p} (x; Q_0^2, \mu_0) = f_{a/p} (x, Q_0)\,,
-\\[0.3cm]
-&&\tilde D_{h/a}(z; Q_0^2, \mu_0) = D_{h/a}(z, Q_0)\,,
-\label{e:FF_ansatz2}
-\end{eqnarray}
-where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
 
 Finally we arrive at the following parameterization of the unpolarized structure function from Eq.~(\ref{e:FUU}) 
 \begin{equation}

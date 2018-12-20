@@ -257,10 +257,9 @@ transverse momentum dependent (TMD)
 \end{flushleft}
  
  A condition implicit in the proofs of TMD factorization in SIDIS,
- where hadrons are detected in the final state as fragments of the
- struck quark, the assumption of  a clear separation in momentum of the struck quark from the target spectators.  Then it is natural to conclude that the fragmentation of the quark into hadrons is independent of the production of the quark~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia}. This picture
- implies that fragmentation can be described by a function of $z$ independent of $x$~\cite{Berger:1987zu}.  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{ Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.  
- A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
+ where final state hadrons are depicted as  fragments of the
+ struck quark, is the assumption of  a clear separation in momentum of the struck quark from the target spectators. In this framework one assumes that the fragmentation of the quark into hadrons is independent of the production of the quark~\cite{Berger:1987zu,Trentadue:1993ka}. This picture
+ implies that fragmentation can be described by a function of $z$ independent of $x$.  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.   A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
 
  Recently, it has been shown that at moderate to low values of $Q$, estimating the adequacy of the current fragmentation criteria requires knowledge of intrinsic non-perturbative properties of partons. That analysis depends on a close examination of the errors in TMD factorization, resulting in
  a more restrictive region where current fragmentation by itself is valid~\cite{Boglione:2016bph}.
@@ -289,26 +288,30 @@ where the momenta of the particles are given, and we consider only the exchange 
 \begin{equation}
 S = (l+P)^2\,, \quad\quad Q^2 = -q^2 = -(l-l')^2\,, \quad\quad x_B = \frac{Q^2} {2P\cdot q}\,, \quad\quad y = \frac{Q^2} {x_B S}\,, \quad\quad z_h = \frac{P\cdot P_h} {P\cdot q}\,.
 \end{equation}
-For the situation where $P_{hT}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
+For the situation where $P_{hT}\ll Q$, one finds at leading-power the unpolarized cross section~\cite{Bacchetta:2006tn},
 \begin{eqnarray}
 \frac{d\sigma}
 {dx_B\, dQ^2 \, dz_h \, dP_{hT}^2} &\!\!\!=\!\!\!&
 \frac {2 \, \pi^2 \alpha_{em}^2}{(x_B S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(x,z,P_{hT}^2,Q^2) + \mathcal{O}(P_{hT}/Q)
 \label{e:dsigma}
 \end{eqnarray}
-where \cite{Collins:2011zzd}
+where TMD factorization yeilds for the unpolarized structure function\cite{Collins:2011zzd},
 \begin{equation}
 F_{UU}(x,z,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 \,
 \int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
 \> \delta ^{(2)}\Big(\vec{P}_{hT} - z_h\,\vec{k}_\perp -\vec{p}_\perp\Big)\,
-f_{a/p} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)\,. \label{e:FUU} \\
+f_{a/N} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)\,. \label{e:FUU} \\
 \end{equation}
-The functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized TMD PDF and FF, respectively, for a parton of flavor $a$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the so-called hard function, we will use the $0^{th}$ order of ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$ corrections~\cite{Bacchetta:2006tn}
+The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized TMD PDF and FF, respectively, for a parton of flavor
+$a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at
+ $0^{th}$-leading order in the strong coupling is normalized as ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$ corrections~\cite{Bacchetta:2006tn}
 \begin{equation}
  x=x_B\,, \quad\quad z=z_h\,,\quad\quad \vec{P}_{hT} = z\,\vec{k}_\perp + \vec{p}_\perp\,.\label{e:LT_relations}
 \end{equation}
 One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applicability region of TMD factorization~\cite{Collins:2011zzd} is proven to be $q_T \ll Q$.
-Apart from kinematical variables and transverse momentum TMD functions depend on the scale of the reaction, $Q^2$.
+Apart from kinematical variables and transverse momentum, TMD functions
+depend the scale of the reaction $Q^2$,  through   the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ from solving the Collins-Soper equation for the TMDs. The latter satisfy $\zeta_N=\zeta_h=Q^2$
+scale which parameterizes the effects of soft gluons
 The dependence of functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} in Fourier conjugate to $k_{\perp}$ space $b_T$. In this analysis we study the separation of beam and target fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations, thus we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region. We will start from the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
 \begin{eqnarray}
 &&\tilde f_{a/p} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/p} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,

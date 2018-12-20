@@ -66,7 +66,6 @@ for idx in conf['datasets']['sidis']['xlsx']: conf['datasets']['sidis']['norm'][
 
 conf['datasets']['sidis']['filters']=["z<0.6 and Q2>1.69 and pT>0.2 and pT<0.9"]
 
-#conf['datasets']['sidis']['filters']=["z>0.2 and z<0.6  and Q2>1.69 and (pT/z)**2<0.25*Q2"]
 
 
 

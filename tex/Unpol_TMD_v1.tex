@@ -445,7 +445,7 @@ M_N^h(x_B, Q^2,z_h, P_{hT}) =
 Prior to performing a fit of an experimental measurement, one often needs to make cuts on the data to ensure that the fit is restricted only to the data that can be described by the theoretical model.  For example, a ``standard'' cut on the HERMES multiplicity data is~\cite{Anselmino:2013lza}
 \begin{equation}
 z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad\quad{\rm (standard\;cut)}\,.\label{e:st_cut}
+\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad\quad{\rm (Torino\;cut)}\,.\label{e:st_cut}
 \end{equation}
 However, as was argued in Ref.~\cite{Boglione:2016bph}, Eq.~(\ref{e:st_cut}) is not sufficient to guarantee that one stays strictly in the current (or the so-called ``beam") fragmentation region.  Instead, one should calculate the ratio $R(y_h,z_h,x_B,Q)$, called the collinearity, defined as~\cite{Boglione:2016bph}
 \begin{equation}
@@ -508,25 +508,7 @@ Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for $K^\pm$ HERMES multiplicity data . 
 %%%%%%%%%
 One can see from Fig.~\ref{Fig:hermes_data_R} that lower values of $|R|$ are correlated with higher values of $y_p-y_h$, one can also see that $|R|$ becomes very large for low values of $y_p-y_h$. The distinct families of curves in Fig.~\ref{Fig:hermes_data_R} correspond to 8 bins in $x_B$ of HERMES data. For a given bin in $x_B$ all data for different hadron types, different targets, values of $z_h$, $Q^2$, and $P_{hT}$ belong to a particular distinct curve.
 
-%If we make an assumption that the proton and the produced hadron are separated by a sufficiently large rapidity interval, and the initial quark rapidity is close to the proton rapidity $|y_i - y_p| \ll |y_p|$ and the final quark has approximately the same rapidity as the pion $|y_f -y_h| \ll |y_h|$, then we obtain
-%\begin{equation}
-%R \sim \frac{e^{y_p-y_h}} {e^{2 (y_p-y_h)}-1}\,\to \frac{1} {e^{y_p-y_h}}
-%\label{eq:r_mod}
-%\end{equation}
-if% $y_p-y_h$ is large enough, so that $e^{y_p-y_h} \gg 1$ and $R \ll 1$. 
-One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. We also deduce that a simpler filter to ensure the collinearity is $y_p-y_h > A$, where $A> 1$ is sufficiently large. In practice our assumptions that lead to Eq.~\eqref{eq:r_mod} are not always satisfied for all HERMES data, see %Fig.~\ref{Fig:hermes_torino_rapidity}, however in the region of interest (negative rapidities for produced hadrons) these assumptions are reasonable.
-%%%%%%%%%
-%\begin{figure}[htb!]
-%\centering
-%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yi_minus_yp.pdf}
-%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yf_minus_yh.pdf}
-%\caption{\label{Fig:hermes_torino_rapidity}
-%[Color online] {\bf Left panel:} Scatter plot of $y_i-y_p$ vs $y_p$ for HERMES multiplicity data . {\bf Right panel:} 
-%Scatter plot of HERMES multiplicity data $y_i-y_h$ vs $y_h$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$
-%}
-%\end{figure}
-%%%%%%%%%
-
+One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. We also deduce that a simpler filter to ensure the collinearity is $y_p-y_h > A$, where $A> 1$ is sufficiently large. 
 Let us discuss first the application of the ``standard'' cut from Eq.~\eqref{e:st_cut}. As shown in Ref.~\cite{Anselmino:2013lza} the data filtered by Eq.~\eqref{e:st_cut} can be described well in the framework of TMD parton model. The cut of Eq.~\eqref{e:st_cut} however does not necessarily ensure filtering the data for which TMD factorization is applicable, moreover, as pointed out in Ref.~\cite{Boglione:2016bph} it does not ensure filtering of the data in the ``beam" fragmentation region. In order to demonstrate it, let us plot $q_T^2/Q^2$ versus $y_p-y_h$ in Fig.~\ref{Fig:hermes_torino}.
 %%%%%%%%%
 \begin{figure}[htb!]
@@ -542,14 +524,14 @@ Scatter plot of HERMES multiplicity data filtered by the ``standard'' cut from E
 One can see from Fig.~\ref{Fig:hermes_torino} that $q_T^2/Q^2$ can reach high values, even though one should ensure that $q_T^2/Q^2\ll 1$ for the applicability of TMD factorization. In case of HERMES multiplicities, cuts from Eq.~\eqref{e:st_cut} result in total of 978 points and 292 points are such that $q_T^2/Q^2>1$. On the other hand, if we add $y_p-y_h>2.5$ selection criteria to Eq.~\eqref{e:st_cut}, then only 11 out of 473 points are such that $q_T^2/Q^2>1$. In order to study the influence of restriction of the rapidity interval on the results of the fit, we will use cuts from Eq.~\eqref{e:st_cut} and add $y_p-y_h>A$ selection criteria, where $A \in[1.25, 3.5]$:
 \begin{equation}
 z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad y_p-y_h > A  \quad\quad\quad{\rm (new\;standard\;cut)}\,.\label{e:st_cut1}
+\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad y_p-y_h > A  \quad\quad\quad{\rm (Torino+\;q_T\;cut)}\,.\label{e:st_cut1}
 \end{equation}
 An example of such data selection for A = 2.5 is shown in the right panel of Fig.~\ref{Fig:hermes_torino}.
 
 The second set of cuts that we will explore will be motivated by ensuring applicability of TMD factorization together with selection of large rapidity interval, we will call it ``rapidity" cut:
 \begin{equation}
 z_h > 0.2 \quad\quad  z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad  q_T^2/Q^2 < \, 0.15   \quad\quad y_p-y_h > A \quad\quad{\rm (rapidity\;cut)}\,.\label{e:rapidity_cut}
+\quad\quad  q_T^2/Q^2 < \, 0.15   \quad\quad y_p-y_h > A \quad\quad{\rm (rapidity+\;q_T\;cut)}\,.\label{e:rapidity_cut}
 \end{equation}
 Notice that we cut the values of $z_h<0.2$, Ref.~\cite{schnell}. We will vary the value $A \in[1.25, 3.5]$ in order to test the sensitivity of the fit results to this value. Scatter plot of the filtered data by the rapidity cut from Eq.~\eqref{e:rapidity_cut} is shown in Fig.~\ref{Fig:hermes_new}.
 

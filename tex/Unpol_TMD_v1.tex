@@ -438,9 +438,21 @@ The HERMES multiplicity data set~\cite{Airapetian:2012ki} consists of 2660 point
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all.pdf}
-\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all_qt_vs_R.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all_lnR.pdf}
 \caption{\label{Fig:hermes_data_rapidity}
-[Color online]  {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data.  The solid line corresponds to $q_T^2/Q^2=1$. {\bf Right panel:} Scatter plot of $q_T^2/Q^2$  vs $|R|$ for HERMES multiplicity data. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+[Color online]  {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data.  The solid line corresponds to $q_T^2/Q^2=1$. {\bf Right panel:} Scatter plot of $q_T^2/Q^2$  vs $\ln|R|$ for HERMES multiplicity data. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+}
+\end{figure}
+%%%%%%%%%
+
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_pion_qt_vs_R.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_kaon_qt_vs_R.pdf}
+\caption{\label{Fig:hermes_data_qt_vs_R}
+[Color online] {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $|R|$ for $\pi^\pm$ HERMES multiplicity data . {\bf Right panel:} 
+Scatter plot of $q_T^2/Q^2$ vs $|R|$ for $K^\pm$ HERMES multiplicity data . Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
 }
 \end{figure}
 %%%%%%%%%
@@ -451,32 +463,33 @@ We can state that if one imposes $R<1$-cut, then {\em simultaneously}  $q_T^2/Q^
 %%%%%%%%%
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all_R.pdf}
-\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all_lnR.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_pion.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_kaon.pdf}
 \caption{\label{Fig:hermes_data_R}
-[Color online] {\bf Left panel:} Scatter plot of $|R|$ vs $y_p-y_h$ for HERMES multiplicity data . {\bf Right panel:} 
-Scatter plot of HERMES multiplicity data $\ln|R|$ vs $y_p-y_h$. The solid line corresponds to $R=1$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+[Color online] {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for $\pi^\pm$ HERMES multiplicity data . {\bf Right panel:} 
+Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for $K^\pm$ HERMES multiplicity data . The solid line corresponds to $R=1$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
 }
 \end{figure}
 %%%%%%%%%
 One can see from Fig.~\ref{Fig:hermes_data_R} that lower values of $|R|$ are correlated with higher values of $y_p-y_h$, one can also see that $|R|$ becomes very large for low values of $y_p-y_h$. The distinct families of curves in Fig.~\ref{Fig:hermes_data_R} correspond to 8 bins in $x_B$ of HERMES data. For a given bin in $x_B$ all data for different hadron types, different targets, values of $z_h$, $Q^2$, and $P_{hT}$ belong to a particular distinct curve.
 
-If we make an assumption that the proton and the produced hadron are separated by a sufficiently large rapidity interval, and the initial quark rapidity is close to the proton rapidity $|y_i - y_p| \ll |y_p|$ and the final quark has approximately the same rapidity as the pion $|y_f -y_h| \ll |y_h|$, then we obtain
-\begin{equation}
-R \sim \frac{e^{y_p-y_h}} {e^{2 (y_p-y_h)}-1}\,\to \frac{1} {e^{y_p-y_h}}
-\label{eq:r_mod}
-\end{equation}
-if $y_p-y_h$ is large enough, so that $e^{y_p-y_h} \gg 1$ and $R \ll 1$. One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. We also deduce that a simpler filter to ensure the collinearity is $y_p-y_h > A$, where $A> 1$ is sufficiently large. In practice our assumptions that lead to Eq.~\eqref{eq:r_mod} are not always satisfied for all HERMES data, see Fig.~\ref{Fig:hermes_torino_rapidity}, however in the region of interest (negative rapidities for produced hadrons) these assumptions are reasonable.
+%If we make an assumption that the proton and the produced hadron are separated by a sufficiently large rapidity interval, and the initial quark rapidity is close to the proton rapidity $|y_i - y_p| \ll |y_p|$ and the final quark has approximately the same rapidity as the pion $|y_f -y_h| \ll |y_h|$, then we obtain
+%\begin{equation}
+%R \sim \frac{e^{y_p-y_h}} {e^{2 (y_p-y_h)}-1}\,\to \frac{1} {e^{y_p-y_h}}
+%\label{eq:r_mod}
+%\end{equation}
+if% $y_p-y_h$ is large enough, so that $e^{y_p-y_h} \gg 1$ and $R \ll 1$. 
+One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. We also deduce that a simpler filter to ensure the collinearity is $y_p-y_h > A$, where $A> 1$ is sufficiently large. In practice our assumptions that lead to Eq.~\eqref{eq:r_mod} are not always satisfied for all HERMES data, see %Fig.~\ref{Fig:hermes_torino_rapidity}, however in the region of interest (negative rapidities for produced hadrons) these assumptions are reasonable.
 %%%%%%%%%
-\begin{figure}[htb!]
-\centering
-\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yi_minus_yp.pdf}
-\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yf_minus_yh.pdf}
-\caption{\label{Fig:hermes_torino_rapidity}
-[Color online] {\bf Left panel:} Scatter plot of $y_i-y_p$ vs $y_p$ for HERMES multiplicity data . {\bf Right panel:} 
-Scatter plot of HERMES multiplicity data $y_i-y_h$ vs $y_h$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$
-}
-\end{figure}
+%\begin{figure}[htb!]
+%\centering
+%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yi_minus_yp.pdf}
+%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yf_minus_yh.pdf}
+%\caption{\label{Fig:hermes_torino_rapidity}
+%[Color online] {\bf Left panel:} Scatter plot of $y_i-y_p$ vs $y_p$ for HERMES multiplicity data . {\bf Right panel:} 
+%Scatter plot of HERMES multiplicity data $y_i-y_h$ vs $y_h$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$
+%}
+%\end{figure}
 %%%%%%%%%
 
 Let us discuss first the application of the ``standard'' cut from Eq.~\eqref{e:st_cut}. As shown in Ref.~\cite{Anselmino:2013lza} the data filtered by Eq.~\eqref{e:st_cut} can be described well in the framework of TMD parton model. The cut of Eq.~\eqref{e:st_cut} however does not necessarily ensure filtering the data for which TMD factorization is applicable, moreover, as pointed out in Ref.~\cite{Boglione:2016bph} it does not ensure filtering of the data in the ``beam" fragmentation region. In order to demonstrate it, let us plot $q_T^2/Q^2$ versus $y_p-y_h$ in Fig.~\ref{Fig:hermes_torino}.

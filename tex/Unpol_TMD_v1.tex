@@ -289,11 +289,12 @@ where the momenta of the particles are given, and we consider only the exchange 
 \begin{equation}
 S = (l+P)^2\,, \quad\quad Q^2 = -q^2 = -(l-l')^2\,, \quad\quad x_B = \frac{Q^2} {2P\cdot q}\,, \quad\quad y = \frac{Q^2} {x_B S}\,, \quad\quad z_h = \frac{P\cdot P_h} {P\cdot q}\,.
 \end{equation}
-For the situation where $P_{hT}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
+One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applicability region of TMD factorization~\cite{Collins:2011zzd} is proven to be $q_T \ll Q$.
+For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
 \begin{eqnarray}
 \frac{d\sigma}
 {dx_B\, dQ^2 \, dz_h \, dP_{hT}^2} &\!\!\!=\!\!\!&
-\frac {2 \, \pi^2 \alpha_{em}^2}{(x_B S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(x,z,P_{hT}^2,Q^2) + \mathcal{O}(P_{hT}/Q)
+\frac {2 \, \pi^2 \alpha_{em}^2}{(x_B S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(x,z,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)
 \label{e:dsigma}
 \end{eqnarray}
 where \cite{Collins:2011zzd}
@@ -307,7 +308,6 @@ The functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^
 \begin{equation}
  x=x_B\,, \quad\quad z=z_h\,,\quad\quad \vec{P}_{hT} = z\,\vec{k}_\perp + \vec{p}_\perp\,.\label{e:LT_relations}
 \end{equation}
-One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applicability region of TMD factorization~\cite{Collins:2011zzd} is proven to be $q_T \ll Q$.
 Apart from kinematical variables and transverse momentum TMD functions depend on the scale of the reaction, $Q^2$.
 The dependence of functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} in Fourier conjugate to $k_{\perp}$ space $b_T$. In this analysis we study the separation of beam and target fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations, thus we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region. We will start from the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
 \begin{eqnarray}

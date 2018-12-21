@@ -257,10 +257,9 @@ transverse momentum dependent (TMD)
 \end{flushleft}
  
  A condition implicit in the proofs of TMD factorization in SIDIS,
- where hadrons are detected in the final state as fragments of the
- struck quark, the assumption of  a clear separation in momentum of the struck quark from the target spectators.  Then it is natural to conclude that the fragmentation of the quark into hadrons is independent of the production of the quark~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia}. This picture
- implies that fragmentation can be described by a function of $z$ independent of $x$~\cite{Berger:1987zu}.  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{ Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.  
- A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
+ where final state hadrons are depicted as  fragments of the
+ struck quark, is the assumption of  a clear separation in momentum of the struck quark from the target spectators. In this framework one assumes that the fragmentation of the quark into hadrons is independent of the production of the quark~\cite{Berger:1987zu,Trentadue:1993ka}. This picture
+ implies that fragmentation can be described by a function of $z$ independent of $x$.  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.   A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
 
  Recently, it has been shown that at moderate to low values of $Q$, estimating the adequacy of the current fragmentation criteria requires knowledge of intrinsic non-perturbative properties of partons. That analysis depends on a close examination of the errors in TMD factorization, resulting in
  a more restrictive region where current fragmentation by itself is valid~\cite{Boglione:2016bph}.
@@ -289,6 +288,7 @@ where the momenta of the particles are given, and we consider only the exchange 
 \begin{equation}
 S = (l+P)^2\,, \quad\quad Q^2 = -q^2 = -(l-l')^2\,, \quad\quad x_B = \frac{Q^2} {2P\cdot q}\,, \quad\quad y = \frac{Q^2} {x_B S}\,, \quad\quad z_h = \frac{P\cdot P_h} {P\cdot q}\,.
 \end{equation}
+
 One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applicability region of TMD factorization~\cite{Collins:2011zzd} is proven to be $q_T \ll Q$.
 For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
 \begin{eqnarray}
@@ -297,19 +297,27 @@ For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta
 \frac {2 \, \pi^2 \alpha_{em}^2}{(x_B S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(x,z,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)
 \label{e:dsigma}
 \end{eqnarray}
-where \cite{Collins:2011zzd}
+where TMD factorization yeilds for the unpolarized structure function\cite{Collins:2011zzd},
 \begin{equation}
 F_{UU}(x,z,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 \,
 \int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
 \> \delta ^{(2)}\Big(\vec{P}_{hT} - z_h\,\vec{k}_\perp -\vec{p}_\perp\Big)\,
 f_{a/N} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)\,. \label{e:FUU} \\
 \end{equation}
-The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized TMD PDF and FF, respectively, for a parton of flavor $a$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the so-called hard function, we will use the $0^{th}$ order of ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(q_{T}/Q)$ and $\mathcal{O}(M_N/Q)$ corrections~\cite{Bacchetta:2006tn}
-\begin{equation}
- x=x_B\,, \quad\quad z=z_h\,,\label{e:LT_relations}
-\end{equation}
-Apart from kinematical variables and transverse momentum TMD functions depend on the scale of the reaction, $Q^2$.
-The dependence of functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} in Fourier conjugate to $k_{\perp}$ space $b_T$. In this analysis we study the separation of beam and target fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations, thus we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region corresponding to large $b_T$ or small $k_\perp$. We will start from the solution of CS equations from Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
+The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized TMD PDF and FF, respectively, for a parton of flavor
+$a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at leading order in the strong coupling
+is normalized as ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$ corrections~\cite{Bacchetta:2006tn}
+%\begin{equation}
+$x=x_B\,, \quad\quad z=z_h$  %\label{e:LT_relations}
+%\end{equation}
+Apart from kinematical variables and transverse momentum, TMD functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ 
+depend on the scale of the reaction $Q^2$,  through  the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ from jointly solving the Collins-Soper (CS) 
+in $b_T$ space-Fourier conjugate to $k_{\perp}$-and renormalization group equations for the TMDs.
+The rapidity parameters can be set to $\zeta_N=\zeta_h=Q^2$~\cite{Collins:2011zzd,Collins:2014jpa}.
+%The dependence of functions  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} 
+
+In this analysis we study the separation of current  fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations.
+Thus, we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region. We will start from the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
 \begin{eqnarray}
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/N} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:PDF_ansatz}\\[0.3cm]
@@ -341,19 +349,54 @@ The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that
 \end{eqnarray}
 where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
 
-Using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs we can easily show in Fig.~\ref{Fig:width} $b_T$ behavior of unpolarized TMDs at initial scale $Q_0$.
+Using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs we show in Fig.~\ref{Fig:tmd_shape} $b_T$ behavior of unpolarized TMDs at initial scale $Q_0$. One notices that the support of $b_T$ behavior corresponds to large values of $b_T \sim $ 3 to 4 (GeV$^{-1}$) which correspond to $\sim 1$ fm of separation of quark fields. These distances are associated with non-perturbative QCD dynamics.
 
-Let us denote
+The Collins-Soper evolution kernel obeys the following renormalization-group equation:
+\begin{equation}
+\frac{d\, \tilde K (b_T;\mu)}{d \ln \mu} = - \gamma_K (\alpha_s(\mu)) \; ,
+\end{equation} 
+where we use notations of Ref.~\cite{Collins:2011zzd}.
+
+Using the first loop result for $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have:
+\begin{eqnarray}
+\gamma_K(\alpha_s(\mu)) &=& 2 C_F \frac{\alpha_s(\mu)}{\pi} \; ,\\
+\tilde K (b_T;\mu) &=& -\frac{\alpha_s(\mu)}{\pi}  \left[\ln\frac{b_T^2 \mu^2}{4} + 2 \gamma_E
+ \right] \; + {\cal O} (\alpha_s(\mu)^2),
+ \label{e:CS_kernel}
+\end{eqnarray}
+this result is applicable for perturbative distances and scales; for instance $\mu > 1$ (GeV) and at low $b_T < 1$  GeV$^{-1} = 0.2$ fm.
+As we saw from Fig.~\ref{Fig:tmd_shape}, the distance where we need to calculate $\tilde K (b_T;\mu)$ is much bigger and thus this fixed-order approximation is not applicable any more.  Numerically it happens due to the growth of $\ln\frac{b_T^2 \mu^2}{4} $, so that neglected higher orders become comparable to the first loop order. One of the solutions to circumvent this problem is to introduce an intermediate scale $\mu_b \sim 1/b_T$ such that all logs are minimized, the Landau pole however will manifest itself in the growth and divergence of $\alpha_s(\mu)$. In order to deal with the Landau pole (or non-perturbative regime) one can introduce a $b_*$ prescription~\cite{Collins:2011zzd} that will limit the region of $b_T$ to a maximum value of $b_{max} \sim 1$ GeV$^{-1}$ and introduce the non perturbative Collins-Soper kernel $g_K(b_T; b_{max}) \equiv - \tilde K(b_T; \mu_{b_*}) + \tilde K(b_*; \mu_{b_*})$. A lot of successful phenomenology [CITE] was done using this procedure.
+
+
+
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_shape.pdf}
+\caption{\label{Fig:tmd_shape}
+[Color online] Typical shape of non perturbative TMDs in Eq.~\eqref{e:FF_ansatz1}.
+}
+\end{figure}
+%%%%%%%%%
+
+In our particular situation, however,  the functional form of TMDs in $b_T$ space is such that {\em only} large values of $b_T$  dominate in the FT connecting momentum and coordinate spaces and will {\em approximate} $K(b_T,\mu_0)$ by its large $b_T$ asymptotic: a constant, as suggested in Ref.~\cite{Collins:2014jpa} and asserts that high $b_T$ limit of $\tilde K(b_T,\mu_0)$ should be negative, we will be able to phenomenologically test this assumption. We will
+call this constant $g_{K_0}\equiv \lim_{b_T\to \infty} \tilde K(b_T,\mu_0)$, such that in this approximation
+\begin{eqnarray}
+&&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/N} (x; Q_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}} e^{-S_{pert}/2}\,,
+\nonumber \\[0.3cm]
+&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
+\label{e:FF_ansatz1}
+\end{eqnarray}
+where
 \begin{eqnarray}
 S_{pert} \equiv \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
 -2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))
  \right] \; ,
  \label{e:FF_Spert}
 \end{eqnarray}
-and using the first loop results for $\gamma_i$ and $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have:
+and using the first loop results~\cite{Aybat:2011zv} for $\gamma_i$ from Eq~\eqref{e:CS_kernel} and $\gamma_K$  we have:
 \begin{eqnarray}
-\gamma_K(\alpha_s(\mu')) = 2 C_F \frac{\alpha_s}{\pi} \, ,  \;
-\gamma_i(\alpha_s(\mu');1) = 2 C_F \frac{\alpha_s}{\pi} \frac{3}{2} \, ,\\
+\gamma_i(\alpha_s(\mu);1) = \frac{3 C_F}{2}  \frac{\alpha_s(\mu)}{\pi}  \, ,\\
 S_{pert} = 2 C_F \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'} \frac{\alpha_s(\mu')}{\pi} \left[\ln\frac{Q^2}{\mu'^2} - \frac{3}{2}
  \right] \; ,
  \label{e:FF_Spert1}
@@ -371,36 +414,28 @@ S_{pert} = -\frac{2 C_F}{\pi \beta_0}\left ( \ln \frac{Q}{Q_0} - \ln \frac{Q}{\L
  \label{e:FF_Spert_analytical}
 \end{eqnarray}
 
-We will assume that the functional form of TMDs in $b_T$ space is such that {\em only} large values of $b_T$  dominate in the FT connecting momentum and coordinate spaces and will approximate $K(b_T,\mu_0)$ by its large $b_T$ asymptotic: a constant, as suggested in Ref.~\cite{Collins:2014jpa}. We will
-call this constant $g_{K_0}\equiv \lim_{b_T\to \infty} \tilde K(b_T,\mu_0)$, such that in this approximation
-\begin{eqnarray}
-&&\tilde f_{a/p} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/p} (x, b_T; Q_0^2, \mu_0)\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}} e^{-S_{pert}/2}\,,
-\nonumber \\[0.3cm]
-&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,.
-\label{e:FF_ansatz1}
-\end{eqnarray}
-Our result suggests that in the region of its applicability TMD evolution accounts to the shift of normalization in $Q^2$ and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of HERMES collaboration: no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is a very crude one, so we do not expect the result to hold generically; in particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT. This simplification is taken deliberately to be able to speed up the numerical computations, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used and it should satisfy the following criteria:
-$\lim_{b_T\to \infty} \tilde K(b_T,\mu_0) = const$, $\lim_{b_T\to 0} \tilde K(b_T,\mu_0) = 0$. Ref.~\cite{Collins:2014jpa} suggests high $b_T$ limit of $\tilde K(b_T,\mu_0)$ should be negative, we will be able to phenomenologically test this assumption.
+Our result suggests that in the region of its applicability TMD evolution accounts to the shift of normalization in $Q^2$ and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of HERMES collaboration: no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is a very crude one, so we do not expect the result to hold generically; in particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT. This simplification is taken deliberately to be able to speed up the numerical computations, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used. 
 
 
 Finally we arrive at the following parameterization of the unpolarized structure function from Eq.~(\ref{e:FUU}) 
 \begin{equation}
-F_{UU}(x_B,z_h,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/p}(x_B, Q_0)\,D_{h/a}(z_h, Q_0) \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
+F_{UU}(x_B,z_h,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/N}(x_B, Q_0)\,D_{h/a}(z_h, Q_0) \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
 \frac{e^{-P_{hT}^2/\langle P_{hT}^2 \rangle_a}}{\pi\langle P_{hT}^2 \rangle_a}\,, \label{e:FUU_model}
 \end{equation}
 with
 \begin{equation}
-\langle P_{hT}^2 \rangle_a = \langle p_\perp^2 \rangle_a + z_h^2\, \langle k_\perp^2 \rangle_a\,, \label{e:avg_kT}
+\langle P_{hT}^2 \rangle_a = \langle p_\perp^2 \rangle_{a/N} + z_h^2\, \langle k_\perp^2 \rangle_{h/a}\,, \label{e:avg_kT}
 \end{equation}
-where we have used the expressions from Eq.~(\ref{e:LT_relations}).  
+results from carrying out the Fourier transform to momentum space.
+%where we have used the expressions from Eq.~(\ref{e:LT_relations}).  
 Notice that our result is similar to Refs.~\cite{Anselmino:2013lza,Signori:2013mda}, with the following important differences:
 We do not utilize DGLAP evolution for TMDs as was done in Ref.~\cite{Anselmino:2013lza} and we do not freeze the scale either as was done in Ref.~\cite{Signori:2013mda}. We mention that a fit of HERMES~\cite{Airapetian:2012ki}  and COMPASS~\cite{Adolph:2013stb} multiplicities with full TMD evolution and next-to-leading logarithmic accuracy was published in Ref.~\cite{Bacchetta:2017gcc}. In this study we do not aim at a complete fit of the data at different $Q^2$ and choose to fit only HERMES~\cite{Airapetian:2012ki} multiplicities. Our result is consistent with CS equations, provided that the scale $Q$ is not drastically different from $Q_0$ and TMDs are dominated by the region of large $b_T$, so that $\tilde K(b_T,\mu_0)$ is approximately constant.
 
 From this, we find our formula for the HERMES multiplicities~\cite{Airapetian:2012ki} 
 \begin{equation}
-M_n^h(x_B, Q^2,z_h, P_{hT}) =
-2P_{hT}\frac{\pi\, \sum_{a} e_a^2 \,f_{a/p}(x_B, Q_0)\,D_{h/a}(z_h, Q_0)}
-{\sum_{a} e_a^2 \> f_{a/p} (x_B,Q^2)} \,  \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
+M_N^h(x_B, Q^2,z_h, P_{hT}) =
+2P_{hT}\frac{\pi\, \sum_{a} e_a^2 \,f_{a/N}(x_B, Q_0)\,D_{h/a}(z_h, Q_0)}
+{\sum_{a} e_a^2 \> f_{a/N} (x_B,Q^2)} \,  \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
 \frac{e^{-P_{hT}^2/\langle P_{hT}^2 \rangle_a}}{\pi\langle P_{hT}^2 \rangle_a}
 \,. \label{e:mult_HERMES}
 \end{equation}
@@ -414,9 +449,9 @@ M_n^h(x_B, Q^2,z_h, P_{hT}) =
 Prior to performing a fit of an experimental measurement, one often needs to make cuts on the data to ensure that the fit is restricted only to the data that can be described by the theoretical model.  For example, a ``standard'' cut on the HERMES multiplicity data is~\cite{Anselmino:2013lza}
 \begin{equation}
 z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad\quad{\rm (standard\;cut)}\,.\label{e:st_cut}
+\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad\quad{\rm (Torino\;cut)}\,.\label{e:st_cut}
 \end{equation}
-However, as was argued in Ref.~\cite{Boglione:2016bph}, Eq.~(\ref{e:st_cut}) is not sufficient to guarantee that one stays strictly in the current (or the so-called ``beam") fragmentation region.  Instead, one should calculate the ratio $R(y_h,z_h,x_B,Q)$, called the collinearity, defined as~\cite{Boglione:2016bph}
+However, as was argued in Ref.~\cite{Boglione:2016bph}, Eq.~(\ref{e:st_cut}) is not sufficient to guarantee that one stays strictly in the current (or the so-called ``beam") fragmentation region.  Instead, one should calculate the Lorentz invariant ratio $R(y_h,z_h,x_B,Q)$, called the collinearity, defined as~\cite{Boglione:2016bph}
 \begin{equation}
 R(y_h,z_h,x_B,Q)\equiv \frac{P_h\cdot p} {P_h\cdot k}\,,
 \end{equation}
@@ -435,16 +470,16 @@ On the other hand, the (positive) rapidity of the target proton $y_p$ and the (n
 y_p &=& \ln \left( \frac{Q}{x_n M_P}\right) \,,\\
 y_h &=& \ln\left[\frac{Q\,z_h(Q^2-x_n^2M_P^2)} {2x_n^2M_P^2\sqrt{M_h^2+P_{hT}^2}} -\frac{Q} {x_nM_p}\sqrt{\frac{z_h^2(Q^2-x_n^2M_P^2)^2} {4x_n^2M_P^2(M_h^2+P_{hT}^2)}-1}\right]\,,
 \end{eqnarray}
-with $M_P$ ($M_h$) the mass of the proton (hadron), $x_n\equiv \frac{2x_B} {1+\sqrt{1+4x^2M_P^2/Q^2}}$.
+with $M_P$ ($M_h$) the mass of the proton (hadron), $x_n\equiv \frac{2x_B} {1+\sqrt{1+4x^2M_P^2/Q^2}}$. Under a boost in the  $z$ direction, rapidity transforms additively ~\cite{Collins:2011zzd}: $y \to y' = y+\psi$, this implies that the difference in rapidity is boost independent. We could then use $y_p - y_h$ as a boos independent measure of the total rapidity interval between the proton and the produced hadron.
 
-The HERMES multiplicity data set~\cite{Airapetian:2012ki} consists of 2660 points for $\pi^\pm$ and $K^\pm$ production off hydrogen or deuterium targets measured in the following kinematical region: $0.037 < x_B < 0.41$, $0.13 < z_h < 0.95$, $1.25\; {\rm GeV^2} < Q^2 < 9.22$ GeV$^2$,  and $0.06 \; {\rm GeV} < P_{hT} < 1.36$ GeV. We use the data set where vector meson contributions were subtracted. We sum in quadrature statistical and systematic errors and we ignore correlations. In our numerical calculations we always use the average values of the kinematic variables in each bin.
+The HERMES multiplicity data set~\cite{Airapetian:2012ki} consists of 2660 points for $\pi^\pm$ and $K^\pm$ produced off hydrogen or deuterium targets and measured in 8 bins in the following kinematical region: $0.037 < x_B < 0.41$, $0.13 < z_h < 0.95$, $1.25\; {\rm GeV^2} < Q^2 < 9.22$ GeV$^2$,  and $0.06 \; {\rm GeV} < P_{hT} < 1.36$ GeV. We use the data set where vector meson contributions were subtracted. We sum in quadrature statistical and systematic errors and we ignore correlations. In our numerical calculations we always use the average values of the kinematic variables in each bin.
 %%%%%%%%%
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all.pdf}
 \includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_all_lnR.pdf}
 \caption{\label{Fig:hermes_data_rapidity}
-[Color online]  {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data.  The solid line corresponds to $q_T^2/Q^2=1$. {\bf Right panel:} Scatter plot of $q_T^2/Q^2$  vs $\ln|R|$ for HERMES multiplicity data. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+[Color online]  {\bf Left panel:} Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data.  The solid line corresponds to $q_T^2/Q^2=1$. {\bf Right panel:} Scatter plot of $\ln|R|$  vs $y_p-y_h$ for HERMES multiplicity data. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
 }
 \end{figure}
 %%%%%%%%%
@@ -460,10 +495,20 @@ Scatter plot of $q_T^2/Q^2$ vs $|R|$ for $K^\pm$ HERMES multiplicity data . Red 
 }
 \end{figure}
 %%%%%%%%%
-The scatter plot of  $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data is shown in Fig.~\ref{Fig:hermes_data_rapidity}. In order to interpret the data in terms of TMD factorization, one must ensure applicability of factorization and make sure that the production mechanism corresponds to the ``beam" fragmentation. One requirement is $q_T \ll Q$. One can see from Fig.~\ref{Fig:hermes_data_rapidity} that  $q_T^2/Q^2$ for HERMES data can reach high values, and indeed 799 points are such that $q_T^2/Q^2>1$. Ref.~\cite{Boglione:2016bph} proposes collinearity, $R$, as a filter to  safely separate the ``forward'' and ``backward'' rapidity regions and ensure ``beam" fragmentation. One can also see from the right panel of Fig.~\ref{Fig:hermes_data_rapidity}  that values of $q_T^2/Q^2$ HERMES are correlated with values of $|R|$.
-The exact starting value of $q_T^2/Q^2$ when the TMD factorization should become appropriate is not exactly known and should be determined phenomenologically. In order to be able to describe SIDIS cross section in a wide region of $q_T$ one should use the so-called $W+Y$ prescription, see for instance Ref.~\cite{Collins:2016hqq}, however at present for SIDIS data there are difficulties in implementation of this prescription, see Ref.~\cite{Gonzalez-Hernandez:2018ipj}. In this study we will use only TMD approximated cross-section as in Eq.~\eqref{e:dsigma} and consequently multiplicity as in Eq.~\eqref{e:mult_HERMES}.
+The scatter plot of  $q_T^2/Q^2$ vs $y_p-y_h$ for HERMES multiplicity data is shown in Fig.~\ref{Fig:hermes_data_rapidity}. In order to interpret the data in terms of TMD factorization, one must ensure applicability of factorization and make sure that the production mechanism corresponds to the ``beam" fragmentation. Another requirement is $q_T \ll Q$. One can see from Fig.~\ref{Fig:hermes_data_rapidity} that  $q_T^2/Q^2$ for HERMES data can reach high values, and indeed 799 points are such that $q_T^2/Q^2>1$. As we mentioned, Ref.~\cite{Boglione:2016bph} proposes collinearity, $R$, as a filter to  safely separate the ``forward'' and ``backward'' rapidity regions and ensure ``beam" fragmentation. One can also see from the right panel of Fig.~\ref{Fig:hermes_data_rapidity}  that values of $|R|$ HERMES are correlated with values of $y_p-y_h$. In particular, after $y_p-y_h$ reaches 4 units in rapidity, $|R|$ values become small. One can see from Fig.~\ref{Fig:hermes_data_R} that lower values of $|R|$ are correlated with higher values of $y_p-y_h$, one can also see that $|R|$ becomes very large for low values of $y_p-y_h$. The distinct families of curves in the right panel of Fig.~\ref{Fig:hermes_data_rapidity} correspond to 8 bins in $x_B$ of HERMES data. For a given bin in $x_B$ all data for different hadron types, different targets, values of $z_h$, $Q^2$, and $P_{hT}$ belong to a particular distinct curve. One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. 
 
-We can state that if one imposes $R<1$-cut, then {\em simultaneously}  $q_T^2/Q^2$ are cut to smaller values $q_T^2/Q^2<1$, see left panel of Fig.~\ref{Fig:hermes_data_rapidity}. The same statement is true only to some extent for the cut in $y_p-y_h$, as only for large rapidity separation $y_p-y_h > 3.5$ the values of $q_T^2/Q^2$ become smaller than 1.  Fig.~\ref{Fig:hermes_data_R} shows $|R|$ versus $y_p-y_h$, and $\ln|R|$ versus $y_p-y_h$.
+
+Figure ~\ref{Fig:hermes_data_qt_vs_R} shows correlation of $q_T^2/Q^2$ and $|R|$ separately for pions (left panel) and Kaons (right panel).
+We can state that if one imposes $R<1$-cut, then {\em simultaneously}  $q_T^2/Q^2$ are cut to smaller values $q_T^2/Q^2<1$, see both panels of Fig.~\ref{Fig:hermes_data_qt_vs_R}. It means that collinearity can simultaneously ensure that the particle is produced in ``beam" fragmentation region and that $q_T^2/Q^2<1$.
+
+Figure ~\ref{Fig:hermes_data_R} shows correlation of $q_T^2/Q^2$ and $y_p-y_h$ separately for pions (left panel) and Kaons (right panel).
+One can see from Fig. ~\ref{Fig:hermes_data_R} only for large rapidity separation $y_p-y_h > 3.5$ the values of $q_T^2/Q^2$ become smaller than 1.  One can also see that pions have larger maximal rapidity interval ($\sim 5.5$) compared to Kaons ($\sim 4.5$). It means that if we use 
+$y_p-y_h>A$, where $A> 1$ is sufficiently large as a cut, Kaon TMD parameters will be determined worser for large values of $A$.
+
+The exact starting value of $q_T^2/Q^2$ when the TMD factorization should become appropriate is not exactly known and should be determined phenomenologically. In order to be able to describe SIDIS cross section in a wide region of $q_T$ one should use the so-called $W+Y$ prescription, see for instance Ref.~\cite{Collins:2016hqq}, however at present for SIDIS data there are difficulties in implementation of this prescription, see Ref.~\cite{Gonzalez-Hernandez:2018ipj}. In this study we will use only TMD approximated cross-section as in Eq.~\eqref{e:dsigma} and consequently multiplicity as in Eq.~\eqref{e:mult_HERMES}. 
+
+
+ 
 %%%%%%%%%
 \begin{figure}[htb!]
 \centering
@@ -475,26 +520,7 @@ Scatter plot of $q_T^2/Q^2$ vs $y_p-y_h$ for $K^\pm$ HERMES multiplicity data . 
 }
 \end{figure}
 %%%%%%%%%
-One can see from Fig.~\ref{Fig:hermes_data_R} that lower values of $|R|$ are correlated with higher values of $y_p-y_h$, one can also see that $|R|$ becomes very large for low values of $y_p-y_h$. The distinct families of curves in Fig.~\ref{Fig:hermes_data_R} correspond to 8 bins in $x_B$ of HERMES data. For a given bin in $x_B$ all data for different hadron types, different targets, values of $z_h$, $Q^2$, and $P_{hT}$ belong to a particular distinct curve.
 
-%If we make an assumption that the proton and the produced hadron are separated by a sufficiently large rapidity interval, and the initial quark rapidity is close to the proton rapidity $|y_i - y_p| \ll |y_p|$ and the final quark has approximately the same rapidity as the pion $|y_f -y_h| \ll |y_h|$, then we obtain
-%\begin{equation}
-%R \sim \frac{e^{y_p-y_h}} {e^{2 (y_p-y_h)}-1}\,\to \frac{1} {e^{y_p-y_h}}
-%\label{eq:r_mod}
-%\end{equation}
-if% $y_p-y_h$ is large enough, so that $e^{y_p-y_h} \gg 1$ and $R \ll 1$. 
-One can see that $R$ is an exponential measure, so we will introduce an R-filter using $\ln R < A$ instead of $R < A$, where $A < 1$. We also deduce that a simpler filter to ensure the collinearity is $y_p-y_h > A$, where $A> 1$ is sufficiently large. In practice our assumptions that lead to Eq.~\eqref{eq:r_mod} are not always satisfied for all HERMES data, see %Fig.~\ref{Fig:hermes_torino_rapidity}, however in the region of interest (negative rapidities for produced hadrons) these assumptions are reasonable.
-%%%%%%%%%
-%\begin{figure}[htb!]
-%\centering
-%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yi_minus_yp.pdf}
-%\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_yf_minus_yh.pdf}
-%\caption{\label{Fig:hermes_torino_rapidity}
-%[Color online] {\bf Left panel:} Scatter plot of $y_i-y_p$ vs $y_p$ for HERMES multiplicity data . {\bf Right panel:} 
-%Scatter plot of HERMES multiplicity data $y_i-y_h$ vs $y_h$. Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$
-%}
-%\end{figure}
-%%%%%%%%%
 
 Let us discuss first the application of the ``standard'' cut from Eq.~\eqref{e:st_cut}. As shown in Ref.~\cite{Anselmino:2013lza} the data filtered by Eq.~\eqref{e:st_cut} can be described well in the framework of TMD parton model. The cut of Eq.~\eqref{e:st_cut} however does not necessarily ensure filtering the data for which TMD factorization is applicable, moreover, as pointed out in Ref.~\cite{Boglione:2016bph} it does not ensure filtering of the data in the ``beam" fragmentation region. In order to demonstrate it, let us plot $q_T^2/Q^2$ versus $y_p-y_h$ in Fig.~\ref{Fig:hermes_torino}.
 %%%%%%%%%
@@ -510,17 +536,17 @@ Scatter plot of HERMES multiplicity data filtered by the ``standard'' cut from E
 %%%%%%%%%
 One can see from Fig.~\ref{Fig:hermes_torino} that $q_T^2/Q^2$ can reach high values, even though one should ensure that $q_T^2/Q^2\ll 1$ for the applicability of TMD factorization. In case of HERMES multiplicities, cuts from Eq.~\eqref{e:st_cut} result in total of 978 points and 292 points are such that $q_T^2/Q^2>1$. On the other hand, if we add $y_p-y_h>2.5$ selection criteria to Eq.~\eqref{e:st_cut}, then only 11 out of 473 points are such that $q_T^2/Q^2>1$. In order to study the influence of restriction of the rapidity interval on the results of the fit, we will use cuts from Eq.~\eqref{e:st_cut} and add $y_p-y_h>A$ selection criteria, where $A \in[1.25, 3.5]$:
 \begin{equation}
-z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad y_p-y_h > A  \quad\quad\quad{\rm (new\;standard\;cut)}\,.\label{e:st_cut1}
+0.2 < z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
+\quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad y_p-y_h > A  \quad\quad\quad{\rm (Torino+\;rapidity\;cut)}\,.\label{e:st_cut1}
 \end{equation}
-An example of such data selection for A = 2.5 is shown in the right panel of Fig.~\ref{Fig:hermes_torino}.
+An example of such data selection for A = 2.5 is shown in the right panel of Fig.~\ref{Fig:hermes_torino}. Notice that we cut the values of the ``padding" bin $z_h<0.2$, Ref.~\cite{schnell}.
 
 The second set of cuts that we will explore will be motivated by ensuring applicability of TMD factorization together with selection of large rapidity interval, we will call it ``rapidity" cut:
 \begin{equation}
-z_h > 0.2 \quad\quad  z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
-\quad\quad  q_T^2/Q^2 < \, 0.15   \quad\quad y_p-y_h > A \quad\quad{\rm (rapidity\;cut)}\,.\label{e:rapidity_cut}
+0.2 < z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
+\quad\quad  q_T^2/Q^2 < \, 0.15   \quad\quad y_p-y_h > A \quad\quad{\rm (rapidity+\;q_T\;cut)}\,.\label{e:rapidity_cut}
 \end{equation}
-Notice that we cut the values of $z_h<0.2$, Ref.~\cite{schnell}. We will vary the value $A \in[1.25, 3.5]$ in order to test the sensitivity of the fit results to this value. Scatter plot of the filtered data by the rapidity cut from Eq.~\eqref{e:rapidity_cut} is shown in Fig.~\ref{Fig:hermes_new}.
+ We will vary the value $A \in[1.25, 3.5]$ in order to test the sensitivity of the fit results to this value. Scatter plot of the filtered data by the rapidity cut from Eq.~\eqref{e:rapidity_cut} is shown in Fig.~\ref{Fig:hermes_new}.
 
 %%%%%%%%%
 \begin{figure}[htb!]
@@ -534,7 +560,7 @@ Notice that we cut the values of $z_h<0.2$, Ref.~\cite{schnell}. We will vary th
 
 The third set of cuts that we will explore will include collinearity criteria from Ref.~\cite{Boglione:2016bph}, we will discard any data for large values of $|R|$, we will call it R-cut: 
  \begin{equation}
-z_h > 0.2 \quad\quad  z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
+0.2 <  z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
 \quad\quad   \ln |R|  < A \quad\quad{\rm (R\;cut)}\,.\label{e:r_cut}
 \end{equation}
 We will vary the value $A \in[-0.5, -2.5]$ in order to test the sensitivity of the fit results to this value. The scatter plot of HERMES multiplicity data filtered by the R-cut from Eq.~\eqref{e:r_cut},  $\ln |R|  < -0.5$ and $\ln |R| < -2.5$, is shown in Fig.~\ref{Fig:hermes_R}. One can see that $\ln |R|  < -0.5$ ensures selection of $q_T^2/Q^2<1$. One can also see from Fig.~\ref{Fig:hermes_R}, that filtering larger negative values of $\ln |R|$ correspond to simultaneous filtering out smaller values of $y_p - y_h$, and large values of $q_T^2/Q^2$ (compare left and right panels of Fig.~\ref{Fig:hermes_R}).
@@ -647,6 +673,10 @@ Fitted parameters of the model with cuts from Eq.~\eqref{e:st_cut1} as function 
 %%%%%%%%%
 
 [Comments, discussions....]
+
+Notice, that our results for the lowest $y_p-y_h$ cut are very close to the results of Ref.~\cite{Anselmino:2013lza}: 
+$ \langle k_\perp^2 \rangle = 0.57$ GeV$^2$, $ \langle p_\perp^2 \rangle = 0.12$ GeV$^2$. We will explore the reason for this similarity in \ref{appendix}.
+
 \newpage
 Resulting parameters of the fits with  the ``rapidity'' cut from Eq.~\eqref{e:rapidity_cut} 
 are shown in Fig.~\ref{Fig:rapidity_cut}.
@@ -705,6 +735,64 @@ U.S. Department of Energy, Office of Science, Office of Nuclear
 Physics under Award No. DE-FG02-07ER41460 (L.G.), No.~DE-AC05-06OR23177 (A.P.), by the National Science Foundation 
 under Contract No. PHY-1623454 (A.P.), and within the 
 framework of the TMD Topical Collaboration.
+
+
+\appendix
+\section{Comparison of TMD evolution and Torino method}
+\label{appendix}
+
+Ref.~\cite{Anselmino:2013lza} uses usual DGLAP evolution for TMDs, such that
+\begin{eqnarray}
+&&f_{a/N} (x,k_\perp; Q^2)= f_{a/N} (x; Q^2) \frac{e^{-k_\perp^2/{\langle k_\perp^2 \rangle_a}}}{\pi \langle k_\perp^2 \rangle_a}\,,
+\nonumber \\[0.3cm]
+&&D_{h/a}(z,k_\perp; Q^2) =  \frac{1}{z^2} D_{h/a}(z; Q^2) \frac{e^{-k_\perp^2/{\langle p_\perp^2 \rangle_a}}}{\pi \langle p_\perp^2 \rangle_a}.
+\label{e:FF_ansatzTorino}
+\end{eqnarray}
+
+Using our formulas we obtain
+\begin{eqnarray}
+&&f_{a/N} (x,k_\perp; Q^2)= f_{a/N} (x; Q_0^2) \left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,\frac{e^{-k_\perp^2/{\langle k_\perp^2 \rangle_a}}} {\pi \langle k_\perp^2 \rangle_a}\, ,
+\nonumber \\[0.3cm]
+&&D_{h/a}(z,k_\perp; Q^2) =  \frac{1}{z^2} D_{h/a}(z; Q_0^2)  \left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,  \frac{e^{-k_\perp^2/{\langle p_\perp^2 \rangle_a}}}{\pi \langle p_\perp^2 \rangle_a}.
+\label{e:FF_ansatzour}
+\end{eqnarray}
+
+A natural question is: if the widths extracted using Eqs.~\eqref{e:FF_ansatzTorino} and Eqs.~\eqref{e:FF_ansatzour} are similar, does it mean that functions are similar?
+
+In order to study it, let us first plot the rage of $x,z$ and $Q^2$ for HERMES data in Fig.~\ref{Fig:hermes_data_Q2}
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_Q2_x.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_Q2_z.pdf}
+\caption{\label{Fig:hermes_data_Q2}
+[Color online] {\bf Left panel:} Scatter plot of $Q^2$ vs $x$ for $\pi^\pm$ HERMES multiplicity data . {\bf Right panel:} 
+Scatter plot of $Q^2$ vs $z$ for $K^\pm$ HERMES multiplicity data .  Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+}
+\end{figure}
+%%%%%%%%%
+
+In order to achieve similar extractions, one would need to have Eqs.~\eqref{e:FF_ansatzTorino} and Eqs.~\eqref{e:FF_ansatzour} similar for corresponding values of $x,z,Q^2$.
+
+We plot in Fi.~\ref{Fig:comparison} up quark distributions for typical values of $Q^2=2,3,5,9$ GeV$^2$.
+One can see that indeed the values of distributions are quite similar in $x_B = 0.1, 0.15, 0.25, 0.4$ accordingly.
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison2}{\tiny(a)}%
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison3}{\tiny(b)}\\% 
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison5}{\tiny(c)}%
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison9}{\tiny(d)}%
+\caption{\label{Fig:comparison}
+Up quark distributions  at different values of $Q^2$ using DGLAP and Eqs.~\ref{e:FF_ansatzour}.
+}
+\end{figure}
+%%%%%%%%%
+
+
+We conclude that even though our methods are very different in the shape, the results are similar for HERMES data.
+
+
 
 \bibliographystyle{h-physrev}
 \bibliography{lg}

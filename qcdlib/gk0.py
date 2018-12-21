@@ -45,7 +45,7 @@ class GK:
 
 # Alpha_S at the first loop, Lambda = 0.25
     def alpha_s(self,Q):
-        return 1./(beta0*np.log(Q**2/self.lam**2))
+        return 1./(self.beta0*np.log(Q**2/self.lam**2))
 
 # Perturbative Sudakov
     def get_pertsud(self,Q2):

@@ -673,6 +673,10 @@ Fitted parameters of the model with cuts from Eq.~\eqref{e:st_cut1} as function 
 %%%%%%%%%
 
 [Comments, discussions....]
+
+Notice, that our results for the lowest $y_p-y_h$ cut are very close to the results of Ref.~\cite{Anselmino:2013lza}: 
+$ \langle k_\perp^2 \rangle = 0.57$ GeV$^2$, $ \langle p_\perp^2 \rangle = 0.12$ GeV$^2$. We will explore the reason for this similarity in \ref{appendix}.
+
 \newpage
 Resulting parameters of the fits with  the ``rapidity'' cut from Eq.~\eqref{e:rapidity_cut} 
 are shown in Fig.~\ref{Fig:rapidity_cut}.
@@ -731,6 +735,64 @@ U.S. Department of Energy, Office of Science, Office of Nuclear
 Physics under Award No. DE-FG02-07ER41460 (L.G.), No.~DE-AC05-06OR23177 (A.P.), by the National Science Foundation 
 under Contract No. PHY-1623454 (A.P.), and within the 
 framework of the TMD Topical Collaboration.
+
+
+\appendix
+\section{Comparison of TMD evolution and Torino method}
+\label{appendix}
+
+Ref.~\cite{Anselmino:2013lza} uses usual DGLAP evolution for TMDs, such that
+\begin{eqnarray}
+&&f_{a/N} (x,k_\perp; Q^2)= f_{a/N} (x; Q^2) \frac{e^{-k_\perp^2/{\langle k_\perp^2 \rangle_a}}}{\pi \langle k_\perp^2 \rangle_a}\,,
+\nonumber \\[0.3cm]
+&&D_{h/a}(z,k_\perp; Q^2) =  \frac{1}{z^2} D_{h/a}(z; Q^2) \frac{e^{-k_\perp^2/{\langle p_\perp^2 \rangle_a}}}{\pi \langle p_\perp^2 \rangle_a}.
+\label{e:FF_ansatzTorino}
+\end{eqnarray}
+
+Using our formulas we obtain
+\begin{eqnarray}
+&&f_{a/N} (x,k_\perp; Q^2)= f_{a/N} (x; Q_0^2) \left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,\frac{e^{-k_\perp^2/{\langle k_\perp^2 \rangle_a}}} {\pi \langle k_\perp^2 \rangle_a}\, ,
+\nonumber \\[0.3cm]
+&&D_{h/a}(z,k_\perp; Q^2) =  \frac{1}{z^2} D_{h/a}(z; Q_0^2)  \left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,  \frac{e^{-k_\perp^2/{\langle p_\perp^2 \rangle_a}}}{\pi \langle p_\perp^2 \rangle_a}.
+\label{e:FF_ansatzour}
+\end{eqnarray}
+
+A natural question is: if the widths extracted using Eqs.~\eqref{e:FF_ansatzTorino} and Eqs.~\eqref{e:FF_ansatzour} are similar, does it mean that functions are similar?
+
+In order to study it, let us first plot the rage of $x,z$ and $Q^2$ for HERMES data in Fig.~\ref{Fig:hermes_data_Q2}
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_Q2_x.pdf}
+\includegraphics[width=0.45\textwidth]{\FigPath/hermes_data_Q2_z.pdf}
+\caption{\label{Fig:hermes_data_Q2}
+[Color online] {\bf Left panel:} Scatter plot of $Q^2$ vs $x$ for $\pi^\pm$ HERMES multiplicity data . {\bf Right panel:} 
+Scatter plot of $Q^2$ vs $z$ for $K^\pm$ HERMES multiplicity data .  Red (deep blue) color in the plots corresponds to growing (diminishing) values of $q_T^2/Q^2$.
+}
+\end{figure}
+%%%%%%%%%
+
+In order to achieve similar extractions, one would need to have Eqs.~\eqref{e:FF_ansatzTorino} and Eqs.~\eqref{e:FF_ansatzour} similar for corresponding values of $x,z,Q^2$.
+
+We plot in Fi.~\ref{Fig:comparison} up quark distributions for typical values of $Q^2=2,3,5,9$ GeV$^2$.
+One can see that indeed the values of distributions are quite similar in $x_B = 0.1, 0.15, 0.25, 0.4$ accordingly.
+%%%%%%%%%
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison2}{\tiny(a)}%
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison3}{\tiny(b)}\\% 
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison5}{\tiny(c)}%
+\includegraphics[width=0.45\textwidth]{\FigPath/tmd_comparison9}{\tiny(d)}%
+\caption{\label{Fig:comparison}
+Up quark distributions  at different values of $Q^2$ using DGLAP and Eqs.~\ref{e:FF_ansatzour}.
+}
+\end{figure}
+%%%%%%%%%
+
+
+We conclude that even though our methods are very different in the shape, the results are similar for HERMES data.
+
+
 
 \bibliographystyle{h-physrev}
 \bibliography{lg}

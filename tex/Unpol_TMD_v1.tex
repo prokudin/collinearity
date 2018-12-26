@@ -217,9 +217,9 @@ JLAB-XXXX
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-  We analyze HERMES multiplicities in semi-inclusive deep-inelastic scattering and extract non-perturbative transverse momentum dependence of unpolarized transverse momentum dependent distributions. We discuss the importance of data selection in conducting the fits of the multiplicities.  In particular
-  we implement   the  collinearity criteria introduced in reference~\cite{Boglione:2016bph} that allow us to study the effects of selecting data
-  that is  predominantly in the current fragmentation region.  We compare our parameters to previous extractions in order to better interpret our results.  We also give an outlook on what impact this criteria can have for on-going and future experiments.
+
+  {\crd  We discuss the impact of data selection in carrying  fits of 
+    non-perturbative transverse momentum dependence in semi-inclusive deep-inelastic scattering. In particular, we implement the  collinearity criteria introduced in reference~\cite{Boglione:2016bph} that allow us to select data  that is  predominantly in the current fragmentation region.  We apply this framework to HERMES multiplicities, and extract  the unpolarized transverse momentum dependent distributions.    We compare our parameters to previous extractions in order to interpret our results.  We also give an outlook on what impact this criteria can have for on-going and future experiments.}
 \end{abstract}
 
 
@@ -252,44 +252,58 @@ describes these DIS processes in terms of  a collinear perturbative (hard) scatt
 transverse momentum dependent (TMD)
  parton distribution functions (PDFs) and fragmentation functions (FFs) (collectively called TMDs)~\cite{Kotzinian:1994dv,Mulders:1995dh,Boer:1997nt}. 
 
-\begin{flushleft}
-{\em [Discussion on what was done in the past (i.e., Berger criteria $\to$ ``standard'' cut).]}
-\end{flushleft}
+%\begin{flushleft}
+%{\em [Discussion on what was done in the past (i.e., Berger criteria $\to$ ``st%andard'' cut).]}
+%\end{flushleft}
  
  A condition implicit in the proofs of TMD factorization in SIDIS,
- where final state hadrons are depicted as  fragments of the
- struck quark, is the assumption of  a clear separation in momentum of the struck quark from the target spectators. In this framework one assumes that the fragmentation of the quark into hadrons is independent of the production of the quark~\cite{Berger:1987zu,Trentadue:1993ka}. This picture
- implies that fragmentation can be described by a function of $z$ independent of $x$.  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.   A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
+ where final state hadrons are   fragments of the
+ struck quark, is the assumption of  a clear separation in momentum of the struck quark from the target spectators. {\crd In this framework,  the fragmentation of the quark into hadrons is assumed to be independent of the production of the quark~\cite{Berger:1987zu,Trentadue:1993ka}. That is, 
+ fragmentation is described by a function of $z$ independent of $x$.}  By contrast if the produced hadron moves in nearly the same direction as the target then the hadron is said to be in the target fragmentation region and the relevant factorization theorem uses fracture functions~\cite{Trentadue:1993ka,Grazzini:1997ih,Anselmino:2011ss}.   A clear distinction between the current and target  region, require large enough separation in momentum of the current and target fragments.  It has proved  convenient to use rapidity to delineate these regions.   Some time ago Berger provided a rapidity gap criteria  to study the dynamics of quark fragmentation in the current region~\cite{Berger:1987zu,Mulders:2000jt}.  In reality the classification of distinct current, target, and central fragmentation regions however, are not sharp~\cite{Berger:1987zu,Mulders:2000jt,Joosten:2013mia,Boglione:2016bph,Collins:2018teg}.
 
- Recently, it has been shown that at moderate to low values of $Q$, estimating the adequacy of the current fragmentation criteria requires knowledge of intrinsic non-perturbative properties of partons. That analysis depends on a close examination of the errors in TMD factorization, resulting in
+ Recently, it has been shown that at moderate to small values of $Q$, estimating the adequacy of the current fragmentation criteria requires knowledge of intrinsic non-perturbative properties of partons. That analysis depends on a close examination of the errors in TMD factorization, resulting in
  a more restrictive region where current fragmentation by itself is valid~\cite{Boglione:2016bph}.
  %as those in SIDIS experiments the distinction between these regions becomes blurred~\cite{Boglione:2016bph}.
-   Additionally it was pointed out that the applicability of TMD factorization, that is factorization  with fragmentation in  current region, not only depends on a clearly separate and relatively distinct target and current rapidity regions but also depends on the transverse momentum of the current hadron, $P_{hT}$ ({\em we should be clear about using $q_T$ and or $P_{hT}$ re: $z_h$ : see Sec. 3.1})  
- to study this issue.  Indeed, recent work shows that for these SIDIS experiments, the standard cuts~\cite{Anselmino:2013lza} (more references to fits Bacchetta et al. \dots)
-   are not enough, and the current and target fragmentation regions may overlap, to the point where certain kinematic bins thought to be in the current regime are actually in the target sector~\cite{Boglione:2016bph}.  In principle, this mixing of hadrons produced from the target, central and current region can affect the extraction of TMDs and interpretation of the fitted functions.
-  Therefore, it is of utmost importance to analyze the impact of cuts separating current from target and central fragmentation regions on the extraction of TMDs in order to better improve the phenomenology moving forward.
+{\crd  Additionally it was pointed out that the applicability of TMD factorization  %that is factorization  with fragmentation
+ in  current region not only depends on 
+ %clearly separate and
+ relatively distinct target and current rapidity regions, but also depends on the transverse momentum of the current hadron, $P_{hT}$.
+ %({\em we should be clear about using $q_T$ and or $P_{hT}$ re: $z_h$ : see Sec. 3.1})   to study this issue.
+ Indeed, recent work shows that for these SIDIS experiments, the standard cuts~\cite{Anselmino:2013lza,Bacchetta:2017gcc}
+  %(more references ??? \dots)
+ are insufficient to guarantee %single out
+  SIDIS data is firmly in the current region.
+  That is using the  standard cuts
+ might suggest 
+ certain kinematic bins thought to be
+ in the current regime consist of an admixture of
+ current central and  target fragmentation regions~\cite{Boglione:2016bph}.  In principle, this mixing of hadrons produced from the target, central and current region can affect the extraction of TMDs and interpretation of the fitted functions.  Therefore, it important to analyze the impact of cuts separating current from target and central fragmentation regions on the extraction of TMDs in order to better improve the phenomenology moving forward.}
 
 \begin{flushleft}  
   {\em A lines or two more on the collinearity criteria $\rightarrow$ R-cut/filter as an introduction and continue in Section 3.1}.
   \end{flushleft}
 
   
-In this Letter, we  implement for the first time the collinearity criteria~\cite{Boglione:2016bph} in an extraction of TMD widths for unpolarized PDFs and FFs.  In order to avoid issues with evolution, we focus only on HERMES multiplicity data in SIDIS.  We use a simple analytical approximation for the solutions of TMD evolution equations that is valid in the non-perturbative region and  extract transverse momentum dependence of TMDs allowing the widths to vary with flavor.  The Letter is organized as follows: in Sec.~\ref{s:model} we summarize the theoretical formalism needed to analyze the data, including our model for the transverse momentum dependence.  Next, in Sec.~\ref{s:phenom} we give details on our data selection and perform our fit of the HERMES multiplicities in order to extract the relevant TMD widths.  We also compare our results with previous works and give an interpretation of our widths in the context of these other extractions.  Finally, in Sec.~\ref{s:concl} we summarize our findings and give an outlook on the impact of this analysis for on-going and future experiments.
+In this paper, we  implement for the first time the collinearity criteria~\cite{Boglione:2016bph} in an extraction of TMD widths for unpolarized PDFs and FFs.  In order to avoid issues with evolution, we focus only on HERMES multiplicity data in SIDIS.  We use a simple analytical approximation for the solutions of TMD evolution equations that is valid in the non-perturbative region and  extract transverse momentum dependence of TMDs allowing the widths to vary with flavor.
+{\crd We organize the discussion as follows}: In Sec.~\ref{s:model} we summarize the theoretical formalism needed to analyze the data, including our model for the transverse momentum dependence.  Next, in Sec.~\ref{s:phenom} we give details on our data selection and perform our fit of the HERMES multiplicities in order to extract the relevant TMD widths.  We also compare our results with previous works and give an interpretation of our {\crd results in the context of  other extractions}.  Finally, in Sec.~\ref{s:concl} we summarize our findings and give an outlook on the impact of this analysis for on-going and future experiments.
 
 
 
 \section{Theoretical Formalism}
 \label{s:model}
-Consider the process of SIDIS off an unpolarized nucleon target $N=p,n,d,...$,
+Consider the process of SIDIS from an unpolarized nucleon {\crd and deuteron} target $N=p,n,d,...$,
 \begin{equation}
 \ell(l)+p(N)\to \ell'(l') + h(P_h) + X\,,
 \end{equation}
-where the momenta of the particles are given, and we consider only the exchange of a single virtual photon $\gamma^*(q)$.  One can define the standard Lorentz invariants for this reaction as
+where the momenta of the particles are {\crd $\ell$, $p$ and $P_h$ for the lepton, target and produced hadron respectively.
+%, and we consider only the exchange of a single virtual photon $\gamma^*(q)$.
+ The standard Lorentz invariants for this reaction are}
 \begin{equation}
 S = (l+P)^2\,, \quad\quad Q^2 = -q^2 = -(l-l')^2\,, \quad\quad x_B = \frac{Q^2} {2P\cdot q}\,, \quad\quad y = \frac{Q^2} {x_B S}\,, \quad\quad z_h = \frac{P\cdot P_h} {P\cdot q}\,.
 \end{equation}
 
-One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$ as far as applicability region of TMD factorization~\cite{Collins:2011zzd} is proven to be $q_T \ll Q$.
+One also often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/z$
+{\crd since the power counting applied in proofs of  TMD factorization~\cite{Collins:2011zzd} is carried out for the region, $q_T \ll Q$}.
 For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
 \begin{eqnarray}
 \frac{d\sigma}
@@ -297,47 +311,50 @@ For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta
 \frac {2 \, \pi^2 \alpha_{em}^2}{(x_B S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(x,z,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)
 \label{e:dsigma}
 \end{eqnarray}
-where TMD factorization yeilds for the unpolarized structure function\cite{Collins:2011zzd},
+where TMD factorization yields for the unpolarized structure function\cite{Collins:2011zzd},
 \begin{equation}
 F_{UU}(x,z,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 \,
 \int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
-\> \delta ^{(2)}\Big(\vec{P}_{hT} - z_h\,\vec{k}_\perp -\vec{p}_\perp\Big)\,
+\> \delta ^{(2)}\left(\vec{P}_{hT} - z_h\,\vec{k}_\perp -\vec{p}_\perp \right)\,
 f_{a/N} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)\,. \label{e:FUU} \\
 \end{equation}
-The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized TMD PDF and FF, respectively, for a parton of flavor
+The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized {\crd TMDs},  for a parton of flavor
 $a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at leading order in the strong coupling
-is normalized as ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$ corrections~\cite{Bacchetta:2006tn}
-%\begin{equation}
-$x=x_B\,, \quad\quad z=z_h$  %\label{e:LT_relations}
-%\end{equation}
-Apart from kinematical variables and transverse momentum, TMD functions $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ 
-depend on the scale of the reaction $Q^2$,  through  the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ from jointly solving the Collins-Soper (CS) 
-in $b_T$ space-Fourier conjugate to $k_{\perp}$-and renormalization group equations for the TMDs.
-The rapidity parameters can be set to $\zeta_N=\zeta_h=Q^2$~\cite{Collins:2011zzd,Collins:2014jpa}.
+is normalized as, ${\cal H} = 1$. In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$
+corrections~\cite{Bacchetta:2006tn}
+\begin{equation}
+  x=\frac{-q^+}{p^+}\approx x_B\,, \quad\quad z=\frac{P_h^-}{q^-}\approx z_h.
+  \label{e:LT_relations}
+\end{equation}
+{\crd Apart from kinematical variables and transverse momentum, the TMDs  $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$, }
+depend on the scale of the reaction $Q^2$,  through  the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ as a result of  jointly solving the Collins-Soper (CS) in $b_T$ space  and renormalization group equations for the TMDs.  The rapidity parameters can be set to $\zeta_N=\zeta_h=Q^2$~\cite{Collins:2011zzd,Collins:2014jpa}.
 %The dependence of functions  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} 
 
-In this analysis we study the separation of current  fragmentation regions and we need an analytical form of TMDs in the momentum space in order to speed up our numerical calculations.
-Thus, we will utilize an estimate for the solution of CS equations that is valid in non-perturbative region. We will start from the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$:
+ In this analysis we study the  current  fragmentation region employing  an analytical form of TMDs in the momentum space 
+ that enables us  to speed up our numerical calculations by using 
+ an estimate for the solution of CS equations that is valid in non-perturbative region. Our analysis begins with  the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$,
 \begin{eqnarray}
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/N} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:PDF_ansatz}\\[0.3cm]
 &&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:FF_ansatz0}
 \end{eqnarray}
-where $b_T$ is Fourier conjugate variable to $k_\perp$; $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$). The evolution factor is $e^{-S(b_T, Q, Q_0, \mu_0)/2}$, where
+where $b_T$ is Fourier conjugate variable to $k_\perp$.   $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$).
+The evolution factor {\crd $S(b_T, Q, Q_0, \mu_0)/2$}  is,
 \begin{eqnarray}
 S(b_T, Q, \mu_Q, Q_0, \mu_0) = \tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} - \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
 -2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))\,,
  \right]
  \label{e:FF_ansatz}
 \end{eqnarray}
-where $\tilde K$ is the so-called Collins-Soper evolution kernel, $\gamma_i$ and $\gamma_K$ are anomalous dimensions of the TMD and $\tilde K$ accordingly and can be calculated perturbatively provided $\alpha_s$ is small enough. We will choose $\mu_Q = Q$. 
+where $\tilde K$ is the Collins-Soper evolution kernel, {\crd and
+$\gamma_i$ and $\gamma_K$ are anomalous dimensions of the TMD.} They  can be calculated perturbatively provided $\alpha_s$ is small enough. We will choose $\mu_Q = Q$. 
 
-The next step is to choose $b_T$ parameterization of TMDs at the initial scale $Q_0$. In this study the parameterization can be chosen arbitrary provided an analytical FT transform is possible for the sake of numerical computation speed. Low $Q^2$ data is known \cite{Schweitzer:2010tt} to have an approximate Gaussian dependence and we will follow a very simple analytical form used in Refs~\cite{Anselmino:2013lza,Signori:2013mda}, and choose a Gaussian ansatz for $b_T$ dependence (note that we also allow for a flavor dependence in the widths of the Gaussians):
+    The next step is to choose $b_T$ parameterization of TMDs at the initial scale $Q_0$. \sout{In this study the parameterization can be chosen {\crd{arbitrarily}} provided an analytical  {\crd{Fourier transform (FT)}} is possible for the sake of numerical computation speed.} {\crd Since low $Q^2$ data is known \cite{Schweitzer:2010tt} to have an approximate Gaussian dependence,} we will follow a very simple analytical form used in Refs~\cite{Anselmino:2013lza,Signori:2013mda}, and choose a Gaussian ansatz for $b_T$ dependence (note that we also allow for a flavor dependence in the widths of the Gaussians):
 \begin{eqnarray}
-&&\tilde f_{a/N} (x,b_T; Q_0^2, \mu_0)\simeq f_{a/N} (x; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,,
+&&\tilde f_{a/N} (x,b_T; Q_0^2, \mu_0)\simeq {\crd \tilde f_{a/N}} (x; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,,
 \nonumber \\[0.3cm]
-&&\tilde D_{h/a}(z,b_T; Q_0^2, \mu_0)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}.
+&&\tilde D_{h/a}(z,b_T; Q_0^2, \mu_0)\simeq \frac{1}{z^2} {\crd \tilde D_{h/a}}(z; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}.
 \label{e:FF_ansatz1}
 \end{eqnarray}
 The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that we can make a connection of $\tilde f_{a/N} (x; Q_0^2, \mu_0)$ and $\tilde D_{h/a}(z; Q_0^2, \mu_0)$ to the usual collinear PDF and FF functions. Indeed, using result of Ref.~\cite{Collins:2016hqq} we know that at leading order in $\alpha_s$, the collinear integrated cross-section corresponds to the integral in $P_{hT}$ of the TMD approximated cross-section. Using $S(b_T, Q_0, \mu_0, Q_0, \mu_0) = 0$ we obtain:
@@ -349,23 +366,28 @@ The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that
 \end{eqnarray}
 where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
 
-Using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs we show in Fig.~\ref{Fig:tmd_shape} $b_T$ behavior of unpolarized TMDs at initial scale $Q_0$. One notices that the support of $b_T$ behavior corresponds to large values of $b_T \sim $ 3 to 4 (GeV$^{-1}$) which correspond to $\sim 1$ fm of separation of quark fields. These distances are associated with non-perturbative QCD dynamics.
 
-The Collins-Soper evolution kernel obeys the following renormalization-group equation:
+{\crd Here it is important to note, that using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs at the initial scale $Q_0$, the dominant support in $b_T$ space  for the FT TMDs is at} large values of $b_T \sim $ 3 to 4 (GeV$^{-1}$) which correspond to $\sim 1$ fm of separation of quark fields. {\crd These distances are associated with non-perturbative QCD dynamics which we  depict in Fig.~\ref{Fig:tmd_shape}  (see~\cite{Aidala:2014hva}).}
+
+
+\subsection{Approximate Solution to the CS Equation in the non-perturbative regime}
+{\crd Here we outline our approximate solution to the CS evolution kernel in the non-perturbative regime.}
+
+  
+The Collins-Soper evolution kernel obeys the following renormalization-group equation,
 \begin{equation}
 \frac{d\, \tilde K (b_T;\mu)}{d \ln \mu} = - \gamma_K (\alpha_s(\mu)) \; ,
 \end{equation} 
-where we use notations of Ref.~\cite{Collins:2011zzd}.
-
-Using the first loop result for $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have:
+where we use notations of Ref.~\cite{Collins:2011zzd}. Using the {\crd one} loop result for $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have
 \begin{eqnarray}
 \gamma_K(\alpha_s(\mu)) &=& 2 C_F \frac{\alpha_s(\mu)}{\pi} \; ,\\
 \tilde K (b_T;\mu) &=& -\frac{\alpha_s(\mu)}{\pi}  \left[\ln\frac{b_T^2 \mu^2}{4} + 2 \gamma_E
  \right] \; + {\cal O} (\alpha_s(\mu)^2),
  \label{e:CS_kernel}
 \end{eqnarray}
-this result is applicable for perturbative distances and scales; for instance $\mu > 1$ (GeV) and at low $b_T < 1$  GeV$^{-1} = 0.2$ fm.
-As we saw from Fig.~\ref{Fig:tmd_shape}, the distance where we need to calculate $\tilde K (b_T;\mu)$ is much bigger and thus this fixed-order approximation is not applicable any more.  Numerically it happens due to the growth of $\ln\frac{b_T^2 \mu^2}{4} $, so that neglected higher orders become comparable to the first loop order. One of the solutions to circumvent this problem is to introduce an intermediate scale $\mu_b \sim 1/b_T$ such that all logs are minimized, the Landau pole however will manifest itself in the growth and divergence of $\alpha_s(\mu)$. In order to deal with the Landau pole (or non-perturbative regime) one can introduce a $b_*$ prescription~\cite{Collins:2011zzd} that will limit the region of $b_T$ to a maximum value of $b_{max} \sim 1$ GeV$^{-1}$ and introduce the non perturbative Collins-Soper kernel $g_K(b_T; b_{max}) \equiv - \tilde K(b_T; \mu_{b_*}) + \tilde K(b_*; \mu_{b_*})$. A lot of successful phenomenology [CITE] was done using this procedure.
+this result is applicable for perturbative distances and scales; for instance $\mu > 1$ (GeV) and at low $b_T < 1$  GeV$^{-1} = 0.2$ fm. As we {\crd noted in Fig.~\ref{Fig:tmd_shape}, 
+  the distances where we need to calculate $\tilde K (b_T;\mu)$ are much larger than the perturbative distance scales,} and thus the fixed-order approximation is not applicable {\crd anymore}.  Numerically it happens due to the growth of {\crd $\ln\left(b_T^2 \mu^2/\, 4 \right) $,} so that neglected higher orders become comparable to the  {\crd one
+ loop order.} One of the {\crd methods} to circumvent this problem is to introduce an intermediate scale $\mu_b \sim 1/b_T$ such that all logs are minimized, the Landau pole however will manifest itself in the growth and divergence of $\alpha_s(\mu)$. In order to deal with the Landau pole (or non-perturbative regime) one can introduce a $b_*$ prescription~\cite{Collins:2011zzd} that will limit the region of $b_T$ to a maximum value of $b_{max} \sim 1$ GeV$^{-1}$ and introduce the non perturbative Collins-Soper kernel $g_K(b_T; b_{max}) \equiv - \tilde K(b_T; \mu_{b_*}) + \tilde K(b_*; \mu_{b_*})$. A  {\crd great deal}  of successful phenomenology [CITE] was done using this procedure.
 
 
 
@@ -379,42 +401,52 @@ As we saw from Fig.~\ref{Fig:tmd_shape}, the distance where we need to calculate
 \end{figure}
 %%%%%%%%%
 
-In our particular situation, however,  the functional form of TMDs in $b_T$ space is such that {\em only} large values of $b_T$  dominate in the FT connecting momentum and coordinate spaces and will {\em approximate} $K(b_T,\mu_0)$ by its large $b_T$ asymptotic: a constant, as suggested in Ref.~\cite{Collins:2014jpa} and asserts that high $b_T$ limit of $\tilde K(b_T,\mu_0)$ should be negative, we will be able to phenomenologically test this assumption. We will
-call this constant $g_{K_0}\equiv \lim_{b_T\to \infty} \tilde K(b_T,\mu_0)$, such that in this approximation
+In our particular situation, however, the functional form of {\crd Fourier transform (FT) TMDs    are such that {\em only} large values of $b_T$  dominate} \sout{connecting momentum and coordinate spaces,}.
+{\crd Thus we {\em approximate} $K(b_T,\mu_0)$ by its large $b_T$ asymptote which is approximately  constant, and  negative,}
+  as suggested in Ref.~\cite{Collins:2014jpa}.
+%  and assert that the high $b_T$ limit of $\tilde K(b_T,\mu_0)$
+%  we will be able to phenomenologically test this assumption.
+  We will call this constant $g_{K_{0}}\equiv \lim_{b_T\to \infty} \tilde K(b_T,\mu_0)$, such that in this approximation {\crd our FT TMDs take the form,} 
 \begin{eqnarray}
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/N} (x; Q_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}} e^{-S_{pert}/2}\,,
 \nonumber \\[0.3cm]
 &&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
 \label{e:FF_ansatz1}
 \end{eqnarray}
-where
+where the {\crd perturbative part of the CSS exponent is}
 \begin{eqnarray}
 S_{pert} \equiv \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
 -2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))
- \right] \; ,
+ \right] \; .
  \label{e:FF_Spert}
 \end{eqnarray}
-and using the first loop results~\cite{Aybat:2011zv} for $\gamma_i$ from Eq~\eqref{e:CS_kernel} and $\gamma_K$  we have:
+{\crd Using the \crd one loop results~\cite{Aybat:2011zv} for $\gamma_i$ from Eq~\eqref{e:CS_kernel} and $\gamma_K$  we have,} 
 \begin{eqnarray}
-\gamma_i(\alpha_s(\mu);1) = \frac{3 C_F}{2}  \frac{\alpha_s(\mu)}{\pi}  \, ,\\
+  \gamma_i(\alpha_s(\mu);1) = \frac{3 C_F}{2}  \frac{\alpha_s(\mu)}{\pi}  \ ,
+  \end{eqnarray}
+and thus Eq.~(\ref{e:FF_Spert}) is
+\begin{eqnarray}
 S_{pert} = 2 C_F \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'} \frac{\alpha_s(\mu')}{\pi} \left[\ln\frac{Q^2}{\mu'^2} - \frac{3}{2}
  \right] \; ,
  \label{e:FF_Spert1}
 \end{eqnarray}
-where $C_F = 4/3$. In order to calculate analytically the integral from Eq.~\eqref{e:FF_Spert1} we will use the first loop result for the strong coupling constant:
+where $C_F = 4/3$. In order to calculate analytically the integral from Eq.~\eqref{e:FF_Spert1} we   {\crd use the one} loop result for the strong coupling constant, 
 \begin{eqnarray}
 \alpha_s(\mu') = \frac{1}{\beta_0 \ln Q^2/\Lambda^2} \; , \quad\quad
 \beta_0 = \frac{33-2 n_f}{12 \pi}\; ,
  \label{e:as}
 \end{eqnarray}
-where we will use $n_f=3$ as we are interested in the region of low Q; and $\Lambda = 0.25$ (GeV), such that $\alpha_s(M_Z)= 0.118$ ~\cite{Bethke:2012jm}. We obtain, see also Ref.~\cite{Aidala:2014hva}:
+where we will use $n_f=3$ as we are interested in the region of low Q; and $\Lambda = 0.25$ (GeV), such that $\alpha_s(M_Z)= 0.118$ ~\cite{Bethke:2012jm}. We obtain, see also Ref.~\cite{Aidala:2014hva},
 \begin{eqnarray}
-S_{pert} = -\frac{2 C_F}{\pi \beta_0}\left ( \ln \frac{Q}{Q_0} - \ln \frac{Q}{\Lambda} \ln \left(\frac{\ln \frac{Q}{\Lambda}}{\ln \frac{Q_0}{\Lambda}} \right)+
-\frac{3}{4} \ln \left(\frac{\ln \frac{Q}{\Lambda}}{\ln \frac{Q_0}{\Lambda}} \right)\right).
+  {\crd
+    S_{pert} = -\frac{2 C_F}{\pi \beta_0}\left[\, \ln\left(Q/Q_0\right)
+  - \ln\left(Q/\, \Lambda\right) \ln\left(\frac{\ln\left(Q/\,\Lambda\right)}
+  {\ln\left(Q_0/\, \Lambda\right)}\right) +
+\frac{3}{4} \ln \left(\frac{\ln\left(Q/\Lambda\right)}{\ln\left(Q_0/\Lambda\right)} \right)\, \right].}
  \label{e:FF_Spert_analytical}
 \end{eqnarray}
 
-Our result suggests that in the region of its applicability TMD evolution accounts to the shift of normalization in $Q^2$ and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of HERMES collaboration: no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is a very crude one, so we do not expect the result to hold generically; in particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT. This simplification is taken deliberately to be able to speed up the numerical computations, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used. 
+{\crd Our result suggests that in the region of applicability, TMD evolution  amounts to a  shift in the normalization in $Q^2$,} and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of {\crd the  HERMES collaboration, where} no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is  {\crd quite crude  and  we do} not expect the result to hold {\crd generally.} In particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT. {\crd As we stated earlier}, this simplification is taken deliberately to be able to speed up the numerical computations.{\crd{\sout{, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used.}} }
 
 
 Finally we arrive at the following parameterization of the unpolarized structure function from Eq.~(\ref{e:FUU}) 
@@ -422,14 +454,15 @@ Finally we arrive at the following parameterization of the unpolarized structure
 F_{UU}(x_B,z_h,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/N}(x_B, Q_0)\,D_{h/a}(z_h, Q_0) \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
 \frac{e^{-P_{hT}^2/\langle P_{hT}^2 \rangle_a}}{\pi\langle P_{hT}^2 \rangle_a}\,, \label{e:FUU_model}
 \end{equation}
-with
+{\crd where}
 \begin{equation}
 \langle P_{hT}^2 \rangle_a = \langle p_\perp^2 \rangle_{a/N} + z_h^2\, \langle k_\perp^2 \rangle_{h/a}\,, \label{e:avg_kT}
 \end{equation}
-results from carrying out the Fourier transform to momentum space.
+results from carrying out the {\crd FT} to momentum space.
 %where we have used the expressions from Eq.~(\ref{e:LT_relations}).  
 Notice that our result is similar to Refs.~\cite{Anselmino:2013lza,Signori:2013mda}, with the following important differences:
-We do not utilize DGLAP evolution for TMDs as was done in Ref.~\cite{Anselmino:2013lza} and we do not freeze the scale either as was done in Ref.~\cite{Signori:2013mda}. We mention that a fit of HERMES~\cite{Airapetian:2012ki}  and COMPASS~\cite{Adolph:2013stb} multiplicities with full TMD evolution and next-to-leading logarithmic accuracy was published in Ref.~\cite{Bacchetta:2017gcc}. In this study we do not aim at a complete fit of the data at different $Q^2$ and choose to fit only HERMES~\cite{Airapetian:2012ki} multiplicities. Our result is consistent with CS equations, provided that the scale $Q$ is not drastically different from $Q_0$ and TMDs are dominated by the region of large $b_T$, so that $\tilde K(b_T,\mu_0)$ is approximately constant.
+We do not utilize DGLAP evolution for TMDs as was done in Ref.~\cite{Anselmino:2013lza} and we do not freeze the scale {\crd \sout{either}} as was done in Ref.~\cite{Signori:2013mda}. We mention that a fit of HERMES~\cite{Airapetian:2012ki}  and COMPASS~\cite{Adolph:2013stb} multiplicities with full TMD evolution and next-to-leading logarithmic accuracy was published in Ref.~\cite{Bacchetta:2017gcc}. In this study we do not aim at a complete fit of the data at different $Q^2$ and choose to fit only HERMES~\cite{Airapetian:2012ki} multiplicities.
+Our {\crd approximate result, Eq.~(\ref{e:FUU_model})} is consistent with CS equations, provided that the scale $Q$ is not drastically different from $Q_0$ and TMDs are dominated by the region of large $b_T$, so that $\tilde K(b_T,\mu_0)$ is approximately constant.
 
 From this, we find our formula for the HERMES multiplicities~\cite{Airapetian:2012ki} 
 \begin{equation}

@@ -55,7 +55,7 @@ class PDF(CORE):
 
 if __name__ == '__main__':
 
-    from qcdlib.aux import AUX
+    from qcdlib.auxiliary import AUX  # renamed from "aux"
 
     conf['aux']  = AUX()
     conf['pdf']  = PDF()
@@ -63,19 +63,3 @@ if __name__ == '__main__':
     x = 0.15
     Q2 = 2.4
     print conf['pdf'].get_C(x, Q2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

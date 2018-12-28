@@ -4,7 +4,7 @@ import pylab as py
 from scipy.special import gamma
 from scipy.integrate import quad as _quad
 from scipy.integrate import fixed_quad
-from qcdlib.aux import AUX
+from qcdlib.auxiliary import AUX  # renamed from "aux"
 from qcdlib.alphaS import ALPHAS
 from qcdlib.interpolator import INTERPOLATOR
 from tools.config import conf
@@ -59,12 +59,12 @@ class STFUNCS:
 
     def qplus(self,PDF):
 
-        if self.hadron == 'n':  
+        if self.hadron == 'n':
 
             PDF = self.p2n(PDF)
 
         elif self.hadron=='d':
-      
+
             PDF = 0.5*(PDF+self.p2n(PDF))
 
 

@@ -16,12 +16,12 @@ class GK:
         self.aux = conf['aux']
         self.set_default_params()
         self.setup()
- 
+
     def set_default_params(self):
         # free params
         self.gk  = -0.3
         self.Q0  = 1.3
- 
+
     def setup(self):
         self.lam  = 0.25
         self.Nf = 3
@@ -56,27 +56,11 @@ class GK:
 
 if __name__ == '__main__':
 
-    from qcdlib.aux import AUX
+    from qcdlib.auxiliary import AUX  # renamed from "aux"
 
     conf['aux']  = AUX()
     conf['gk']  = GK()
 
- 
+
     Q2 = 2.4
     print conf['gk'].get_gk(Q2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

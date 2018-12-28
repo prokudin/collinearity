@@ -3,7 +3,7 @@ import sys
 import os
 import numpy as np
 from tools.tools import load_config
-from qcdlib.aux import AUX
+from qcdlib.auxiliary import AUX  # renamed from "aux"
 from tools.config import conf
 
 eu2, ed2 = 4/9., 1/9.
@@ -25,7 +25,7 @@ def _get_FUT(x,z,Q2,pT,tar,had,F,D,w_tar,w_had):
 
     if   'pi' in had: Mh=conf['aux'].Mpi
     elif 'k'  in had: Mh=conf['aux'].Mk
- 
+
     if had.endswith('+'):
 
         wq = z**2 * np.abs(w_tar) + np.abs(w_had)
@@ -85,7 +85,7 @@ def get_FUT(x,z,Q2,pT,tar,had):
         F=conf['aux'].p2n(F)
         w_tar=conf['aux'].p2n(w_tar)
         return  _get_FUT(x,z,Q2,pT,tar,had,F,D,w_tar,w_had)
-  
+
     elif tar=='d':
 
       return 0.5*(get_FUT(x,z,Q2,pT,'p',had)+get_FUT(x,z,Q2,pT,'n',had))

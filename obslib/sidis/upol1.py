@@ -3,7 +3,7 @@ import sys
 import os
 import numpy as np
 from tools.tools import load_config
-from qcdlib.aux import AUX
+from qcdlib.auxiliary import AUX  # renamed from "aux"
 from tools.config import conf
 
 eu2, ed2 = 4/9., 1/9.
@@ -30,7 +30,7 @@ def _get_FUU(x,z,Q2,pT,tar,had,F,D,w_tar,w_had):
 
     evolution=conf['gk'].get_gk(Q2)*np.exp(-conf['gk'].get_pertsud(Q2))
 
-    
+
     if had.endswith('+'):
 
         wq = z**2 * np.abs(w_tar) + np.abs(w_had)
@@ -66,7 +66,7 @@ def get_FUU(x,z,Q2,pT,tar,had):
     We will use a simple form of TMD evolution based on large bT dominance where Ktilde is constant
     """
     Q0 = conf['gk'].Q0
-    
+
     # get collinear parts (proton and positive hadrons)
     F = conf['pdf'].get_C(x, Q0**2)
     if   'pi' in had:  D = conf['ffpi'].get_C(z, Q0**2)
@@ -91,7 +91,7 @@ def get_FUU(x,z,Q2,pT,tar,had):
         F=conf['aux'].p2n(F)
         w_tar=conf['aux'].p2n(w_tar)
         return  _get_FUU(x,z,Q2,pT,tar,had,F,D,w_tar,w_had)
-  
+
     elif tar=='d':
 
       return 0.5*(get_FUU(x,z,Q2,pT,'p',had)+get_FUU(x,z,Q2,pT,'n',had))

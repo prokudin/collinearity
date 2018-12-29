@@ -297,7 +297,7 @@ transverse momentum dependent (TMD)
  might suggest 
  certain kinematic bins thought to be
  in the current regime consist of an admixture of
- current central and  target fragmentation regions~\cite{Boglione:2016bph}.  In principle, this mixing of hadrons produced from the target, central and current region can affect the extraction of TMDs and interpretation of the fitted functions.  {\cbl Therefore, it is important to analyze the role that   cuts on data play in
+ current, central, and  target fragmentation regions~\cite{Boglione:2016bph}.  In principle, this mixing of hadrons produced from the target, central and current region {\cbl affects} the extraction of TMDs and interpretation of the fitted functions.  {\cbl Therefore, it is important to analyze the role that   cuts on data play in
  discriminating  current  from target and central fragmentation regions on the
  extraction of TMDs so that we can better improve the phenomenology moving forward.}
 
@@ -307,13 +307,13 @@ transverse momentum dependent (TMD)
 
   
 In this paper, we  implement for the first time the collinearity criteria~\cite{Boglione:2016bph} in an extraction of TMD widths for unpolarized PDFs and FFs.  In order to avoid issues with evolution, we focus only on HERMES multiplicity data in SIDIS.  We use a simple analytical approximation for the solutions of TMD evolution equations that is valid in the non-perturbative region and  extract transverse momentum dependence of TMDs allowing the widths to vary with flavor.
- We organize the discussion as follows: In Sec.~\ref{s:model} we summarize the theoretical formalism needed to analyze the data, including our model for the transverse momentum dependence.  Next, in Sec.~\ref{s:phenom} we give details on our data selection and perform our fit of the HERMES multiplicities in order to extract the relevant TMD widths.  We also compare our results with previous works and give an interpretation of our results in the context of  other extractions.  Finally, in Sec.~\ref{s:concl} we summarize our findings and give an outlook on the impact of this analysis for on-going and future experiments.
+We organize the discussion as follows: In Sec.~\ref{s:model} we summarize the theoretical formalism needed to analyze the data, including our model for the transverse momentum dependence.  {\cbl Next, in Sec.~\ref{s:phenom} we review the collinearity criteria used to discriminate the current fragmentation region. We then provide details on our data selection and perform our} fit of the HERMES multiplicities in order to extract the relevant TMD widths.  We also compare our results with previous works and give an interpretation of our results in the context of  other extractions.  Finally, in Sec.~\ref{s:concl} we summarize our findings and give an outlook on the impact of this analysis for on-going and future experiments.
 
 
 
 \section{Theoretical Formalism}
 \label{s:model}
-Consider the process of SIDIS from an unpolarized nucleon and deuteron target $N=p,n,d,...$,
+Consider the process of SIDIS from an unpolarized nucleon and deuteron target $N=p,n,d$,
 \begin{equation}
 \ell(l)+p(N)\to \ell'(l') + h(P_h) + X\,,
 \end{equation}
@@ -331,15 +331,16 @@ For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta
 \begin{eqnarray}
 \frac{d\sigma}
 {d\xbj\, dQ^2 \, d\zh \, dP_{hT}^2} &\!\!\!=\!\!\!&
-\frac {2 \, \pi^2 \alpha_{em}^2}{(\xbj S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(\xbj,\zh,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)
+\frac {2 \, \pi^2 \alpha_{em}^2}{(\xbj S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(\xbj,\zh,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)\, ,
 \label{e:dsigma}
 \end{eqnarray}
 where TMD factorization yields for the unpolarized structure function\cite{Collins:2011zzd},
 \begin{equation}
-F_{UU}(\xbj,\zh,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 \,
+F_{UU}(\xbj,\zh,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 
 \int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
 \> \delta ^{(2)}\left(\vec{P}_{hT} - \zh\,\vec{k}_\perp -\vec{p}_\perp \right)\,
-f_{a/N} (\xbj, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q)\,. \label{e:FUU} \\
+f_{a/N} (\xbj, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q) .
+\label{e:FUU} 
 \end{equation}
 The functions $f_{a/N} (\xbj, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized  TMDs,  for a parton of flavor
 $a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at leading order in the strong coupling

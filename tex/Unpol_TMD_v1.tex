@@ -336,18 +336,18 @@ For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta
 \end{eqnarray}
 where TMD factorization yields for the unpolarized structure function\cite{Collins:2011zzd},
 \begin{equation}
-F_{UU}(\xbj,\zh,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 
+F_{UU}(x,z,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 
 \int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
-\> \delta ^{(2)}\left(\vec{P}_{hT} - \zh\,\vec{k}_\perp -\vec{p}_\perp \right)\,
-f_{a/N} (\xbj, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q) .
+\> \delta ^{(2)}\left(\vec{P}_{hT} - z\,\vec{k}_\perp -\vec{p}_\perp \right)\,
+f_{a/N} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q) .
 \label{e:FUU} 
 \end{equation}
-The functions $f_{a/N} (\xbj, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized  TMDs,  for a parton of flavor
+The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized  TMDs,  for a parton of flavor
 $a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at leading order in the strong coupling
 is normalized as, ${\cal H} = 1$.  In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$
 corrections~\cite{Bacchetta:2006tn}
 \begin{equation}
-  x=\frac{-q^+}{p^+}\approx \xbj\,, \quad\quad z=\frac{P_h^-}{q^-}\approx z_h.
+  x=\frac{k^+}{p^+}\approx \xbj\,, \quad\quad z=\frac{P_h^-}{p^-}\approx z_h.
   \label{e:LT_relations}
 \end{equation}
 
@@ -357,7 +357,7 @@ corrections~\cite{Bacchetta:2006tn}
 
 
 
- Apart from kinematical variables and transverse momentum, the TMDs  $f_{a/p} (\xbj, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(\zh, p_{\perp}; Q^2, \mu_Q)$, 
+ Apart from kinematical variables and transverse momentum, the TMDs  $f_{a/p} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$, 
 depend on the scale of the reaction $Q^2$,  through  the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ as a result of  jointly solving the Collins-Soper (CS) in $b_T$ space  and renormalization group equations for the TMDs.  The rapidity parameters can be set to $\zeta_N=\zeta_h=Q^2$~\cite{Collins:2011zzd,Collins:2014jpa}.
 %The dependence of functions  on the scale $Q^2$ is encoded in solutions of Collins-Soper (CS) evolution equations~\cite{Collins:2011zzd} 
 
@@ -365,9 +365,9 @@ depend on the scale of the reaction $Q^2$,  through  the renormalization scale, 
  that enables us  to speed up our numerical calculations by using 
  an estimate for the solution of CS equations that is valid in non-perturbative region. Our analysis begins with  the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$,
 \begin{eqnarray}
-&&\tilde f_{a/N} (\xbj,b_T; Q^2, \mu_Q)= \tilde f_{a/N} (\xbj, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
+&&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/N} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:PDF_ansatz}\\[0.3cm]
-&&\tilde D_{h/a}(\zh,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(\zh, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
+&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:FF_ansatz0}
 \end{eqnarray}
 where $b_T$ is Fourier conjugate variable to $k_\perp$.   $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$).
@@ -385,19 +385,19 @@ The next step is to choose $b_T$ parameterization of TMDs at the initial scale $
 %\sout{In this{\crd{arbitrarily}} provided an analytical  {\crd{Fourier transform (FT)}} is possible for the sake of numerical computation speed.}
  Since low $Q^2$ data is known \cite{Schweitzer:2010tt} to have an approximate Gaussian dependence, we will follow a very simple analytical form used in Refs~\cite{Anselmino:2013lza,Signori:2013mda}, and choose a Gaussian ansatz for $b_T$ dependence (note that we also allow for a flavor dependence in the widths of the Gaussians):
 \begin{eqnarray}
-&&\tilde f_{a/N} (\xbj,b_T; Q_0^2, \mu_0)\simeq  \tilde f_{a/N} (\xbj; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,,
+&&\tilde f_{a/N} (x,b_T; Q_0^2, \mu_0)\simeq  \tilde f_{a/N} (x; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,,
 \nonumber \\[0.3cm]
-&&\tilde D_{h/a}(\zh,b_T; Q_0^2, \mu_0)\simeq \frac{1}{z^2}  \tilde D_{h/a}(\zh; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}.
+&&\tilde D_{h/a}(z,b_T; Q_0^2, \mu_0)\simeq \frac{1}{z^2}  \tilde D_{h/a}(z; Q_0^2, \mu_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}.
 \label{e:FF_ansatz1}
 \end{eqnarray}
-The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that we can make a connection of $\tilde f_{a/N} (\xbj; Q_0^2, \mu_0)$ and $\tilde D_{h/a}(\zh; Q_0^2, \mu_0)$ to the usual collinear PDF and FF functions. Indeed, using result of Ref.~\cite{Collins:2016hqq} we know that at leading order in $\alpha_s$, the collinear integrated cross-section corresponds to the integral in $P_{hT}$ of the TMD approximated cross-section. Using $S(b_T, Q_0, \mu_0, Q_0, \mu_0) = 0$ we obtain:
+The parameterizations in Eqs.~\eqref{e:FF_ansatz1} are chosen in such a way that we can make a connection of $\tilde f_{a/N} (x; Q_0^2, \mu_0)$ and $\tilde D_{h/a}(z; Q_0^2, \mu_0)$ to the usual collinear PDF and FF functions. Indeed, using result of Ref.~\cite{Collins:2016hqq} we know that at leading order in $\alpha_s$, the collinear integrated cross-section corresponds to the integral in $P_{hT}$ of the TMD approximated cross-section. Using $S(b_T, Q_0, \mu_0, Q_0, \mu_0) = 0$ we obtain:
 \begin{eqnarray}
-&&\tilde f_{a/N} (\xbj; Q_0^2, \mu_0) = f_{a/N} (\xbj, Q_0)\,,
+&&\tilde f_{a/N} (x; Q_0^2, \mu_0) = f_{a/N} (x, Q_0)\,,
 \\[0.3cm]
-&&\tilde D_{h/a}(\zh; Q_0^2, \mu_0) = D_{h/a}(\zh, Q_0)\,,
+&&\tilde D_{h/a}(z; Q_0^2, \mu_0) = D_{h/a}(z, Q_0)\,,
 \label{e:FF_ansatz2}
 \end{eqnarray}
-where $f_{a/p} (\xbj, Q_0)$ and $D_{h/a}(\zh, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
+where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized collinear PDF and FF, respectively, for a parton of flavor $a$, at the initial scale.
 
 
 Here it is important to note, that using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs at the initial scale $Q_0$, the dominant support in $b_T$ space  for the FT TMDs is at large values of $b_T \sim $ 3 to 4 (GeV$^{-1}$) which correspond to $\sim 1$ fm of separation of quark fields.  These distances are associated with non-perturbative QCD dynamics which we  depict in Fig.~\ref{Fig:tmd_shape}  (see~\cite{Aidala:2014hva}).
@@ -442,7 +442,7 @@ Thus we {\em approximate} $K(b_T,\mu_0)$ by its large $b_T$ asymptote which is a
 \begin{eqnarray}
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/N} (x; Q_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}} e^{-S_{pert}/2}\,,
 \nonumber \\[0.3cm]
-&&\tilde D_{h/a}(\zh,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} D_{h/a}(\zh; Q_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
+&&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
 \label{e:FF_ansatz1}
 \end{eqnarray}
 where the  perturbative part of the CSS exponent is
@@ -483,12 +483,12 @@ Our result suggests that in the region of applicability, TMD evolution  amounts 
 
 Finally we arrive at the following parameterization of the unpolarized structure function from Eq.~(\ref{e:FUU}) 
 \begin{equation}
-F_{UU}(\xbj,z_h,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/N}(\xbj, Q_0)\,D_{h/a}(z_h, Q_0) \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
+F_{UU}(x,z_h,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/N}(x, Q_0)\,D_{h/a}(z, Q_0) \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
 \frac{e^{-P_{hT}^2/\langle P_{hT}^2 \rangle_a}}{\pi\langle P_{hT}^2 \rangle_a}\,, \label{e:FUU_model}
 \end{equation}
  where
 \begin{equation}
-\langle P_{hT}^2 \rangle_a = \langle p_\perp^2 \rangle_{a/N} + z_h^2\, \langle k_\perp^2 \rangle_{h/a}\,, \label{e:avg_kT}
+\langle P_{hT}^2 \rangle_a = \langle p_\perp^2 \rangle_{a/N} + z^2\, \langle k_\perp^2 \rangle_{h/a}\,, \label{e:avg_kT}
 \end{equation}
 results from carrying out the  FT to momentum space.
 %where we have used the expressions from Eq.~(\ref{e:LT_relations}).  
@@ -498,9 +498,9 @@ Our  approximate result, Eq.~(\ref{e:FUU_model}) is consistent with CS equations
 
 From this, we find our formula for the HERMES multiplicities~\cite{Airapetian:2012ki} 
 \begin{equation}
-M_N^h(\xbj, Q^2,z_h, P_{hT}) =
-2P_{hT}\frac{\pi\, \sum_{a} e_a^2 \,f_{a/N}(\xbj, Q_0)\,D_{h/a}(z_h, Q_0)}
-{\sum_{a} e_a^2 \> f_{a/N} (\xbj,Q^2)} \,  \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
+M_N^h(x, Q^2,z, P_{hT}) =
+2P_{hT}\frac{\pi\, \sum_{a} e_a^2 \,f_{a/N}(x, Q_0)\,D_{h/a}(z, Q_0)}
+{\sum_{a} e_a^2 \> f_{a/N} (x,Q^2)} \,  \left( \frac{Q^2}{Q_0^2}\right)^{g_{K_0}}e^{-S_{pert}}\,
 \frac{e^{-P_{hT}^2/\langle P_{hT}^2 \rangle_a}}{\pi\langle P_{hT}^2 \rangle_a}
 \,. \label{e:mult_HERMES}
 \end{equation}
@@ -514,10 +514,11 @@ M_N^h(\xbj, Q^2,z_h, P_{hT}) =
 
 Prior to performing  fits of  experimental measurements, one often needs to make cuts on the data to ensure that the fit is restricted only to the data that can be described by the theoretical  framework.  For example, the so called standard cut on the HERMES multiplicity data is~\cite{Anselmino:2013lza}
 \begin{equation}
-z_h < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
+z < 0.6 \quad\quad Q^2 > 1.69 \; \textrm{GeV}^2  
 \quad\quad 0.2 < P_{hT} < 0.9 \; \textrm{GeV} \quad\quad\quad{\rm (Torino\;cut)}\,.\label{e:st_cut}
 \end{equation}
-{\crd However, as was argued in Ref.~\cite{Boglione:2016bph}, Eq.~(\ref{e:st_cut}) is not sufficient to guarantee that one stays strictly in the current fragmentation region. To fully understand the conditions under which the outgoing hadron is in the current fragmentation region, we need to know how accurately the factorization theorem holds, as a function of the kinematic variables.
+
+However, as was argued in Ref.~\cite{Boglione:2016bph}, Eq.~(\ref{e:st_cut}) is not sufficient to guarantee that one stays strictly in the current fragmentation region. To fully understand the conditions under which the outgoing hadron is in the current fragmentation region, we need to know how accurately the factorization theorem holds, as a function of the kinematic variables.
 Errors in factorization correspond to the deviations of momenta
 from their limiting cases, notably of collinear momenta from their
 exactly collinear configurations.  Generically these errors are suppressed
@@ -526,13 +527,13 @@ by a power of $m^2/Q^2$ by taking the limit of $Q\rightarrow \infty$ with $\xbj$
 three parts to the relevant deviations.
 One concerns the initial and final
 quark momenta $k_i$ and $k_f$ (see further discussion on their estimates below).
- Related to this is that the target remnant should also be a momentum collinear to the target.   A third component to the error in the fragmentation picture arises from the deviation of $P_h$ from the exact collinear direction for the outgoing quark. All of these errors can be expressed and quantified  in terms of rapidities. Thus,  while data is normally presented with $Q$, $\xbj$, $\zh$ and $\T{P}{\rm h}$ being used as the independent variables, in our analysis we 
- use $Q$, $\xn$, $\hady$ and $\T{P}{\rm h}$ as independent variables.
+ Related to this is that the target remnant should also be a momentum collinear to the target.   A third component to the error in the fragmentation picture arises from the deviation of $P_h$ from the exact collinear direction for the outgoing quark. All of these errors can be expressed and quantified  in terms of rapidities. {\crd Thus,  while data is normally presented with $Q$, $\xbj$, $\zh$ and $\T{P}{\rm h}$ being used as the independent variables, in our analysis we will also relate these variables to the set,
+ $Q$, $\xn$, $\hady$ and $\T{P}{\rm h}$}.
 
  Here it also proves convenient to carry out this analysis in the Breit frame.
  So, we make a Lorentz transformation to  the Breit-frame of the  $\gamma^*$-$p$
  system, where the virtual photon moves along the $-z$ direction, and in the collinear limit, the struck quark's $3$-momentum is reversed in a hard collision.
-  Further it is important to distinguish the Nachtmann variable Eq.~(\ref{e:LT_relations}) defined as $-q^+/P^+$, when the proton mass in not neglected; it approaches $\xbj$ as $M_p/Q\rightarrow\, 0$, and is related to $\xbj$ by
+  Further it is important to distinguish the Nachtmann variable Eq.~(\ref{e:LT_relations}) defined as $x_n=-q^+/P^+$, when the proton mass in not neglected; it approaches $\xbj$ as $M_p/Q\rightarrow\, 0$, and is related to $\xbj$ by
 \begin{equation}
  \xn \equiv \frac{2 \xbj}{1 + \sqrt{1 + 4 \xbj^2 M_p^2/Q^2} }\,,
  \qquad 
@@ -550,7 +551,7 @@ Now, in light-front coordinates in the Breit frame, the virtual photon, proton, 
 where  $\Tsc{M}{h} \equiv \sqrt{ \Tscsq{\hadpsc}{} + \hadmass^2 }$ is the transverse mass, and  $\hady$ is the
 rapidity of the observed hadron, $\hady\equiv \frac{1}{2}\log(P_h^+/P_h^-)$.
 
-In terms of $\hady$ and $\Tsc{P}{\rm h}$, $\zh$ is given by
+In terms of $\hady$ and $\Tsc{P}{\rm h}$, $\zh({\crd \approx P_h^-/q^-})$ is given by
 \begin{align}
 \zh  &=  
    \frac{\Tsc{M}{h}}{Q} \parz{1-\xn^2 \frac{M_p^2}{Q^2}}^{-1} \parz{ e^{-\hady}  +
@@ -665,7 +666,7 @@ On the other hand, the (positive) rapidity of the target proton $y_p$ and the (n
  Under a boost in the  $z$ direction, rapidity transforms additively ~\cite{Collins:2011zzd}: $y \to y' = y+\psi$, this implies that the difference in rapidity is boost independent.
 We could then use $y_p - y_h$ as a boost independent measure of the total rapidity interval between the proton and the produced hadron.
 
-In our following analysis, we will use a mix of the rapidity difference and $R$ to analyze the HERMES data.}
+In our following analysis, we will use a mix of the rapidity difference and $R$ to analyze the HERMES data.
 
 \subsection{Filtering HERMES Data} 
 

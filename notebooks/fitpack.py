@@ -6,7 +6,6 @@ import sys
 
 # Set FITPACK_DIR to local fitpack root directory.
 FITPACK_DIR = os.path.abspath("../")
-print FITPACK_DIR
 
 # =======
 
@@ -16,7 +15,7 @@ if not os.path.exists(FITPACK_DIR):
 
 # Add the FITPACK environmental variable.
 if "FITPACK" not in os.environ:
-#    os.environ["FITPACK"] = FITPACK_DIR
+	# os.environ["FITPACK"] = FITPACK_DIR
     os.environ["JAM3D"] = FITPACK_DIR
 
 # Add FITPACK_DIR to the PYTHONPATH.

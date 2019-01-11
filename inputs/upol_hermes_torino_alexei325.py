@@ -16,23 +16,23 @@ conf['params']={}
 # Parameters in gaussian approximation, parton model:
 # GK approximate
 conf['params']['gk']={}
-conf['params']['gk']['gk0']  ={'value':   -2.93960e-01,'min': -1.3,'max':0,'fixed':False}
+conf['params']['gk']['gk0']  ={'value':   -2.93740e-01,'min': -1.3,'max':0,'fixed':False}
 conf['params']['gk']['Q0']  ={'value':    1.69000e+00,'min':0.8,'max':2.5,'fixed':True}
 
 # TMD PDF:
 conf['params']['pdf']={}
-conf['params']['pdf']['widths1_uv']  ={'value':    3.37127e-01,'min': 0.,'max':0.7,'fixed':False}
+conf['params']['pdf']['widths1_uv']  ={'value':    3.37130e-01,'min': 0.,'max':0.7,'fixed':False}
 conf['params']['pdf']['widths2_uv']  ={'value':    0.00000e+00,'min':-1,'max':1,'fixed':True}
-conf['params']['pdf']['widths1_dv']  ={'value':    3.37127e-01,'min': 0,'max':1,'fixed':'widths1_uv'}
+conf['params']['pdf']['widths1_dv']  ={'value':    3.37130e-01,'min': 0,'max':1,'fixed':'widths1_uv'}
 conf['params']['pdf']['widths2_dv']  ={'value':    0.00000e+00,'min':-1,'max':1,'fixed':'widths2_uv'}
-conf['params']['pdf']['widths1_sea'] ={'value':    1.30755e-01,'min': 0.,'max':0.9,'fixed':False}
+conf['params']['pdf']['widths1_sea'] ={'value':    1.30571e-01,'min': 0.,'max':0.9,'fixed':False}
 conf['params']['pdf']['widths2_sea'] ={'value':    0.00000e+00,'min':-1,'max':1,'fixed':True}
 
 # TMD FF:
 conf['params']['ffpi']={}
-conf['params']['ffpi']['widths1_fav']   ={'value':    1.79843e-01,'min': 0,'max':0.5,'fixed':False}
+conf['params']['ffpi']['widths1_fav']   ={'value':    1.79789e-01,'min': 0,'max':0.5,'fixed':False}
 conf['params']['ffpi']['widths2_fav']   ={'value':    0.00000e+00,'min':-1,'max':1,'fixed':True}
-conf['params']['ffpi']['widths1_ufav'] ={'value':    1.62138e-01,'min': 0,'max':0.5,'fixed':False}
+conf['params']['ffpi']['widths1_ufav'] ={'value':    1.62333e-01,'min': 0,'max':0.5,'fixed':False}
 conf['params']['ffpi']['widths2_ufav'] ={'value':    0.00000e+00,'min':-1,'max':1,'fixed':True}
 conf['params']['ffk']={}
 conf['params']['ffk']['widths1_fav']    ={'value':    1.62701e-01,'min': 0,'max':0.5,'fixed':False}
@@ -64,7 +64,7 @@ conf['datasets']['sidis']['xlsx'][1007]='sidis/expdata/1007.xlsx'  # |  deuteron
 conf['datasets']['sidis']['norm']={}
 for idx in conf['datasets']['sidis']['xlsx']: conf['datasets']['sidis']['norm'][idx]={'value':1,'fixed':True,'min':0,'max':1} 
 
-conf['datasets']['sidis']['filters']=["z<0.6 and Q2>1.69 and pT>0.2 and pT<0.9 and dy>3.25"]
+conf['datasets']['sidis']['filters']=["0.2<z<0.6 and Q2>1.69 and pT>0.2 and pT<0.9 and dy>3.25"]
 
 #conf['datasets']['sidis']['filters']=["z>0.2 and z<0.6  and Q2>1.69 and (pT/z)**2<0.25*Q2"]
 

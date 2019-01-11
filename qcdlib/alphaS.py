@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import os
-from aux import AUX
+from auxiliary import AUX  # renamed from "aux"
 import numpy as np
 from tools.config import conf
 

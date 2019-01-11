@@ -59,7 +59,7 @@ class FF(CORE):
 
 if __name__ == '__main__':
 
-    from qcdlib.aux import AUX
+    from qcdlib.auxiliary import AUX  # renamed from "aux"
     conf['aux']    = AUX()
 
     conf['ffpi'] = FF('pi')
@@ -69,18 +69,3 @@ if __name__ == '__main__':
     Q2 = 2.4
     print conf['ffpi'].get_C(z, Q2)
     print conf['ffk'].get_C(z, Q2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

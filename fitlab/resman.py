@@ -6,7 +6,7 @@ import fitlab.parallel as parallel
 import numpy as np
 import qcdlib
 from qcdlib import pdf0,ff0,pdf1,ff1,gk0
-import qcdlib.aux
+import qcdlib.auxiliary  # renamed from "aux"
 import qcdlib.alphaS
 import qcdlib.interpolator
 import obslib.sidis.residuals
@@ -42,7 +42,7 @@ class RESMAN:
             self.slave = parallel.Worker(ip=ip)
 
         # theory setups
-        conf['aux'] = qcdlib.aux.AUX()
+        conf['aux'] = qcdlib.auxiliary.AUX()
         self.setup_tmds()
         conf['parman'] = PARMAN()
 

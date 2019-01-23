@@ -272,8 +272,8 @@ depend on the scale of the reaction $Q^2$,  through  the renormalization scale, 
 where $b_T$ is Fourier conjugate variable to $k_\perp$.   $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$).
 The evolution factor  $S(b_T, Q, Q_0, \mu_0)$  is,
 \begin{eqnarray}
-S(b_T, Q, \mu_Q, Q_0, \mu_0) = \tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} - \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
--2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))\,,
+S(b_T, Q, \mu_Q, Q_0, \mu_0) = {\crd -}\tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} {\crd -} \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
+{\crd 2 \gamma_i(\alpha_s(\mu');1) -\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))}\,,
  \right]
  \label{e:FF_ansatz}
 \end{eqnarray}
@@ -342,13 +342,13 @@ Thus we {\em approximate} $K(b_T,\mu_0)$ by its large $b_T$ asymptote which is a
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)\simeq \tilde f_{a/N} (x; Q_0) e^{-b_T^2 \frac{\langle k_\perp^2 \rangle_a}{4}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}} e^{-S_{pert}/2}\,,
 \nonumber \\[0.3cm]
 &&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)\simeq \frac{1}{z^2} D_{h/a}(z; Q_0) e^{-b_T^2 \frac{\langle p_\perp^2 \rangle_a}{4 z^2}}\,\left( \frac{Q}{Q_0}\right)^{g_{K_0}}e^{-S_{pert}/2}\,,
-\label{e:FF_ansatz1}
+\label{e:FF_ansatz1-evolv}
 \end{eqnarray}
 where the  perturbative part of the CSS exponent is
 \begin{eqnarray}
-S_{pert} \equiv \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
--2 \gamma_i(\alpha_s(\mu');1) +\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))
- \right] \; .
+S_{pert} \equiv {\crd -\int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
+2 \gamma_i(\alpha_s(\mu');1) -\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))
+ \right]} \; .
  \label{e:FF_Spert}
 \end{eqnarray}
  Using the  one loop results~\cite{Aybat:2011zv} for $\gamma_i$ from Eq~\eqref{e:CS_kernel} and $\gamma_K$  we have,
@@ -361,13 +361,13 @@ S_{pert} = 2 C_F \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'} \frac{\alpha_s(\mu')}{
  \right] \; ,
  \label{e:FF_Spert1}
 \end{eqnarray}
-where $C_F = 4/3$. In order to calculate analytically the integral from Eq.~\eqref{e:FF_Spert1} we   use the one loop result for the strong coupling constant, 
+where $C_F = 4/3$. In order to {\crd analytically calculate} the integral from Eq.~\eqref{e:FF_Spert1} we   use the one loop result for the strong coupling constant, 
 \begin{eqnarray}
 \alpha_s(\mu') = \frac{1}{\beta_0 \ln Q^2/\Lambda^2} \; , \quad\quad
 \beta_0 = \frac{33-2 n_f}{12 \pi}\; ,
  \label{e:as}
 \end{eqnarray}
-where we will use $n_f=3$ as we are interested in the region of low Q; and $\Lambda = 0.25$ (GeV), such that $\alpha_s(M_Z)= 0.118$ ~\cite{Bethke:2012jm}. We obtain, see also Ref.~\cite{Aidala:2014hva},
+where we use $n_f=3$ since are interested in the region of low Q, and $\Lambda = 0.25$ (GeV), such that $\alpha_s(M_Z)= 0.118$ ~\cite{Bethke:2012jm}. We obtain, see also Ref.~\cite{Aidala:2014hva},
 \begin{eqnarray}
     S_{pert} = -\frac{2 C_F}{\pi \beta_0}\left[\, \ln\left(Q/Q_0\right)
   - \ln\left(Q/\, \Lambda\right) \ln\left(\frac{\ln\left(Q/\,\Lambda\right)}
@@ -376,7 +376,10 @@ where we will use $n_f=3$ as we are interested in the region of low Q; and $\Lam
  \label{e:FF_Spert_analytical}
 \end{eqnarray}
 
-Our result suggests that in the region of applicability, TMD evolution  amounts to a  shift in the normalization in $Q^2$, and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of the  HERMES collaboration, where no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of $K(b_T,\mu_0)$ is  quite crude  and  we do not expect the result to hold  generally.  In particular, it will fail at large $Q^2$ where low values of $b_T$ dominate in the FT.  As we stated earlier, this simplification is taken deliberately to be able to speed up the numerical computations.
+Our result suggests that in the region of applicability, TMD evolution  amounts to a  shift in the normalization in $Q^2$, and does not lead to the usual broadening of TMDs observed~\cite{Collins:2011zzd} at large $Q^2$. This result is consistent with the experimental findings \cite{Airapetian:2012ki} of the  HERMES collaboration, where no significant broadening of multiplicities was observed as a function of $Q^2$. Notice that our approximation of {\crd $\tilde K(b_T,\mu_0)$} is  quite crude  and  we do not expect the result to hold  generally.  In particular, it will fail at large $Q^2$ where {\crd small} values of $b_T$ dominate in the FT.  As we stated earlier, this simplification is taken deliberately
+{\crd in order to 
+  speed up the numerical computations while also respecting the large $b_T$
+behavior of $\tilde K(b_T,\mu_0)$~\cite{Collins:2014jpa}.}
 %{\crd{\sout{, otherwise  a specific functional form of $\tilde K(b_T,\mu_0)$ should be used.}} }
 
 
@@ -392,7 +395,7 @@ F_{UU}(\xbj,\zh,P_{hT}^2,Q^2)  =  \sum_{a} \, e_a^2 \,f_{a/N}(\xbj, Q_0)\,D_{h/a
 results from carrying out the  FT to momentum space.
 Notice that our result is similar to Refs.~\cite{Anselmino:2013lza,Signori:2013mda}, with the following important differences:
 We do not utilize DGLAP evolution for TMDs as was done in Ref.~\cite{Anselmino:2013lza} and we do not freeze the scale as was done in Ref.~\cite{Signori:2013mda}. We mention that a fit of HERMES~\cite{Airapetian:2012ki}  and COMPASS~\cite{Adolph:2013stb} multiplicities with full TMD evolution and next-to-leading logarithmic accuracy was published in Ref.~\cite{Bacchetta:2017gcc}. In this study we do not aim at a complete fit of the data at different $Q^2$ and choose to fit only HERMES~\cite{Airapetian:2012ki} multiplicities.
-Our  approximate result, Eq.~(\ref{e:FUU_model}) is consistent with CS equations, provided that the scale $Q$ is not drastically different from $Q_0$ and TMDs are dominated by the region of large $b_T$, so that $\tilde K(b_T,\mu_0)$ is approximately constant.
+{\crd As stated above, our}  approximate result, Eq.~(\ref{e:FUU_model}) is consistent with CS equations, provided that the scale $Q$ is not drastically different from $Q_0$ and TMDs are dominated by the region of large $b_T$, so that $\tilde K(b_T,\mu_0)$ is approximately constant.
 
 From this, we find our formula for the HERMES multiplicities~\cite{Airapetian:2012ki} 
 \begin{equation}

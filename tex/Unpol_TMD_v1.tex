@@ -1,3 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% January 25, 2019		latest revisions by WM
+% 
+% JLAB-THY-2019-xxxx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[final,3p,times,onecolumn,sort&compress,hidelinks]{elsarticle}
 %----------------------------------------------------------------
 \usepackage[utf8]{inputenc}
@@ -6,7 +11,7 @@
 \usepackage{graphicx, graphics, color}
 \usepackage[colorlinks=true]{hyperref}
 %----------------------------------------------------------------
-\newcommand{\xbj}{x_B}
+\newcommand{\xbj}{x_b}
 \newcommand{\zh}{z_h}
 \newcommand{\xn}{x_n}
 \newcommand{\PhT}{\ensuremath{P_{hT}}}
@@ -42,15 +47,15 @@ JLAB-XXXX
 \author{W. Melnitchouk\fnref{label3}}
 \author{\\Daniel Pitonyak\fnref{label2}}
 \author{Alexei Prokudin\fnref{label2,label3}} 
-\author{Nobuo Sato\fnref{label3}}
-\author{Zackary  Scalyer\fnref{label4}}
+\author{Nobuo Sato\fnref{label3,label4}}
+\author{Zackary Scalyer\fnref{label5}}
 \address[label1]{College of Engineering, Penn State University, State College, Pennsylvania 16801, USA}
-\address[label4]{Dipartimento di Fisica Teorica, Universit$\grave{a}$ di Torino, Via P. Giuria 1, I-10125 Torino, Italy}
-\address[label5]{Dipartimento di Fisica, Universit$\grave{a}$ di Cagliari, Cittadella Universitaria, I-09042 Monserrato
-(CA), Italy}
 \address[label2]{Division of Science, Penn State University Berks, Reading, Pennsylvania 19610, USA}
 \address[label3]{Theory Center, Jefferson Lab, 12000 Jefferson Avenue, Newport News, Virginia 23606, USA}
-\address[label4]{Department of Mathematics and Statistics, Villanova University, Villanova, PA 19085, USA}
+\address[label4]{Department of Physics, Old Dominion University, Norfolk, VA 23529, USA}
+\address[label5]{Department of Mathematics and Statistics, Villanova University, Villanova, PA 19085, USA}
+% \address[label4]{Dipartimento di Fisica Teorica, Universit$\grave{a}$ di Torino, Via P. Giuria 1, I-10125 Torino, Italy}
+% \address[label5]{Dipartimento di Fisica, Universit$\grave{a}$ di Cagliari, Cittadella Universitaria, I-09042 Monserrato (CA), Italy}
 
 
 % \title{Study of collinearity criteria and unpolarized Transverse Momentum Dependent distributions using HERMES multiplicities in semi-inclusive deep-inelastic scattering}
@@ -90,7 +95,7 @@ unpolarized TMDs \sep semi-inclusive deep-inelastic scattering \sep perturbative
 Understanding the internal structure of hadrons has been a topic of
 intense research for over 50 years.  From inclusive and semi-inclusive
 deep inelastic scattering (DIS) experiments, we know that hadrons have
-a complex internal structure composed of quarks, anti-quarks, and gluons
+a complex internal structure comprising of quarks, antiquarks and gluons
 (partons). In addition to the partons' collinear momentum, which is
 highly correlated with the direction of a fast-moving parent hadron,
 partons also possess intrinsic transverse motion and structure.
@@ -119,17 +124,16 @@ Boer:1997nt}.
 %\end{flushleft}
 
  
-A condition implicit in the proofs of TMD factorization in SIDIS,
-where final state hadrons are fragments of the struck quark, is the
-assumption of a clear separation in momentum of the struck quark
-from the target spectators.  In this framework, the fragmentation
-of the quark {\color{red} (what about gluons?)} into hadrons 
-is assumed to be independent of the production of the 
-quark~\cite{Berger:1987zu,Trentadue:1993ka}.
-That is, fragmentation is described by a function of the momentum
-fraction $z$ of the quark carried by the produced hadron, independent
-of the momentum fraction $x$ of the parent hadron carried by the
-struck quark.
+A condition implicit in the proof of TMD factorization in SIDIS,
+where at leading order final state hadrons are fragments of the
+struck quark, is the assumption of a clear separation in momentum
+of the struck quark from the target spectators.  In this framework,
+the fragmentation of the quark into hadrons is assumed to be
+independent of the production of the quark~\cite{Berger:1987zu,
+Trentadue:1993ka}.  That is, fragmentation is described by a function
+of the momentum fraction $z$ of the quark carried by the produced
+hadron, independent of the momentum fraction $x$ of the parent
+hadron carried by the struck quark.
 By contrast, if the produced hadron moves in nearly the same
 direction as the target then the hadron is said to be in the target
 fragmentation region and the relevant factorization theorem uses
@@ -210,75 +214,158 @@ the impact of this analysis for ongoing and future experiments.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Theoretical Formalism}
+\section{Theoretical formalism}
 \label{s:model}
 
-Consider the process of SIDIS from an unpolarized nucleon and deuteron target $N=p,n,d$,
+Consider the process of SIDIS from an unpolarized nucleon target,
+$N=p$ or $n$,
+%
 \begin{equation}
-\ell(l)+p(N)\to \ell'(l') + h(P_h) + X\,,
+\ell(l) + N(P) \to \ell'(l') + h(P_h) + X\,,
 \end{equation}
-where the momenta of the particles are  $l$, $p$ and $P_h$ for the lepton, target and produced hadron respectively.
- The standard Lorentz invariants for this reaction are
+%
+where the momenta of the particles are $l$, $l'$, $P$ and $P_h$
+for the incident lepton, scattered lepton, target nucleon, and
+produced hadron, respectively.
+%
+The standard Lorentz invariants for this reaction are the invariant
+center of mass energy squared $S$ and four-momentum transfer squared
+$Q^2$,
+%
 \begin{equation}
-  S = (l+P)^2\,, \quad\quad Q^2 = -q^2 = -(l-l')^2\,, \quad\quad \xbj = \frac{Q^2} {2P\cdot q}\,, \quad\quad y = \frac{Q^2} {\xbj S}\,, \quad\quad
-  \zh = \frac{P\cdot P_h} {P\cdot q}\,.
+S = (l+P)^2\,,
+  \quad\quad
+Q^2 = -q^2 = -(l-l')^2\,,
 \end{equation}
-
-One often uses a vector $\vec{q}_T \simeq -\vec{P}_{hT}/\zh$
- since the power counting applied in proofs of  TMD factorization~\cite{Collins:2011zzd} is carried out for the region, $q_T \ll Q$.
-For the situation where $q_{T}\ll Q$, one finds at leading-order~\cite{Bacchetta:2006tn}
+%
+along with the fractions
+%
+\begin{equation}
+\xbj = \frac{Q^2} {2P\cdot q}\,,
+  \quad\quad
+y = \frac{Q^2} {\xbj S}\,,
+  \quad\quad
+\zh = \frac{P\cdot P_h} {P\cdot q}\,,
+\end{equation}
+%
+for the Bjorken scaling variable $\xbj$,
+lepton fractional energy loss $y$, and
+momentum fraction carried by the produced hadron $\zh$.
+{\color{red} ...[is $y$ def. here exact or high-E approx?]...}
+%
+For the application of TMD factorization~\cite{Collins:2011zzd}
+we require the reaction to be in the region where the vector
+	${\bm q}_T \simeq -{\bm P}_{hT}/\zh$
+has magnitude much smaller than the four-momentum transfer,
+	$q_T \ll Q$.
+In this region the spin-averaged differential semi-inclusive cross
+section for a nucleon target can be written at leading-order
+as~\cite{Bacchetta:2006tn}
+%
 \begin{eqnarray}
 \frac{d\sigma}
-{d\xbj\, dQ^2 \, d\zh \, dP_{hT}^2} &\!\!\!=\!\!\!&
-\frac {2 \, \pi^2 \alpha_{em}^2}{(\xbj S)^2} \, \frac{ 1 + (1-y)^2 }{y^2}\,F_{UU}(\xbj,\zh,P_{hT}^2,Q^2) + \mathcal{O}(q_{T}/Q)\, ,
+{d\xbj\, dQ^2 \, d\zh \, dP_{hT}^2}
+&\!\!\!=\!\!\!&
+  \frac{2 \, \pi^2 \alpha_{\rm em}^2}{(\xbj S)^2} \,
+  \frac{1 + (1-y)^2 }{y^2}\,
+  F_{UU}(\xbj,\zh,P_{hT}^2,Q^2)
++ \mathcal{O}(q_T/Q)\, ,
 \label{e:dsigma}
 \end{eqnarray}
-where TMD factorization yields for the unpolarized structure function\cite{Collins:2011zzd},
+%
+where $\alpha_{\rm em}^2$ is the electromagnetic fine structure
+constant.
+The unpolarized structure function $F_{UU}^N$ is written as a
+function of the momentum fractions $\xbj$ and $\zh$, and the
+transverse momentum $P_{hT}^2$ of the produced hadron,
+as well as the scale $Q^2$.
+%
+Within TMD factorization~\cite{Collins:2011zzd} the unpolarized
+structure function can then be written in the standard convolution
+form~\cite{Bacchetta:2006tn}
+{\crd ...[$F_{UU}$ should not be written in terms of $x$ and $z$
+immediately after being defined in terms of $\xbj$ and $\zh$?]...}
+%
 \begin{equation}
-F_{UU}(x,z,P_{hT}^2,Q^2)  = {\cal H} (Q; \mu_Q)\sum_{a} e_a^2 
-\int d^2\vec{k}_\perp \, d^2\vec{p}_\perp
-\> \delta ^{(2)}\left(\vec{P}_{hT} - z\,\vec{k}_\perp -\vec{p}_\perp \right)\,
-f_{a/N} (x, k_{\perp}; Q^2, \mu_Q) \, D_{h/a}(z, p_{\perp}; Q^2, \mu_Q) .
+F_{UU}^N(x,z,P_{hT}^2,Q^2)
+= {\cal H}(Q;\mu_Q)
+  \sum_a e_a^2 
+  \int d^2{\bm k}_\perp \, d^2{\bm p}_\perp
+  \> \delta^{(2)}\big({\bm P}_{hT} - z\,{\bm k}_\perp -{\bm p}_\perp \big)\,
+  f_{a/N}(x, k_\perp; Q^2, \mu_Q)\,
+  D_{h/a}(z, p_\perp; Q^2, \mu_Q).
 \label{e:FUU} 
 \end{equation}
-The functions $f_{a/N} (x, k_{\perp}; Q^2, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; Q^2, \mu_Q)$ are the unpolarized  TMDs,  for a parton of flavor
-$a$, on a  target $N$, and a produced hadron $h$~\cite{Bacchetta:2006tn,Collins:2011zzd}.  The function ${\cal H}$ is the  hard function, which at leading order in the strong coupling
-is normalized as, ${\cal H} = 1$.  In the $\gamma^*$-$p$ center-of-mass frame, we have the following relations up to $\mathcal{O}(P_{hT}/Q)$
+%
+Here the function ${\cal H}$ represents the hard scattering of the
+virtual photon from a parton, which at leading order in the strong
+coupling is normalized to unity, ${\cal H} = 1$.
+The function $f_{a/N}(x, k_\perp; Q^2, \mu_Q)$ is the unpolarized
+TMD PDF for a parton of flavor $a$ in a hadron $N$, with momentum
+fraction $x$ and transverse momentum $k_\perp$, with $\mu_Q$ the
+renormalization scale.
+Similarly, the function $D_{h/a}(z, p_\perp; Q^2, \mu_Q)$ is the
+unpolarized TMD FF for a parton of flavor $a$ producing a hadron $h$,
+carrying a longitudinal momentum fraction $z$ and transverse momentum
+$p_\perp$.
+%
+In the $\gamma^* p$ center-of-mass frame, we have the following
+relations up to $\mathcal{O}(P_{hT}/Q)$
 corrections~\cite{Bacchetta:2006tn}
+%
 \begin{equation}
- x\equiv \frac{k^+}{P^+}\approx \xbj\,, \quad\quad z\equiv \frac{P_h^-}{p^-}\approx z_h.
+x \equiv \frac{k^+}{P^+}\approx \xbj\,,
+  \quad\quad
+z \equiv \frac{P_h^-}{p^-}\approx z_h.
   \label{e:LT_relations}
 \end{equation}
 
 
+Apart from kinematical variables and transverse momentum, the TMDs
+$f_{a/p}(x, k_\perp; \zeta_N, \mu_Q)$ and
+$D_{h/a}(z, p_\perp; \zeta_h, \mu_Q)$ depend on the scale of the
+reaction $Q$, through the renormalization scale $\mu_Q$, and
+rapidity scales $\zeta_N$ and $\zeta_h$ as a result of jointly
+solving the Collins-Soper (CS) in $b_T$ space and renormalization
+group equations for the TMDs.  The rapidity parameters can be set to 
+$\zeta_N = \zeta_h = Q^2$~\cite{Collins:2011zzd, Collins:2014jpa}.
 
 
-
-
-
- Apart from kinematical variables and transverse momentum, the TMDs  $f_{a/p} (x, k_{\perp}; \zeta_N, \mu_Q)$ and $D_{h/a}(z, p_{\perp}; \zeta_h, \mu_Q)$, 
-depend on the scale of the reaction $Q^2$,  through  the renormalization scale, $\mu_Q$, and  rapidity scales  $\zeta_N$ and $\zeta_h$ as a result of  jointly solving the Collins-Soper (CS) in $b_T$ space  and renormalization group equations for the TMDs.  The rapidity parameters can be set to $\zeta_N=\zeta_h=Q^2$~\cite{Collins:2011zzd,Collins:2014jpa}.
-
-
- In this analysis we study the  current  fragmentation region employing  an analytical form of TMDs in the momentum space 
- that enables us  to speed up our numerical calculations by using 
- an estimate for the solution of CS equations that is valid in nonperturbative region. Our analysis begins with  the solution of CS equations given in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$,
+In this analysis we study the current fragmentation region employing
+an analytical form of TMDs in the momentum space that enables us to
+speed up our numerical calculations by using an estimate for the
+solution of the CS equations that is valid in the nonperturbative
+region. Our analysis begins with the solution of CS equations given
+in Ref.~\cite{Collins:2014jpa} at a given fixed scale, $Q_0=\mu_0$,
+%
 \begin{eqnarray}
 &&\tilde f_{a/N} (x,b_T; Q^2, \mu_Q)= \tilde f_{a/N} (x, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:PDF_ansatz}\\[0.3cm]
 &&\tilde D_{h/a}(z,b_T; Q^2, \mu_Q)=\frac{1}{z^2}\tilde D_{h/a}(z, b_T; Q_0^2, \mu_0)\,e^{-S(b_T, Q, \mu_Q, Q_0, \mu_0)/2}\,,
 \label{e:FF_ansatz0}
 \end{eqnarray}
-where $b_T$ is Fourier conjugate variable to $k_\perp$.   $Q_0$ and $\mu_0$ are chosen fixed reference scales (we will choose $\mu_0 = Q_0$).
-The evolution factor  $S(b_T, Q, Q_0, \mu_0)$  is,
+%
+where $b_T$ is the Fourier conjugate variable to $k_\perp$.
+The parameters $Q_0$ and $\mu_0$ are chosen fixed reference scales
+(we will choose $\mu_0 = Q_0$).
+The evolution factor $S(b_T, Q, Q_0, \mu_0)$ is given by
+%
 \begin{eqnarray}
 S(b_T, Q, \mu_Q, Q_0, \mu_0) = {\crd -}\tilde K(b_T,\mu_0) \ln\frac{Q^2}{Q_0^2} {\crd -} \int_{\mu_0}^{\mu_Q} \frac{d \mu'}{\mu'}\left[
 {\crd 2 \gamma_i(\alpha_s(\mu');1) -\ln\frac{Q^2}{\mu'^2}\gamma_K(\alpha_s(\mu'))}\,,
  \right]
  \label{e:FF_ansatz}
 \end{eqnarray}
-where $\tilde K$ is the Collins-Soper evolution kernel,  and
-$\gamma_i$ and $\gamma_K$ are anomalous dimensions of the TMD. They  can be calculated perturbatively provided $\alpha_s$ is small enough. We will choose $\mu_Q = Q$. 
+%
+where $\tilde K$ is the Collins-Soper evolution kernel, and $\gamma_i$
+and $\gamma_K$ are anomalous dimensions of the TMD.  These can be
+calculated perturbatively provided $\alpha_s$ is small enough. We will
+choose $\mu_Q = Q$.
+
+
+% ###
+% {\crd ...[EDITING HERE]...}
+
 
 The next step is to choose $b_T$ parameterization of TMDs at the initial scale $Q_0$.
 %\sout{In this{\crd{arbitrarily}} provided an analytical  {\crd{Fourier transform (FT)}} is possible for the sake of numerical computation speed.}
@@ -302,22 +389,47 @@ where $f_{a/p} (x, Q_0)$ and $D_{h/a}(z, Q_0)$ are the standard unpolarized coll
 Here it is important to note, that using a typical value of $\langle k_\perp^2 \rangle = 0.25$ (GeV$^2$) \cite{Anselmino:2005nn} for the width of TMDs at the initial scale $Q_0$, the dominant support in $b_T$ space  for the FT TMDs is at large values of $b_T \sim $ 3 to 4 (GeV$^{-1}$) which correspond to $\sim 1$ fm of separation of quark fields.  These distances are associated with nonperturbative QCD dynamics which we  depict in Fig.~\ref{Fig:tmd_shape}  (see~\cite{Aidala:2014hva}).
 
 
-\subsection{Approximate Solution to the CS Equation in the nonperturbative regime}
- In this sub-section, we outline our approximate solution to the CS evolution kernel in the nonperturbative regime.
+% ......................................................................
 
-  
-The Collins-Soper evolution kernel obeys the following renormalization-group equation,
+\subsection{Approximate Solution to the CS Equation in the
+	nonperturbative regime}
+
+In this sub-section, we outline our approximate solution to the CS 
+evolution kernel in the nonperturbative regime.  The Collins-Soper
+evolution kernel obeys the following renormalization group equation,
+%
 \begin{equation}
 \frac{d\, \tilde K (b_T;\mu)}{d \ln \mu} = - \gamma_K (\alpha_s(\mu)) \; ,
 \end{equation} 
-where we use notations of Ref.~\cite{Collins:2011zzd}. Using the one loop result for $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have
+%
+where we use notations of Ref.~\cite{Collins:2011zzd}. Using the one
+loop result for $\gamma_K$ for from Ref.~\cite{Aybat:2011zv}, we have
+%
 \begin{eqnarray}
 \gamma_K(\alpha_s(\mu)) &=& 2 C_F \frac{\alpha_s(\mu)}{\pi} \; ,\\
 \tilde K (b_T;\mu) &=& -\frac{\alpha_s(\mu)}{\pi}  \left[\ln\frac{b_T^2 \mu^2}{4} + 2 \gamma_E
  \right] \; + {\cal O} (\alpha_s(\mu)^2),
  \label{e:CS_kernel}
 \end{eqnarray}
-this result is applicable for perturbative distances and scales; for instance $\mu > 1$ (GeV) and at low $b_T < 1$  GeV$^{-1} = 0.2$ fm. As we  noted in Fig.~\ref{Fig:tmd_shape},   the distances where we need to calculate $\tilde K (b_T;\mu)$ are much larger than the perturbative distance scales, and thus the fixed-order approximation is not applicable  anymore.  Numerically it happens due to the growth of $\ln\left(b_T^2 \mu^2/\, 4 \right) $, so that neglected higher orders become comparable to the  one loop order. One of the methods to circumvent this problem is to introduce an intermediate scale $\mu_b \sim 1/b_T$ such that all logs are minimized, the Landau pole however will manifest itself in the growth and divergence of $\alpha_s(\mu)$. In order to deal with the Landau pole (or nonperturbative regime) one can introduce a $b_*$ prescription~\cite{Collins:2011zzd} that will limit the region of $b_T$ to a maximum value of $b_{max} \sim 1$ GeV$^{-1}$ and introduce the non perturbative Collins-Soper kernel $g_K(b_T; b_{max}) \equiv - \tilde K(b_T; \mu_{b_*}) + \tilde K(b_*; \mu_{b_*})$. A great deal of successful phenomenology [CITE] was done using this procedure.
+%
+this result is applicable for perturbative distances and scales; for 
+instance $\mu > 1$ (GeV) and at low $b_T < 1$ GeV$^{-1} = 0.2$ fm. As we 
+noted in Fig.~\ref{Fig:tmd_shape}, the distances where we need to 
+calculate $\tilde K (b_T;\mu)$ are much larger than the perturbative 
+distance scales, and thus the fixed-order approximation is not 
+applicable anymore.  Numerically it happens due to the growth of 
+$\ln\left(b_T^2 \mu^2/\, 4 \right) $, so that neglected higher orders 
+become comparable to the one loop order. One of the methods to 
+circumvent this problem is to introduce an intermediate scale $\mu_b 
+\sim 1/b_T$ such that all logs are minimized, the Landau pole however 
+will manifest itself in the growth and divergence of $\alpha_s(\mu)$. In 
+order to deal with the Landau pole (or nonperturbative regime) one can 
+introduce a $b_*$ prescription~\cite{Collins:2011zzd} that will limit 
+the region of $b_T$ to a maximum value of $b_{max} \sim 1$ GeV$^{-1}$ 
+and introduce the non perturbative Collins-Soper kernel $g_K(b_T; 
+b_{max}) \equiv - \tilde K(b_T; \mu_{b_*}) + \tilde K(b_*; \mu_{b_*})$. 
+A great deal of successful phenomenology [CITE] was done using this 
+procedure.
 
 
 
@@ -408,7 +520,7 @@ M_N^h(\xbj, Q^2,\zh, P_{hT}) =
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Phenomenological Analysis and Discussion}
+\section{Phenomenological analysis and discussion}
 \label{s:phenom}
 
 \subsection{Data Selection}
@@ -429,8 +541,8 @@ by a power of $m^2/Q^2$ by taking the limit of $Q\rightarrow \infty$ with $\xbj$
 three parts to the relevant deviations.
 One concerns the initial and final
 quark momenta $k_i$ and $k_f$ (see further discussion on their estimates below).
- Related to this is that the target remnant should also be a momentum collinear to the target.   A third component to the error in the fragmentation picture arises from the deviation of $P_h$ from the exact collinear direction for the outgoing quark. All of these errors can be expressed and quantified  in terms of rapidities.Thus,  while data is normally presented with $Q$, $\xbj$, $\zh$ and $\vec{P}_{hT}$ being used as the independent variables, in our analysis we will also relate these variables to the set,
- $Q$, $\xn$, $\hady$ and $\vec{P}_{hT}$. 
+ Related to this is that the target remnant should also be a momentum collinear to the target.   A third component to the error in the fragmentation picture arises from the deviation of $P_h$ from the exact collinear direction for the outgoing quark. All of these errors can be expressed and quantified  in terms of rapidities.Thus,  while data is normally presented with $Q$, $\xbj$, $\zh$ and ${\bm P}_{hT}$ being used as the independent variables, in our analysis we will also relate these variables to the set,
+ $Q$, $\xn$, $\hady$ and ${\bm P}_{hT}$. 
  
  Here it also proves convenient to carry out this analysis in the Breit frame.
  So, we make a Lorentz transformation to  the Breit-frame of the  $\gamma^*$-$p$
@@ -445,7 +557,13 @@ quark momenta $k_i$ and $k_f$ (see further discussion on their estimates below).
 
 Now, in light-front coordinates in the Breit frame, the virtual photon, proton, and produced hadron are given by,
 \begin{align}
-  q &{}= \parz{-\xn P^+,\frac{Q^2}{2 \xn P^+}, \vec{0}_{T} } = \parz{-\frac{Q}{\sqrt{2}},\frac{Q}{\sqrt{2}},\vec{0}_{T} }\, , \quad  P {}= \parz{P^+,\frac{M_p^2}{2 P^+},\vec{0}_{T} } = \parz{\frac{Q}{\xn \sqrt{2}},\frac{\xn M_p^2}{Q \sqrt{2} },\vec{0}_{T} }\\ \hadpsc &{}= \parz{\frac{\Tsc{M}{h}}{\sqrt{2}} \; e^{\hady},\frac{\Tsc{M}{h}}{\sqrt{2}} \; e^{-\hady},\vec{P}_{hT} }\, ,
+  q &{}= \parz{-\xn P^+,\frac{Q^2}{2 \xn P^+}, {\bf 0}_T }
+       = \parz{-\frac{Q}{\sqrt{2}},\frac{Q}{\sqrt{2}},{\bf 0}_T }\, , \quad
+  P {} = \parz{P^+,\frac{M_p^2}{2 P^+},{\bf 0}_T }
+       = \parz{\frac{Q}{\xn \sqrt{2}},\frac{\xn M_p^2}{Q \sqrt{2} },{\bf 0}_T }\\
+\hadpsc &{}= \parz{\frac{\Tsc{M}{h}}{\sqrt{2}} \;
+		 e^{\hady},\frac{\Tsc{M}{h}}{\sqrt{2}} \;
+		 e^{-\hady},{\bm P}_{hT} }\, ,
   \label{eq:hadmom} 
 \end{align}
 where  $\Tsc{M}{h} \equiv \sqrt{ \PhT^2+ \hadmass^2 }$ is the transverse mass, and  $\hady$ is the
@@ -474,8 +592,8 @@ for the struck and fragmenting quark
 momenta  $k\equiv\initq$ and $p\equiv\finalq$
  light-cone  momenta are parameterized as
 \begin{align}
-\initq &{}=\parz{\frac{\Tsc{M}{\rm i}}{\sqrt{2}} e^{\inity},-\frac{\Tsc{M}{\rm i}}{\sqrt{2}} e^{-\inity},\vec{k}_T}, \quad
-\finalq {}= \parz{\frac{\Tsc{M}{\rm f}}{\sqrt{2}} e^{\finaly}, \frac{\Tsc{M}{\rm f}}{\sqrt{2}} e^{-\finaly},\vec{k}_T} \, ,
+\initq &{}=\parz{\frac{\Tsc{M}{\rm i}}{\sqrt{2}} e^{\inity},-\frac{\Tsc{M}{\rm i}}{\sqrt{2}} e^{-\inity},{\bm k}_T}, \quad
+\finalq {}= \parz{\frac{\Tsc{M}{\rm f}}{\sqrt{2}} e^{\finaly}, \frac{\Tsc{M}{\rm f}}{\sqrt{2}} e^{-\finaly},{\bm k}_T} \, ,
 \label{eq:yquarkb}
 \end{align}
 where $\Tsc{M}{\rm (i/f)}$ are the transverse masses of the quarks.
@@ -492,8 +610,11 @@ a conservative range of values was motivated by models and event generators that
 which should be large (positive and negative, respectively) for TMD
 factorization to hold true~\cite{Collins:2011zzd,Boglione:2016bph}.
 Thus, to quantify to what extent the final state hadron  is
-produced in the current region one knows from power counting in TMD factorization~\footnote{The canonical partonic power counting for the initial and final quark light-cone momenta $\initq = \parz{O(Q),O(m^2/Q), O({\bf m})} , \,
-  \finalq  = \parz{O(m^2/Q),O(Q), O({\bf m}) };\, 
+produced in the current region one knows from power counting in TMD
+factorization~\footnote{The canonical partonic power counting for
+the initial and final quark light-cone momenta
+  $\initq = \parz{O(Q),O(m^2/Q), O({\bm m})} , \,
+  \finalq  = \parz{O(m^2/Q),O(Q), O({\bm m}) };\, 
 |\initq^2| =\finalq^2 = O(m^2)$  (Note that $\initq$ is normally space-like.)
 For power counting purposes, $m$ is to be understood as a combination
 of the small mass scales, $m \in \{\Lambda_{\rm QCD}, M_p \}$.},
@@ -515,7 +636,7 @@ defined by
 \ratiocur(\hady,\zh,\xbj,Q) \ll 1 &:~ \text{collinear to outgoing quark} \, .
 \end{align}
 Using Eqs.~(\ref{eq:hadmom},\ref{eq:yquarkb}) and taking the average over the azimuthal angle of
-$\vec{k}_T$, we can express Eqs.~(\ref{eq:col}) as,
+${\bm k}_T$, we can express Eqs.~(\ref{eq:col}) as,
 \begin{equation}
 R = \frac{M_{fT}} {M_{iT}}\,\frac{e^{y_f-y_h}+e^{y_h-y_f}} {e^{y_i-y_h}-e^{y_h-y_i}}\,,
 \label{eq:colrapid}

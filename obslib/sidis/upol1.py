@@ -28,8 +28,11 @@ def _get_FUU(x,z,Q2,pT,tar,had,F,D,w_tar,w_had):
 
     K = x
 
+    # Standard choice:
     evolution=conf['gk'].get_gk(Q2)*np.exp(-conf['gk'].get_pertsud(Q2))
 
+    # Ted's idea on NP behavior:
+    # evolution=conf['gk'].get_gk(Q2,x,z)*np.exp(-conf['gk'].get_pertsud(Q2))
 
     if had.endswith('+'):
 

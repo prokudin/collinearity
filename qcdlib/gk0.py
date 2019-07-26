@@ -32,8 +32,13 @@ class GK:
 #        self.gk = self._gk
 #        self.Q0 = self._Q0
 
+# Standard choice
     def get_gk(self,Q2):
         return (Q2/self.Q0**2)**self.gk
+
+# Ted's idea on NP behaviour
+    def get_gk(self,Q2,x,z):
+        return (z*z*Q2/(x*x*self.Q0**2))**self.gk
 
     def get_state(self):
         return (self.gk,self.Q0)

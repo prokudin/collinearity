@@ -114,7 +114,15 @@ class Rfilter(object):
         """
         Collinearity ratio defined in the paper Eq. (4.15)
         """
-        return  self.get_R( x, z, Q2, PhT, hadron)   
+        return  self.get_R( x, z, Q2, PhT, hadron)  
+    
+    
+    def get_R0(self, x, z, Q2, PhT, hadron):
+        """
+        General hardness ratio defined in the paper Eq. (4.14)
+        """
+        return  ....  
+    
 
 if __name__ == '__main__':
 

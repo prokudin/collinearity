@@ -110,6 +110,12 @@ class Rfilter(object):
         return np.abs(Ph_kf / Ph_ki)
 
 
+    def get_R1(self, x, z, Q2, PhT, hadron):
+        """
+        Collinearity ratio defined in the paper Eq. (4.15)
+        """
+        return  self.get_R( x, z, Q2, PhT, hadron)   
+
 if __name__ == '__main__':
 
     kin = Rfilter(fudge=[0, 0])

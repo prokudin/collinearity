@@ -30,7 +30,7 @@ class Rfilter(object):
         self.Mb = 0.3
         self.deltaM = 0.3
         self.MJ = 0.3
-
+        
         self.MiT = self.MiT2**0.5
         self.MfT = self.MfT2**0.5
         self.kT2 = self.kT**2
@@ -54,6 +54,10 @@ class Rfilter(object):
         W2 = Q2 * (1. - x) / x + self.M2
         return W2
 
+    def get_MBT(self, PhT):
+        MBT = np.sqrt( self.Mh2 + PhT**2 )
+        return MBT
+        
     def get_MiT(self, x, Q2):
         xn = self.get_xn(x, Q2)
 #    self.MiT = np.sqrt( (xn*self.kT**2 + xn*self.MX**2 - (1-xn)*xn*self.M2)/(1-xn) )
@@ -79,6 +83,13 @@ class Rfilter(object):
         return np.log(expy)
 
 
+    # zn
+    def get_zn(self, x, z, Q2, PhT, hadron, sign=-1):
+        xn = self.get_xn(x,Q2)
+        self.set_Mh(hadron)
+        MBT = self.get_MBT(PhT)
+        zn =  xn * z/ (2 * x) * ( 1. + np.sqrt( 1.- 4. * self.M2 * MBT**2 * x**2 /  ( Q2**2 * z**2) ) )
+        
 # rapidity of the target
 
     def get_yp(self, x, Q2):
@@ -102,11 +113,13 @@ class Rfilter(object):
         yf = self.get_yf(Q2)
         MhT = self.get_MhT(PhT)
         yh = self.get_yh(x, z, Q2, PhT, hadron)
+        zn = self.get_zn()
+        znhat = zn/z
 #    Ph_kf=0.5*MhT*self.MfT*(np.exp(yf-yh)+np.exp(yh-yf)) # from paper
 #    Ph_ki=0.5*MhT*self.MiT*(np.exp(yi-yh)-np.exp(yh-yi))
         # from notes of Leonard..
-        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf))
-        Ph_ki = 0.5 * MhT * MiT * (np.exp(yi - yh) - np.exp(yh - yi))
+        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf)) + znhat/zn * PhT**2 - PhT * self.kt
+        Ph_ki = 0.5 * MhT * MiT * (np.exp(yi - yh) - np.exp(yh - yi)) - PhT * self.kt
         return np.abs(Ph_kf / Ph_ki)
 
 
@@ -117,11 +130,11 @@ class Rfilter(object):
         return  self.get_R( x, z, Q2, PhT, hadron)  
     
     
-    def get_R0(self, x, z, Q2, PhT, hadron):
-        """
-        General hardness ratio defined in the paper Eq. (4.14)
-        """
-        return  ....  
+#    def get_R0(self, x, z, Q2, PhT, hadron):
+#        """
+#        General hardness ratio defined in the paper Eq. (4.14)
+#        """
+#        return  ....  
     
 
 if __name__ == '__main__':

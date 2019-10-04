@@ -79,7 +79,7 @@ class READER(_READER):
         tab['yi'] = pd.Series(yi, index=tab.index)
         tab['yf'] = pd.Series(yf, index=tab.index)
         tab['dy'] = pd.Series(yp - yh, index=tab.index)
-        tab['zn'] = pd.Series(zn, index=tab.index)
+        #tab['zn'] = pd.Series(zn, index=tab.index)
         #tab['R1'] = pd.Series(R1,index=tab.index)
         
         
@@ -103,9 +103,17 @@ class READER(_READER):
         R1 = kin.get_R1(x, zh, Q2, pT, hadron)
         R2 = kin.get_R2(x, zh, Q2, pT, hadron)
         
+        xn=kin.get_xn(x, Q2) 
+        zn=kin.get_zn(x, zh, Q2, pT, hadron)
+        
+        qT = pT/zn
+        
         tab['R0'] = pd.Series(R0,index=tab.index)
         tab['R1'] = pd.Series(R1,index=tab.index)
         tab['R2'] = pd.Series(R2,index=tab.index)
+        tab['zn'] = pd.Series(zn, index=tab.index)
+        tab['xn'] = pd.Series(zn, index=tab.index)
+        tab['qT'] = pd.Series(qT, index=tab.index)
         return tab
 
     def modify_table(self, tab, k):

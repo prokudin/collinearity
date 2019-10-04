@@ -15,7 +15,7 @@ class Rfilter(object):
     def __init__(self, hadron='pi+', fudge=[0, 0]):
         self.M = 0.938
         self.M2 = self.M**2
-        self.Mh = 0.14
+        self.Mh = 0.1#self.set_Mh(hadron)
         self.Mh2 = self.Mh**2
 
         self.fudge1 = fudge[0]
@@ -34,14 +34,21 @@ class Rfilter(object):
         self.MiT = self.MiT2**0.5
         self.MfT = self.MfT2**0.5
         self.kT2 = self.kT**2
+        
+        # from paper, we need kf2, deltakT2, ki2
+        # we need to have a way to vary them!
+        self.kf2      = 0.3**2
+        self.ki2      = 0.3**2
+        self.deltakT  = 0.3 
+        self.deltakT2 = self.deltakT**2
 
     def set_Mh(self, hadron):
         if hadron == 'pi+':
-            self.Mh = 0.135  # 0.139
+            self.Mh = 0.135  #  
         if hadron == 'pi-':
-            self.Mh = 0.135  # 0.139
+            self.Mh = 0.135  #  
         if hadron == 'pi0':
-            self.Mh = 0.135  # 0.139
+            self.Mh = 0.135  #  
         if hadron == 'k+':
             self.Mh = 0.493
         if hadron == 'k-':
@@ -84,11 +91,12 @@ class Rfilter(object):
 
 
     # zn
-    def get_zn(self, x, z, Q2, PhT, hadron, sign=-1):
+    def get_zn(self, x, z, Q2, PhT, hadron):
         xn = self.get_xn(x,Q2)
         self.set_Mh(hadron)
         MBT = self.get_MBT(PhT)
         zn =  xn * z/ (2 * x) * ( 1. + np.sqrt( 1.- 4. * self.M2 * MBT**2 * x**2 /  ( Q2**2 * z**2) ) )
+        return zn
         
 # rapidity of the target
 
@@ -113,22 +121,37 @@ class Rfilter(object):
         yf = self.get_yf(Q2)
         MhT = self.get_MhT(PhT)
         yh = self.get_yh(x, z, Q2, PhT, hadron)
-        zn = self.get_zn()
+        zn = self.get_zn(x, z, Q2, PhT, hadron)
         znhat = zn/z
-#    Ph_kf=0.5*MhT*self.MfT*(np.exp(yf-yh)+np.exp(yh-yf)) # from paper
-#    Ph_ki=0.5*MhT*self.MiT*(np.exp(yi-yh)-np.exp(yh-yi))
-        # from notes of Leonard..
-        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf)) + znhat/zn * PhT**2 - PhT * self.kt
-        Ph_ki = 0.5 * MhT * MiT * (np.exp(yi - yh) - np.exp(yh - yi)) - PhT * self.kt
+        # from paper..
+        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf)) - znhat/zn * PhT**2 - PhT * self.kT
+        Ph_ki = 0.5 * MhT * MiT * (np.exp(yi - yh) - np.exp(yh - yi)) - PhT * self.kT
         return np.abs(Ph_kf / Ph_ki)
 
-
+        
+# R0, Eq. (4.14)...
+    def get_R0(self, Q2):
+        """
+        Collinearity ratio defined in the paper Eq. (4.15)
+        """
+        return  np.maximum(np.maximum(self.ki2/Q2,self.kf2/Q2),self.kT2/Q2)  
+        
+        
+# We call R1 in the new paper what was R in the previous...
     def get_R1(self, x, z, Q2, PhT, hadron):
         """
         Collinearity ratio defined in the paper Eq. (4.15)
         """
         return  self.get_R( x, z, Q2, PhT, hadron)  
-    
+
+# R2 from Eq. (4.17)        
+    def get_R2(self, x, z, Q2, PhT, hadron):
+        self.set_Mh(hadron)
+        zn = self.get_zn(x, z, Q2, PhT, hadron)
+        znhat = zn/z
+        qT = -PhT/zn
+        # from paper..
+        return np.abs( -(1.-znhat) - znhat*qT**2/Q2 - (1.-znhat)*self.kf2/(znhat*Q2) -self.deltakT2/(znhat*Q2) + 2.*qT*self.deltakT/Q2 )
     
 #    def get_R0(self, x, z, Q2, PhT, hadron):
 #        """
@@ -145,5 +168,7 @@ if __name__ == '__main__':
     z = 0.5
     Q2 = 4.0
     PhT = 0.1
-    R = kin.get_R(x, z, Q2, PhT, 'pi+')
-    print 'R=', R
+    R0 = kin.get_R0(Q2)
+    R1 = kin.get_R1(x, z, Q2, PhT, 'pi+')
+    R2 = kin.get_R2(x, z, Q2, PhT, 'pi+')
+    print 'R0=', R0, 'R1=', R1, 'R2=', R2

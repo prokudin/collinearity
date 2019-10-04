@@ -15,8 +15,8 @@ class Rfilter(object):
     def __init__(self, hadron='pi+', fudge=[0, 0]):
         self.M = 0.938
         self.M2 = self.M**2
-        self.Mh = 0.1#self.set_Mh(hadron)
-        self.Mh2 = self.Mh**2
+        self.set_Mh(hadron)
+        
 
         self.fudge1 = fudge[0]
         self.fudge2 = fudge[1]

@@ -57,7 +57,7 @@ class _RESIDUALS:
                     self.reaction, k)
                 raise ValueError(msg)
             elif len(norm) == 1:
-                #print '%d has norm uncertainty'%k
+                # print '%d has norm uncertainty'%k
                 dN = self.tabs[k][norm[0]][0] / self.tabs[k]['value'][0]
                 conf['datasets'][self.reaction]['norm'][k]['dN'] = dN
             elif len(norm) == 0:

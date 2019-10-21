@@ -151,7 +151,7 @@ class ZmqServer(object):
 
         t = timer()
         state_tuples = []
-        for x in ['pdf','gk','transversity','ffpi','ffk', 'collinspi','collinsk']:
+        for x in ['pdf', 'gk', 'transversity', 'ffpi', 'ffk', 'collinspi', 'collinsk']:
             if x in conf:
                 state_tuples.append((x, conf[x].get_state()))
         state = pickle.dumps(state_tuples, pickle.HIGHEST_PROTOCOL)

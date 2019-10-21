@@ -19,29 +19,29 @@ class GK:
 
     def set_default_params(self):
         # free params
-        self.gk  = -0.3
-        self.Q0  = 1.3
+        self.gk = -0.3
+        self.Q0 = 1.3
 
     def setup(self):
-        self.lam  = 0.25
+        self.lam = 0.25
         self.Nf = 3
-        self.beta0 = (33.-2.*self.Nf)/(12.*np.pi)
-        self.CF = 4./3.
+        self.beta0 = (33. - 2. * self.Nf) / (12. * np.pi)
+        self.CF = 4. / 3.
 
 #        pass
 #        self.gk = self._gk
 #        self.Q0 = self._Q0
 
 # Standard choice
-    def get_gk(self,Q2):
-        return (Q2/self.Q0**2)**self.gk
+    def get_gk(self, Q2):
+        return (Q2 / self.Q0**2)**self.gk
 
 # Ted's idea on NP behaviour
-    def get_gk(self,Q2,x,z):
-        return (z*z*Q2/(x*x*self.Q0**2))**self.gk
+    def get_gk(self, Q2, x, z):
+        return (z * z * Q2 / (x * x * self.Q0**2))**self.gk
 
     def get_state(self):
-        return (self.gk,self.Q0)
+        return (self.gk, self.Q0)
 
     def set_state(self, state):
         self.gk = state[0]
@@ -49,22 +49,22 @@ class GK:
 
 
 # Alpha_S at the first loop, Lambda = 0.25
-    def alpha_s(self,Q):
-        return 1./(self.beta0*np.log(Q**2/self.lam**2))
+    def alpha_s(self, Q):
+        return 1. / (self.beta0 * np.log(Q**2 / self.lam**2))
 
 # Perturbative Sudakov
-    def get_pertsud(self,Q2):
-        Q=np.sqrt(Q2)
-        x = np.log(np.log(Q/self.lam)/np.log(self.Q0/self.lam))
-        return -self.CF/(2.*np.pi*self.beta0)*(-4.*np.log(self.Q0)+(3.+4.*np.log(self.lam))*x
-                                          +np.log(Q)*(4.-4.*x))
+    def get_pertsud(self, Q2):
+        Q = np.sqrt(Q2)
+        x = np.log(np.log(Q / self.lam) / np.log(self.Q0 / self.lam))
+        return -self.CF / (2. * np.pi * self.beta0) * (-4. * np.log(self.Q0) + (3. + 4. * np.log(self.lam)) * x
+                                          + np.log(Q) * (4. - 4. * x))
 
 if __name__ == '__main__':
 
     from .qcdlib.auxiliary import AUX  # renamed from "aux"
 
-    conf['aux']  = AUX()
-    conf['gk']  = GK()
+    conf['aux'] = AUX()
+    conf['gk'] = GK()
 
 
     Q2 = 2.4

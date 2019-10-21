@@ -5,7 +5,7 @@ import logging
 import fitlab.parallel as parallel
 import numpy as np
 import qcdlib
-from qcdlib import pdf0,ff0,pdf1,ff1,gk0
+from qcdlib import pdf0, ff0, pdf1, ff1, gk0
 import qcdlib.auxiliary  # renamed from "aux"
 import qcdlib.alphaS
 import qcdlib.interpolator
@@ -48,10 +48,10 @@ class RESMAN:
 
         if 'datasets' in conf:
 
-            if 'sidis'   in conf['datasets']: self.setup_sidis()
-            if 'sia'     in conf['datasets']: self.setup_sia()
+            if 'sidis' in conf['datasets']: self.setup_sidis()
+            if 'sia' in conf['datasets']: self.setup_sia()
             if 'moments' in conf['datasets']: self.setup_moments()
-            if 'AN'      in conf['datasets']: self.setup_AN()
+            if 'AN' in conf['datasets']: self.setup_AN()
 
         # final setups for paralleization
         if self.mode == 'parallel':
@@ -60,19 +60,19 @@ class RESMAN:
 
     def setup_tmds(self):
 
-        if 'pdf'          in conf['params']: conf['pdf']          = pdf0.PDF()
-        if 'gk'           in conf['params']: conf['gk']           = gk0.GK()
+        if 'pdf' in conf['params']: conf['pdf'] = pdf0.PDF()
+        if 'gk' in conf['params']: conf['gk'] = gk0.GK()
         if 'transversity' in conf['params']: conf['transversity'] = pdf1.PDF()
-        if 'sivers'       in conf['params']: conf['sivers']       = pdf1.PDF()
-        if 'boermulders'  in conf['params']: conf['boermulders']  = pdf1.PDF()
+        if 'sivers' in conf['params']: conf['sivers'] = pdf1.PDF()
+        if 'boermulders' in conf['params']: conf['boermulders'] = pdf1.PDF()
 
         if 'ffpi' in conf['params']: conf['ffpi'] = ff0.FF('pi')
-        if 'ffk'  in conf['params']: conf['ffk']  = ff0.FF('k')
+        if 'ffk' in conf['params']: conf['ffk'] = ff0.FF('k')
         if 'collinspi' in conf['params']: conf['collinspi'] = ff1.FF('pi')
-        if 'collinsk'  in conf['params']: conf['collinsk']  = ff1.FF('k')
+        if 'collinsk' in conf['params']: conf['collinsk'] = ff1.FF('k')
 
     def setup_sidis(self):
-        conf['sidis tabs']    = obslib.sidis.reader.READER().load_data_sets('sidis')
+        conf['sidis tabs'] = obslib.sidis.reader.READER().load_data_sets('sidis')
         self.sidisres = obslib.sidis.residuals.RESIDUALS()
 
         if (self.slave):
@@ -82,7 +82,7 @@ class RESMAN:
                 'sidis', self.sidisres.mproc)
 
     def setup_sia(self):
-        conf['sia tabs']    = obslib.sia.reader.READER().load_data_sets('sia')
+        conf['sia tabs'] = obslib.sia.reader.READER().load_data_sets('sia')
         conf['sia stfuncs'] = obslib.sia.stfuncs.STFUNCS()
         self.siares = obslib.sia.residuals.RESIDUALS()
 
@@ -103,7 +103,7 @@ class RESMAN:
                 'moments', self.momres.mproc)
 
     def setup_AN(self):
-        conf['AN tabs']   = obslib.AN_pp.reader.READER().load_data_sets('AN')
+        conf['AN tabs'] = obslib.AN_pp.reader.READER().load_data_sets('AN')
         conf['AN theory'] = obslib.AN_pp.AN_theory.ANTHEORY()
         self.ANres = obslib.AN_pp.residuals.RESIDUALS()
 

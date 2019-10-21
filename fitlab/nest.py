@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 from timeit import default_timer as timer
 from numpy import linalg as la
 from tools.config import conf
-from tools.tools import load, save,checkdir
+from tools.tools import load, save, checkdir
 import copy
 
 def lprint(msg):
@@ -92,7 +92,7 @@ class ELLIPSE:
         while 1:
             cnt += 1
             # if cnt%100==0:
-            #print '\nfixing cov attempts:',cnt
+            # print '\nfixing cov attempts:',cnt
             fake_samples = [
                 sample + np.random.randn(sigma.size) * sigma for sample in samples]
             cov = np.cov(np.transpose(fake_samples))
@@ -163,7 +163,7 @@ class ELLIPSE:
             # return self.fix_cov2(samples,cov)
 
             # print
-            #print 'cov is singular'
+            # print 'cov is singular'
             sys.exit()
 
     def gen_new_samples(self):
@@ -176,7 +176,7 @@ class ELLIPSE:
 
         # generate sphere samples
         Y = np.einsum('ij,nj->ni', self.F * self.T, X) + self.y0
-        #print Y[-10:]
+        # print Y[-10:]
         self.Y = [y for y in Y]
 
     def status(self):
@@ -432,7 +432,7 @@ class NEST:
 
         self.samples_nll = []
         self.samples_p = []
-        save(data, 'mcdata/'+fname)
+        save(data, 'mcdata/' + fname)
 
         self.block_cnt += 1
         self.block_size = 0

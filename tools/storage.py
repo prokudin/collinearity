@@ -15,7 +15,7 @@ class STORAGE(object):
 
         # create storage if not created
         if not os.path.exists(fname):
-            #print fname+' is been created !'
+            # print fname+' is been created !'
             self.storage = {}
         else:
             self.storage = load(fname)
@@ -30,7 +30,7 @@ class STORAGE(object):
     def register(self, func, x, Q2, name):
 
         if self.query(x, Q2) == False:
-            #print 'register x=%0.3e Q2=%0.3e at %s'%(x,Q2,name)
+            # print 'register x=%0.3e Q2=%0.3e at %s'%(x,Q2,name)
             key = self.gen_key(x, Q2)
             self.storage[key] = func(x, Q2)
 

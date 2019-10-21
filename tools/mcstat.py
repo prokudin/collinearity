@@ -5,7 +5,7 @@ import time
 import numpy as np
 import pylab as py
 import pandas as pd
-from .tools import load, save
+from tools import load, save
 from .config import load_config,conf
 from .inputmod import INPUTMOD
 
@@ -182,7 +182,6 @@ class parhist:
         if isave:
             py.savefig('hist_norm.pdf')
             py.close()
-
 
 
 

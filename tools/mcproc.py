@@ -3,7 +3,7 @@ import os
 import sys
 import time
 import argparse
-from .tools import load, save
+from tools import load, save
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
@@ -92,4 +92,3 @@ def impose_cdf_cut(mcdata,cdfcut):
   samples=samples[II]
 
   return weights,samples
-

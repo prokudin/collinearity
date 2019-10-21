@@ -2,14 +2,14 @@
 import sys
 import os
 import numpy as np
-from .tools.residuals import _RESIDUALS
-from .tools.config import conf
+from tools.residuals import _RESIDUALS
+from tools.config import conf
 #from obslib.sidis import upol0 as upol
-from .obslib.sidis import upol1 as upol # Let us use an approximate TMD evolution
-from .obslib.sidis import collins0 as collins
-from .obslib.sidis import sivers0 as sivers
-from .obslib.sidis import boermulders0 as boermulders
-from .obslib.idis.stfuncs import STFUNCS as DIS_STFUNCS
+from obslib.sidis import upol1 as upol # Let us use an approximate TMD evolution
+from obslib.sidis import collins0 as collins
+from obslib.sidis import sivers0 as sivers
+from obslib.sidis import boermulders0 as boermulders
+from obslib.idis.stfuncs import STFUNCS as DIS_STFUNCS
 
 class RESIDUALS(_RESIDUALS):
 
@@ -338,7 +338,6 @@ if __name__ == '__main__':
     print(conf['residuals'].get_residuals())
 
     #conf['residuals'].gen_report(verb=1, level=1)
-
 
 
 

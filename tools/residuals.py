@@ -2,7 +2,7 @@ from numpy.random import choice, randn
 import numpy as np
 from .multiproc import MULTIPROC
 from .config import conf
-from .tools import save
+from tools import save
 import copy
 
 

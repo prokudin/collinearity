@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import pandas as pd
-from .tools.reader import _READER
-from .tools.config import conf
-from .qcdlib.rfilter import Rfilter
+from tools.reader import _READER
+from tools.config import conf
+from qcdlib.rfilter import Rfilter
 
 class READER(_READER):
 

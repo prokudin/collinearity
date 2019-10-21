@@ -39,4 +39,3 @@ class INTERPOLATOR:
     def get_f(self,x,Q2):
         return np.array([self._get_f(iflav,x,Q2) for iflav in self.IFLAV])
 
-

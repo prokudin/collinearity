@@ -72,4 +72,3 @@ conf['datasets']['sidis']['filters']=["0.2<z<0.6 and Q2>1.69 and pT>0.2 and pT<0
 
 
 
-

@@ -1,15 +1,15 @@
 import sys,os
 import numpy as np
-from .tools.tools import checkdir,save,load
-from .tools.config import load_config, conf
+from tools.tools import checkdir,save,load
+from tools.config import load_config, conf
 import time
 from scipy.optimize import minimize,leastsq
 import json
-from .tools.bar import BAR
+from tools.bar import BAR
 import itertools as it
 import pandas as pd
 from IPython.display import clear_output
-from .tools.inputmod import INPUTMOD
+from tools.inputmod import INPUTMOD
 from scipy.optimize import least_squares
 
 class ML:
@@ -515,6 +515,5 @@ class ML:
     else:
       return hess
      
-
 
 

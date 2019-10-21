@@ -86,4 +86,3 @@ class MCSAMP:
         for i in range(nruns):
             fname = id_generator(size=6)
             self.single_run(fname, None)
-

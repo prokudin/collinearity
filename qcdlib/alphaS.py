@@ -3,7 +3,7 @@ import sys
 import os
 from auxiliary import AUX  # renamed from "aux"
 import numpy as np
-from .tools.config import conf
+from tools.config import conf
 
 
 class ALPHAS:

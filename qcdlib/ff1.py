@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import time
-from .tools.config import conf
-from .qcdlib.interpolator import INTERPOLATOR
-from .qcdlib.core import CORE
+from tools.config import conf
+from qcdlib.interpolator import INTERPOLATOR
+from qcdlib.core import CORE
 
 class FF(CORE):
     """

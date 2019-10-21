@@ -13,8 +13,8 @@ import warnings
 warnings.filterwarnings('ignore')
 from timeit import default_timer as timer
 from numpy import linalg as la
-from .tools.config import conf
-from .tools.tools import load, save,checkdir
+from tools.config import conf
+from tools.tools import load, save,checkdir
 import copy
 
 def lprint(msg):
@@ -454,7 +454,6 @@ class NEST:
                 self.results('%s-%d.mc' % (fname, self.block_cnt), cmd)
                 break
         print()
-
 
 
 

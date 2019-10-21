@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import time
-from .qcdlib.core import CORE
-from .qcdlib.interpolator import INTERPOLATOR
-from .tools.config import conf
+from qcdlib.core import CORE
+from qcdlib.interpolator import INTERPOLATOR
+from tools.config import conf
 
 class GK:
     """

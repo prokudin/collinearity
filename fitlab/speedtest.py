@@ -2,8 +2,8 @@ import sys
 import os
 import numpy as np
 from timeit import default_timer as timer
-from .tools.tools import lprint
-from .tools.config import conf
+from tools.tools import lprint
+from tools.config import conf
 
 
 class SPEEDTEST:

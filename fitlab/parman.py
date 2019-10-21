@@ -241,4 +241,3 @@ class PARMAN:
                     conf['collinsk'].shape2[iflav][ipar] = conf['params']['collinsk']['%s %s 2'%(flav,par)]['value']
         conf['collinsk'].setup()
 
-

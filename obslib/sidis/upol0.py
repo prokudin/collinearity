@@ -2,9 +2,9 @@
 import sys
 import os
 import numpy as np
-from .tools.tools import load_config
-from .qcdlib.auxiliary import AUX  # # renamed from "aux"
-from .tools.config import conf
+from tools.tools import load_config
+from qcdlib.auxiliary import AUX  # # renamed from "aux"
+from tools.config import conf
 
 eu2, ed2 = 4/9., 1/9.
 e2 = []
@@ -113,7 +113,6 @@ if __name__ == '__main__':
     print(get_FUU(x,z,Q2,pT,'d','pi+'))
     print(get_FUU(x,z,Q2,pT,'d','pi-'))
     print(get_FUU(x,z,Q2,pT,'d','pi0'))
-
 
 
 

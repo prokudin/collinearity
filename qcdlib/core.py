@@ -80,4 +80,3 @@ class CORE:
     def get_widths(self,Q2):
         s=np.log(Q2/conf['aux'].Q02 )
         return np.abs(self.widths1+s*self.widths2)
-

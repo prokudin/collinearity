@@ -6,15 +6,15 @@ from scipy.integrate import quad, simps
 from numpy import linalg as LA
 from scipy.stats import gaussian_kde
 import time
-import cPickle
+import pickle
 import pickle
 import zlib
 import warnings
 warnings.filterwarnings('ignore')
 from timeit import default_timer as timer
 from numpy import linalg as la
-from tools.config import conf
-from tools.tools import load, save,checkdir
+from .tools.config import conf
+from .tools.tools import load, save,checkdir
 import copy
 
 def lprint(msg):
@@ -27,13 +27,13 @@ def checkdir(path):
         os.makedirs(path)
 
 def save(data, name):
-    compressed = zlib.compress(cPickle.dumps(data))
+    compressed = zlib.compress(pickle.dumps(data))
     with open(name, "wb") as f:
         f.writelines(compressed)
 
 def load(name):
     with open(name, "rb") as compressed:
-        data = cPickle.loads(zlib.decompress(compressed.read()))
+        data = pickle.loads(zlib.decompress(compressed.read()))
     return data
 
 def load_snapshot(name):
@@ -147,7 +147,7 @@ class ELLIPSE:
         in the zero dimensions to fulfill the volume expected from
         ``pointvol``.
         """
-        print '\nfixing cov'
+        print('\nfixing cov')
         npoints = self.N
         expected_vol = np.exp(-self.iteration / float(npoints))
         pointvol = expected_vol / npoints
@@ -293,14 +293,14 @@ class NEST:
         q0 = np.copy(par)
         H0 = get_H(q0, par)
         while 1:
-            print 'hmc attempt', self.attempts
+            print('hmc attempt', self.attempts)
             p0 = randn(dim)
             p = np.copy(p0)
             q = np.copy(q0)
             p = p0 - delta / 2 * get_dU(q0)
             q = q0 + delta * p
             for i in range(steps):
-                print 'walking', i
+                print('walking', i)
                 p = p - delta * get_dU(q)
                 q = q + delta * get_dK(p)
             p = p - delta / 2 * get_dU(q)
@@ -408,18 +408,18 @@ class NEST:
         # stopping criterion
 
         if self.cnt == conf['itmax']:
-            print
-            print 'itmax reached'
+            print()
+            print('itmax reached')
             self.status = 'stop'
 
         elif conf['tol'] != None and rel < conf['tol']:
-            print
-            print 'tolernce %f reached' % conf['tol']
+            print()
+            print('tolernce %f reached' % conf['tol'])
             self.status = 'stop'
 
         elif self.block_size == conf['block size']:
-            print
-            print 'max block size reached. flushing'
+            print()
+            print('max block size reached. flushing')
             self.status = 'flush'
 
     def results(self, fname, cmd=None):
@@ -444,7 +444,7 @@ class NEST:
     def run(self, fname, cmd):
 
         t1 = timer()
-        print
+        print()
         while 1:
             t2 = timer()
             self.next((t2 - t1) / (60 * 60))
@@ -453,7 +453,7 @@ class NEST:
             if self.status == 'stop':
                 self.results('%s-%d.mc' % (fname, self.block_cnt), cmd)
                 break
-        print
+        print()
 
 
 

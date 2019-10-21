@@ -2,14 +2,14 @@
 import sys
 import os
 import numpy as np
-from tools.residuals import _RESIDUALS
-from tools.config import conf
+from .tools.residuals import _RESIDUALS
+from .tools.config import conf
 #from obslib.sidis import upol0 as upol
-from obslib.sidis import upol1 as upol # Let us use an approximate TMD evolution
-from obslib.sidis import collins0 as collins
-from obslib.sidis import sivers0 as sivers
-from obslib.sidis import boermulders0 as boermulders
-from obslib.idis.stfuncs import STFUNCS as DIS_STFUNCS
+from .obslib.sidis import upol1 as upol # Let us use an approximate TMD evolution
+from .obslib.sidis import collins0 as collins
+from .obslib.sidis import sivers0 as sivers
+from .obslib.sidis import boermulders0 as boermulders
+from .obslib.idis.stfuncs import STFUNCS as DIS_STFUNCS
 
 class RESIDUALS(_RESIDUALS):
 
@@ -87,7 +87,7 @@ class RESIDUALS(_RESIDUALS):
             thy = coeff * FUUcos2 / FUU
 
         else:
-            print 'ERR: exp=%d obs=%s and target=%s not implemented' % (k, obs, tar)
+            print('ERR: exp=%d obs=%s and target=%s not implemented' % (k, obs, tar))
             sys.exit()
 
         return k, i, thy
@@ -198,14 +198,14 @@ class RESIDUALS(_RESIDUALS):
             return L
         elif verb == 1:
             for l in L:
-                print l
+                print(l)
             return L
 
 if __name__ == '__main__':
 
-    from qcdlib.interpolator import INTERPOLATOR
-    from qcdlib import pdf0,ff0,pdf1,ff1,gk0
-    from qcdlib.auxiliary import AUX  # renamed from "aux"
+    from .qcdlib.interpolator import INTERPOLATOR
+    from .qcdlib import pdf0,ff0,pdf1,ff1,gk0
+    from .qcdlib.auxiliary import AUX  # renamed from "aux"
     from reader import READER
 
     conf['aux']    = AUX()
@@ -335,7 +335,7 @@ if __name__ == '__main__':
     conf['sidis tabs'] = READER().load_data_sets('sidis')
 
     conf['residuals']= RESIDUALS()
-    print conf['residuals'].get_residuals()
+    print(conf['residuals'].get_residuals())
 
     #conf['residuals'].gen_report(verb=1, level=1)
 

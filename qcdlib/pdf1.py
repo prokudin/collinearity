@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import time
-from qcdlib.core import CORE
-from qcdlib.interpolator import INTERPOLATOR
-from tools.config import conf
+from .qcdlib.core import CORE
+from .qcdlib.interpolator import INTERPOLATOR
+from .tools.config import conf
 
 class PDF(CORE):
     """
@@ -57,11 +57,11 @@ class PDF(CORE):
 
 if __name__ == '__main__':
 
-    from qcdlib.auxiliary import AUX  # renamed from "aux"
+    from .qcdlib.auxiliary import AUX  # renamed from "aux"
 
     conf['aux']  = AUX()
     conf['pdf']  = PDF()
 
     x = 0.15
     Q2 = 2.4
-    print conf['pdf'].get_C(x, Q2)
+    print(conf['pdf'].get_C(x, Q2))

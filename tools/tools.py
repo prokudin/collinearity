@@ -4,7 +4,7 @@ import os
 import numpy as np
 import time
 import fnmatch
-import cPickle
+import pickle
 import zlib
 
 
@@ -18,14 +18,14 @@ def tex(x):
 
 
 def save(data, name):
-    compressed = zlib.compress(cPickle.dumps(data))
+    compressed = zlib.compress(pickle.dumps(data))
     with open(name, "wb") as f:
         f.writelines(compressed)
 
 
 def load(name):
     with open(name, "rb") as compressed:
-        data = cPickle.loads(zlib.decompress(compressed.read()))
+        data = pickle.loads(zlib.decompress(compressed.read()))
     return data
 
 
@@ -40,7 +40,7 @@ def isnumeric(value):
 def load_config(fname):
     with open(fname) as f:
         for l in f:
-            exec l.replace('<<', '').replace('>>', '')
+            exec(l.replace('<<', '').replace('>>', ''))
     return conf
 
 

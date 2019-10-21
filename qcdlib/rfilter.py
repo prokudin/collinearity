@@ -171,4 +171,4 @@ if __name__ == '__main__':
     R0 = kin.get_R0(Q2)
     R1 = kin.get_R1(x, z, Q2, PhT, 'pi+')
     R2 = kin.get_R2(x, z, Q2, PhT, 'pi+')
-    print 'R0=', R0, 'R1=', R1, 'R2=', R2
+    print('R0=', R0, 'R1=', R1, 'R2=', R2)

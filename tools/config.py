@@ -13,5 +13,5 @@ def load_config(fname):
         L = f.readlines()
     D = {}
     for l in L:
-        exec l in D
+        exec(l, D)
     conf.update(D['conf'])

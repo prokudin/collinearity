@@ -55,7 +55,7 @@ def get_runs(path2mc,veto=[]):
   nll=np.array(nll)
   samples=np.array(samples)
   runs['all']={'samples':samples,'nll':nll,'num active points':nap,'name':'all','active p':active_p}
-  print 'original samples size =',len(samples)
+  print('original samples size =',len(samples))
   return runs
 
 def get_ordered_samples(nap,nll,samples):

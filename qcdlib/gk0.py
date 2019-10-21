@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import time
-from qcdlib.core import CORE
-from qcdlib.interpolator import INTERPOLATOR
-from tools.config import conf
+from .qcdlib.core import CORE
+from .qcdlib.interpolator import INTERPOLATOR
+from .tools.config import conf
 
 class GK:
     """
@@ -61,11 +61,11 @@ class GK:
 
 if __name__ == '__main__':
 
-    from qcdlib.auxiliary import AUX  # renamed from "aux"
+    from .qcdlib.auxiliary import AUX  # renamed from "aux"
 
     conf['aux']  = AUX()
     conf['gk']  = GK()
 
 
     Q2 = 2.4
-    print conf['gk'].get_gk(Q2)
+    print(conf['gk'].get_gk(Q2))

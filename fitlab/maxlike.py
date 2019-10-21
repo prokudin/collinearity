@@ -1,15 +1,15 @@
 import sys,os
 import numpy as np
-from tools.tools import checkdir,save,load
-from tools.config import load_config, conf
+from .tools.tools import checkdir,save,load
+from .tools.config import load_config, conf
 import time
 from scipy.optimize import minimize,leastsq
 import json
-from tools.bar import BAR
+from .tools.bar import BAR
 import itertools as it
 import pandas as pd
 from IPython.display import clear_output
-from tools.inputmod import INPUTMOD
+from .tools.inputmod import INPUTMOD
 from scipy.optimize import least_squares
 
 class ML:
@@ -71,7 +71,7 @@ class ML:
       else: data.append('')
       if i<nparstatus: data.append(parstatus[i])
       else: data.append('')
-      print '%-120s  | %s'%tuple(data)
+      print('%-120s  | %s'%tuple(data))
       
     
     if delay==True: 
@@ -240,7 +240,7 @@ class ML:
         try:
           os.system(conf['cmd'].replace('<<fname>>',fname))
         except:
-          print 'could not execute %s'%cmd
+          print('could not execute %s'%cmd)
 
   def run_test(self):
 
@@ -266,7 +266,7 @@ class ML:
     self.get_residuals(guess)
 
     for l in conf['resman'].gen_report(verb=0,level=1):
-      print l
+      print(l)
 
   def analysis(self):
     self.gen_report()
@@ -279,7 +279,7 @@ class ML:
     self.t0 = time.time()
     self.cnt=0
     self.get_residuals(par,status=False)
-    print conf['pdf'].sr
+    print(conf['pdf'].sr)
     report=conf['resman'].gen_report(verb=1,level=1)
     save(report,'%s/report-ML'%outdir)
 
@@ -337,8 +337,8 @@ class ML:
     xs =bin_center(data['axis'][0]['min'],data['axis'][0]['max'],data['axis'][0]['bins'])
     ys =bin_center(data['axis'][1]['min'],data['axis'][1]['max'],data['axis'][1]['bins'])
 
-    I=range(xs.size)
-    print 
+    I=list(range(xs.size))
+    print() 
     bar=BAR('generating json file',xs.size**2)
     for item in it.product(I,I):
       ix,iy=item
@@ -360,7 +360,7 @@ class ML:
       y=(Q2/2/x)/((s-M2)/2)
 
       if y<0 or y>1: 
-        bar.next()
+        next(bar)
         continue 
         
       YP=1+(1-y)**2
@@ -376,9 +376,9 @@ class ML:
       row='%10d %10d %10.4e %10.4e %10.4e %10.4e %10.4e %10.4e %10.4e'
       row=row%(ix,iy,x,y,Q2,F2,FL,F3,xsec)
       Tab.append(row)
-      bar.next()
+      next(bar)
     bar.finish()
-    print '\nsaving...'
+    print('\nsaving...')
     Tab=[row+'\n' for row in Tab]
     f = open("dis-jam.json",'w')
     f.writelines(Tab)
@@ -423,9 +423,9 @@ class ML:
     xs =bin_center(data['axis'][0]['min'],data['axis'][0]['max'],data['axis'][0]['bins'])
     ys =bin_center(data['axis'][1]['min'],data['axis'][1]['max'],data['axis'][1]['bins'])
 
-    IX=range(xs.size)
-    IY=range(ys.size)
-    print 
+    IX=list(range(xs.size))
+    IY=list(range(ys.size))
+    print() 
     bar=BAR('generating json file',xs.size**2)
     for item in it.product(IX,IY):
       ix,iy=item
@@ -447,7 +447,7 @@ class ML:
       y=(Q2/2/x)/((s-M2)/2)
 
       if y<0 or y>1: 
-        bar.next()
+        next(bar)
         continue 
         
       YP=1+(1-y)**2
@@ -465,9 +465,9 @@ class ML:
       row='%10d %10d %10.4e %10.4e %10.4e %10.4e %10.4e '
       row=row%(ix,iy,xsec,xsec*0.05,x,y,Q2)
       Tab.append(row)
-      bar.next()
+      next(bar)
     bar.finish()
-    print '\nsaving...'
+    print('\nsaving...')
     Tab=[row+'\n' for row in Tab]
     f = open("jam.dat",'w')
     f.writelines(Tab)
@@ -497,7 +497,7 @@ class ML:
       else:
         fit=leastsq(lambda p: self.get_residuals(p,False,True),guess,full_output = 1)
       save(fit[0],'%s/rep%d.dat'%(outputdir,i))
-      bar.next()
+      next(bar)
     bar.finish()
 
   def hessian(self):

@@ -270,7 +270,7 @@ class _RESIDUALS:
             return L
         elif verb == 1:
             for l in L:
-                print l
+                print(l)
 
     def ___save_results(self, path):
         save(self.tabs, path)

@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import pandas as pd
-from tools.reader import _READER
-from tools.config import conf
-from qcdlib.rfilter import Rfilter
+from .tools.reader import _READER
+from .tools.config import conf
+from .qcdlib.rfilter import Rfilter
 
 class READER(_READER):
 
@@ -135,11 +135,11 @@ if __name__ == "__main__":
 
     conf['datasets']['sidis']['filters'] = {}
     conf['datasets']['sidis']['filters'][1] = {}
-    conf['datasets']['sidis']['filters'][1]['list'] = range(1000, 2000)
+    conf['datasets']['sidis']['filters'][1]['list'] = list(range(1000, 2000))
     conf['datasets']['sidis']['filters'][1]['cond'] = []
     conf['datasets']['sidis']['filters'][1]['cond'].append("z<0.6")
     conf['datasets']['sidis']['filters'][1]['cond'].append("Q2>1.69")
     conf['datasets']['sidis']['filters'][1]['cond'].append("pT>0.2 and pT<0.9")
 
     TAB = READER().load_data_sets('sidis')
-    print TAB
+    print(TAB)

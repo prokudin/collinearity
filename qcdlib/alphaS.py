@@ -3,7 +3,7 @@ import sys
 import os
 from auxiliary import AUX  # renamed from "aux"
 import numpy as np
-from tools.config import conf
+from .tools.config import conf
 
 
 class ALPHAS:
@@ -96,15 +96,15 @@ if __name__ == '__main__':
     conf['aux'] = AUX()
     aS = ALPHAS()
 
-    print '========================'
-    print 'test alphaS evolution'
-    print '========================'
-    print 'Q2=1           alphaS=%0.5f' % aS.get_alphaS(1.0)
-    print 'Q2=(1+mc2)/2   alphaS=%0.5f' % aS.get_alphaS(0.5 * (1.0 + aS.aux.mc2))
-    print 'Q2=mc2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mc2)
-    print 'Q2=(mc2+mb2)/2 alphaS=%0.5f' % aS.get_alphaS(0.5 *
-                                                        (aS.aux.mc2 + aS.aux.mb2))
-    print 'Q2=mb2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mb2)
-    print 'Q2=(mb2+mZ2)/2 alphaS=%0.5f' % aS.get_alphaS(0.5 *
-                                                        (aS.aux.mb2 + aS.aux.mZ2))
-    print 'Q2=mZ2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mZ2)
+    print('========================')
+    print('test alphaS evolution')
+    print('========================')
+    print('Q2=1           alphaS=%0.5f' % aS.get_alphaS(1.0))
+    print('Q2=(1+mc2)/2   alphaS=%0.5f' % aS.get_alphaS(0.5 * (1.0 + aS.aux.mc2)))
+    print('Q2=mc2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mc2))
+    print('Q2=(mc2+mb2)/2 alphaS=%0.5f' % aS.get_alphaS(0.5 *
+                                                        (aS.aux.mc2 + aS.aux.mb2)))
+    print('Q2=mb2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mb2))
+    print('Q2=(mb2+mZ2)/2 alphaS=%0.5f' % aS.get_alphaS(0.5 *
+                                                        (aS.aux.mb2 + aS.aux.mZ2)))
+    print('Q2=mZ2         alphaS=%0.5f' % aS.get_alphaS(aS.aux.mZ2))

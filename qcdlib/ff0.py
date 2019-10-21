@@ -3,9 +3,9 @@ import sys
 import os
 import numpy as np
 import time
-from tools.config import conf
-from qcdlib.interpolator import INTERPOLATOR
-from qcdlib.core import CORE
+from .tools.config import conf
+from .qcdlib.interpolator import INTERPOLATOR
+from .qcdlib.core import CORE
 
 class FF(CORE):
     """
@@ -56,7 +56,7 @@ class FF(CORE):
 
 if __name__ == '__main__':
 
-    from qcdlib.auxiliary import AUX  # renamed from "aux"
+    from .qcdlib.auxiliary import AUX  # renamed from "aux"
     conf['aux']    = AUX()
 
     conf['ffpi'] = FF('pi')
@@ -64,8 +64,8 @@ if __name__ == '__main__':
 
     z = 0.15
     Q2 = 2.4
-    print conf['ffpi'].get_C(z, Q2)
-    print conf['ffk'].get_C(z, Q2)
+    print(conf['ffpi'].get_C(z, Q2))
+    print(conf['ffk'].get_C(z, Q2))
 
 
 

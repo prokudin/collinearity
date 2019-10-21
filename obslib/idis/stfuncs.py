@@ -4,10 +4,10 @@ import pylab as py
 from scipy.special import gamma
 from scipy.integrate import quad as _quad
 from scipy.integrate import fixed_quad
-from qcdlib.auxiliary import AUX  # renamed from "aux"
-from qcdlib.alphaS import ALPHAS
-from qcdlib.interpolator import INTERPOLATOR
-from tools.config import conf
+from .qcdlib.auxiliary import AUX  # renamed from "aux"
+from .qcdlib.alphaS import ALPHAS
+from .qcdlib.interpolator import INTERPOLATOR
+from .tools.config import conf
 
 class STFUNCS:
 
@@ -110,9 +110,9 @@ if __name__ == '__main__':
 
     x = 0.5
     Q2 = 1000.
-    print stfuncs.get_F2(x,Q2,'p',method='gauss')
-    print stfuncs.get_F2(x,Q2,'n',method='gauss')
-    print stfuncs.get_F2(x,Q2,'d',method='gauss')
+    print(stfuncs.get_F2(x,Q2,'p',method='gauss'))
+    print(stfuncs.get_F2(x,Q2,'n',method='gauss'))
+    print(stfuncs.get_F2(x,Q2,'d',method='gauss'))
 
 
 

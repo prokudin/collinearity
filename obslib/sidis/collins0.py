@@ -2,9 +2,9 @@
 import sys
 import os
 import numpy as np
-from tools.tools import load_config
-from qcdlib.auxiliary import AUX  # renamed from "aux"
-from tools.config import conf
+from .tools.tools import load_config
+from .qcdlib.auxiliary import AUX  # renamed from "aux"
+from .tools.config import conf
 
 eu2, ed2 = 4/9., 1/9.
 e2 = []
@@ -93,8 +93,8 @@ def get_FUT(x,z,Q2,pT,tar,had):
 
 if __name__ == '__main__':
 
-    from qcdlib.pdf1 import PDF
-    from qcdlib.ff1 import FF
+    from .qcdlib.pdf1 import PDF
+    from .qcdlib.ff1 import FF
     conf['aux']= AUX()
     conf['transversity']=PDF()
     conf['collinspi']=FF('pi')
@@ -108,17 +108,17 @@ if __name__ == '__main__':
     tar = 'p'
     had = 'pi+'
 
-    print get_FUT(x,z,Q2,pT,'p','pi+')
-    print get_FUT(x,z,Q2,pT,'p','pi-')
-    print get_FUT(x,z,Q2,pT,'p','pi0')
+    print(get_FUT(x,z,Q2,pT,'p','pi+'))
+    print(get_FUT(x,z,Q2,pT,'p','pi-'))
+    print(get_FUT(x,z,Q2,pT,'p','pi0'))
 
-    print get_FUT(x,z,Q2,pT,'n','pi+')
-    print get_FUT(x,z,Q2,pT,'n','pi-')
-    print get_FUT(x,z,Q2,pT,'n','pi0')
+    print(get_FUT(x,z,Q2,pT,'n','pi+'))
+    print(get_FUT(x,z,Q2,pT,'n','pi-'))
+    print(get_FUT(x,z,Q2,pT,'n','pi0'))
 
-    print get_FUT(x,z,Q2,pT,'d','pi+')
-    print get_FUT(x,z,Q2,pT,'d','pi-')
-    print get_FUT(x,z,Q2,pT,'d','pi0')
+    print(get_FUT(x,z,Q2,pT,'d','pi+'))
+    print(get_FUT(x,z,Q2,pT,'d','pi-'))
+    print(get_FUT(x,z,Q2,pT,'d','pi0'))
 
 
 

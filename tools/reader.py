@@ -3,8 +3,8 @@ import sys
 import os
 import numpy as np
 import pandas as pd
-from tools import isnumeric
-from config import conf
+from .tools import isnumeric
+from .config import conf
 
 
 class _READER:
@@ -15,7 +15,8 @@ class _READER:
     def apply_cuts(self, tab, k):
         if 'filters' in conf['datasets'][self.reaction]:
             filters = conf['datasets'][self.reaction]['filters']
-            for _ in filters: tab = tab.query(_)
+            for _ in filters:
+                tab = tab.query(_)
         return tab
 
     def load_data_sets(self, reaction):

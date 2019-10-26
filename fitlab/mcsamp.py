@@ -1,10 +1,7 @@
-import os
 import numpy as np
-from tools.tools import load, save, checkdir
 from tools.config import conf
 from tools.randomstr import id_generator
-import nest
-from multiprocessing import Process, Queue, Pool, Pipe
+from . import nest
 
 
 class MCSAMP:
@@ -43,7 +40,8 @@ class MCSAMP:
             plims.append([pmin, pmax])
         return plims
 
-    def single_run(self, path, nestout, factor=2, kappa=1, tol=1e-10, itmax=10, sample_size=1000, method='cov', nll_shift=0):
+    def single_run(self, path, nestout, factor=2, kappa=1, tol=1e-10, itmax=10,
+                   sample_size=1000, method='cov', nll_shift=0):
 
         # set nest params if not specified in conf
         if 'factor' not in conf:
@@ -68,8 +66,8 @@ class MCSAMP:
         conf['par lims'] = self.get_par_lims()
         conf['num points'] = int(npar * conf['factor'])
 
-        par = conf['parman'].par
-        res = self.get_residuals(par)
+        # par = conf['parman'].par
+        # res = self.get_residuals(par)
         conf['nll shift'] = 0  # 0.5*(len(res)+conf['nll shift'])
 
         if 'cmd' in conf:

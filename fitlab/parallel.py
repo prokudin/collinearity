@@ -1,19 +1,17 @@
 from collections import namedtuple, deque
 from multiprocessing import Process, current_process
 from timeit import default_timer as timer
-import logging
 import psutil
 import zmq
-import cPickle as pickle
+import pickle
 import numpy as np
 import socket
 import time
-import os
 from tools.config import conf
 try:
-  import mkl
-except:
-  pass
+    import mkl
+except Exception:
+    pass
 
 use_pickles = False
 
@@ -25,14 +23,18 @@ ZMQ_ROUTER = zmq.ROUTER  # @UndefinedVariable
 ZMQ_POLLIN = zmq.POLLIN  # @UndefinedVariable
 ZMQ_ROUTER_MANDATORY = zmq.ROUTER_MANDATORY  # @UndefinedVariable
 
+
 def Server(ip):
     return ZmqServer(ip)
+
 
 def Worker(ip):
     return ZmqWorker(ip)
 
+
 def Broker(partition=None):
     return ZmqBroker(partition)
+
 
 class ZmqBroker(object):
 
@@ -53,7 +55,7 @@ class ZmqBroker(object):
         backend = context.socket(ZMQ_ROUTER)
         backend.bind("tcp://*:55551")
         backend.router_mandatory = 1
-        #backend.setsockopt(ZMQ_ROUTER_MANDATORY, 1)
+        # backend.setsockopt(ZMQ_ROUTER_MANDATORY, 1)
 
         # Idle workers
         ready_workers = deque()
@@ -81,13 +83,14 @@ class ZmqBroker(object):
                 worker, _, client = request[:3]
                 ready_workers.append(worker)
 
-                # If this is a result message as opposed to a ready message, it will
-                # contain more than three parts
+                # If this is a result message as opposed to a ready message,
+                # it will contain more than three parts.
                 if len(request) > 3:
                     _, sn, result = request[3:]
                     results[client].append(result)
 
-                    # If all workers have generated results, we can pass them to the client
+                    # If all workers have generated results,
+                    # we can pass them to the client.
                     if len(results[client]) == self.partition:
                         msg = [client, '']
                         msg.extend(results[client])
@@ -108,9 +111,11 @@ class ZmqBroker(object):
                 client, request, offset = pending_work[0]
                 serial += 1
                 try:
-                    backend.send_multipart([worker, '', client, '', repr(serial), repr(
-                        offset), repr(self.partition), request], copy=True)
-                except zmq.ZMQError as e:
+                    backend.send_multipart([worker, '', client, '',
+                                            repr(serial), repr(offset),
+                                            repr(self.partition), request],
+                                           copy=True)
+                except zmq.ZMQError:
                     continue
                 offset += 1
                 if offset < self.partition:
@@ -128,6 +133,7 @@ class ZmqBroker(object):
         if self.process:
             self.process.terminate()
             self.process.join(3)
+
 
 class ZmqServer(object):
 
@@ -151,7 +157,8 @@ class ZmqServer(object):
 
         t = timer()
         state_tuples = []
-        for x in ['pdf','gk','transversity','ffpi','ffk', 'collinspi','collinsk']:
+        for x in ['pdf', 'gk', 'transversity', 'ffpi', 'ffk', 'collinspi',
+                  'collinsk']:
             if x in conf:
                 state_tuples.append((x, conf[x].get_state()))
         state = pickle.dumps(state_tuples, pickle.HIGHEST_PROTOCOL)
@@ -183,17 +190,19 @@ class ZmqServer(object):
                 self.received = True
                 self.load_times.append(timer() - t)
             t = timer()
-            tuples = [(mproc.data[i][0], mproc.data[i][1], self.theory[first + i])
+            tuples = [(mproc.data[i][0], mproc.data[i][1],
+                       self.theory[first + i])
                       for i in range(len(mproc.data))]
             self.store_times.append(timer() - t)
             self.mproc_times.append(timer() - a)
 
-            #verify = mproc.singlecore()
-            #verify.sort(key = lambda x: x[1])
-            #tuples.sort(key = lambda x: x[1])
+            # verify = mproc.singlecore()
+            # verify.sort(key = lambda x: x[1])
+            # tuples.sort(key = lambda x: x[1])
             # for i in range(len(verify)):
-            #    if verify[i] != tuples[i]:
-            #        logging.warn("Mismatch parallel [%d] %s != %s",i,verify[i],tuples[i])
+            #     if verify[i] != tuples[i]:
+            #         logging.warn("Mismatch parallel [%d] %s != %s",
+            #                      i,verify[i],tuples[i])
             return tuples
 
         Wrapper = namedtuple('Wrapper', 'run')
@@ -201,6 +210,7 @@ class ZmqServer(object):
 
     def finis(self):
         pass
+
 
 class ZmqWorker(object):
 
@@ -224,9 +234,10 @@ class ZmqWorker(object):
                       [0] + ':' + current_process().name)
 
         while True:
-            address, _, serial, offset, stride, blob = worksock.recv_multipart()
+            address, _, serial, offset, stride, blob = \
+                worksock.recv_multipart()
             serial = int(serial)
-            if stride == None:
+            if stride is None:
                 break
             offset, stride = int(offset), int(stride)
             state_tuples = pickle.loads(blob)
@@ -241,9 +252,7 @@ class ZmqWorker(object):
             r = np.array(results, dtype=np.float64)
             worksock.send_multipart([address, '', repr(serial), r])
 
-
     def run(self):
-
         if 'nprocs' in conf:
             nprocs = conf['nprocs']
         else:

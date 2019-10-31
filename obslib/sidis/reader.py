@@ -35,9 +35,9 @@ class READER(_READER):
             Mh = conf['aux'].Mk
 
 # Our educated guesses:
-        kf2      = 0.3**2
-        ki2      = 0.3**2
-        deltakT  = 0.3 
+        kf2 = 0.3**2
+        ki2 = 0.3**2
+        deltakT = 0.3 
         deltakT2 = deltakT**2
         MiT = 0.5
         MfT = 0.5
@@ -45,12 +45,12 @@ class READER(_READER):
 
         MhT = np.sqrt(Mh**2 + pT**2)
         
-        #xn
+        # xn
         xn = 2 * x / (1 + np.sqrt(1 + 4 * x**2 * M2 / Q2))
 
-        #y produced hadron check!!!!
+        # y produced hadron check!!!!
         yh = np.log(Q * zh * (Q2 - xn**2 * M2) / (2 * M2 * xn**2 * MhT)
-            -  Q / (xn * M) * np.sqrt(zh**2 * (Q2 - xn**2 * M2)**2
+            - Q / (xn * M) * np.sqrt(zh**2 * (Q2 - xn**2 * M2)**2
                                         / (4 * M2 * xn**2 * MhT**2) - 1))
         # y proton
         yp = 0.5 * np.log(Q2 / xn**2 / M2)
@@ -59,17 +59,17 @@ class READER(_READER):
         dy = yp - yh
         
         # zn
-        zn =  xn * zh/ (2 * x) * ( 1. + np.sqrt( 1.- 4. *  M2 * MhT**2 * x**2 /  ( Q2**2 * zh**2) ) )
+        zn = xn * zh / (2 * x) * (1. + np.sqrt(1. - 4. * M2 * MhT**2 * x**2 / (Q2**2 * zh**2)))
 
         
-        yi = np.log(Q/MiT)
-        yf = -np.log(Q/MfT)
+        yi = np.log(Q / MiT)
+        yf = -np.log(Q / MfT)
 
-        R = np.sqrt( (MfT/MiT * (np.exp(yf-yh) + np.exp(yh-yf))/(np.exp(yi-yh)-np.exp(yh-yi)))**2 )
+        R = np.sqrt((MfT / MiT * (np.exp(yf - yh) + np.exp(yh - yf)) / (np.exp(yi - yh) - np.exp(yh - yi)))**2)
 
-        znhat = zn/zh # Educated guess
+        znhat = zn / zh  # Educated guess
         
-        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf)) - znhat/zn * pT**2 - pT * deltakT
+        Ph_kf = 0.5 * MhT * MfT * (np.exp(yf - yh) + np.exp(yh - yf)) - znhat / zn * pT**2 - pT * deltakT
         Ph_ki = 0.5 * MhT * MiT * (np.exp(yi - yh) - np.exp(yh - yi)) - pT * deltakT
         R1 = np.abs(Ph_kf / Ph_ki)
 
@@ -83,8 +83,8 @@ class READER(_READER):
         #tab['R1'] = pd.Series(R1,index=tab.index)
         
         
-        tab['R'] = pd.Series(R,index=tab.index)
-        tab['lnR'] = pd.Series(np.log(R),index=tab.index)
+        tab['R'] = pd.Series(R, index=tab.index)
+        tab['lnR'] = pd.Series(np.log(R), index=tab.index)
         return tab
         
     def get_ratios(self, tab, k):
@@ -103,14 +103,14 @@ class READER(_READER):
         R1 = kin.get_R1(x, zh, Q2, pT, hadron)
         R2 = kin.get_R2(x, zh, Q2, pT, hadron)
         
-        xn=kin.get_xn(x, Q2) 
-        zn=kin.get_zn(x, zh, Q2, pT, hadron)
+        xn = kin.get_xn(x, Q2) 
+        zn = kin.get_zn(x, zh, Q2, pT, hadron)
         
-        qT = pT/zn
+        qT = pT / zn
         
-        tab['R0'] = pd.Series(R0,index=tab.index)
-        tab['R1'] = pd.Series(R1,index=tab.index)
-        tab['R2'] = pd.Series(R2,index=tab.index)
+        tab['R0'] = pd.Series(R0, index=tab.index)
+        tab['R1'] = pd.Series(R1, index=tab.index)
+        tab['R2'] = pd.Series(R2, index=tab.index)
         tab['zn'] = pd.Series(zn, index=tab.index)
         tab['xn'] = pd.Series(zn, index=tab.index)
         tab['qT'] = pd.Series(qT, index=tab.index)
@@ -135,11 +135,11 @@ if __name__ == "__main__":
 
     conf['datasets']['sidis']['filters'] = {}
     conf['datasets']['sidis']['filters'][1] = {}
-    conf['datasets']['sidis']['filters'][1]['list'] = range(1000, 2000)
+    conf['datasets']['sidis']['filters'][1]['list'] = list(range(1000, 2000))
     conf['datasets']['sidis']['filters'][1]['cond'] = []
     conf['datasets']['sidis']['filters'][1]['cond'].append("z<0.6")
     conf['datasets']['sidis']['filters'][1]['cond'].append("Q2>1.69")
     conf['datasets']['sidis']['filters'][1]['cond'].append("pT>0.2 and pT<0.9")
 
     TAB = READER().load_data_sets('sidis')
-    print TAB
+    print(TAB)

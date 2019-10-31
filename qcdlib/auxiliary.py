@@ -64,14 +64,14 @@ class AUX:
         self.alphaSMZ = 0.118
 
     def set_evolution(self):
-        self.Q02=1.0
-        self.lam2=0.4
+        self.Q02 = 1.0
+        self.lam2 = 0.4
 
     def p2n(self, p):
-        return np.copy(p[[0,3,4,1,2,5,6,7,8,9,10]])
+        return np.copy(p[[0, 3, 4, 1, 2, 5, 6, 7, 8, 9, 10]])
 
-    def charge_conj(self,p):
-        return np.copy(p[[0,2,1,4,3,6,5,8,7,10,9]])
+    def charge_conj(self, p):
+        return np.copy(p[[0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9]])
 
     def pip2piz(self, pip):
         piz = np.copy(pip)
@@ -84,7 +84,5 @@ class AUX:
         piz[3] = 0.5 * (d + db)
         piz[4] = 0.5 * (d + db)
         return piz
-
-
 
 

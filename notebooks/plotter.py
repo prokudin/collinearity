@@ -499,8 +499,8 @@ class Plotter(object):
                     
                     # Theory error coridor
                     ax.fill_between(data_z[self.col_lab],
-                            data_z["thy"]-data_z["dthy"],data_z["thy"]+data_z["dthy"],
-                            color=thy_colors[k % nthy_colors],alpha=0.5,
+                            data_z["thy"] - data_z["dthy"], data_z["thy"] + data_z["dthy"],
+                            color=thy_colors[k % nthy_colors], alpha=0.5,
                             **self.thy_plot_kw)
  
                 ax.relim()

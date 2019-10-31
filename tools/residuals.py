@@ -57,7 +57,7 @@ class _RESIDUALS:
                     self.reaction, k)
                 raise ValueError(msg)
             elif len(norm) == 1:
-                #print '%d has norm uncertainty'%k
+                # print '%d has norm uncertainty'%k
                 dN = self.tabs[k][norm[0]][0] / self.tabs[k]['value'][0]
                 conf['datasets'][self.reaction]['norm'][k]['dN'] = dN
             elif len(norm) == 0:
@@ -131,7 +131,6 @@ class _RESIDUALS:
     # residuals
 
     def _get_residuals(self, k):
-        npts = len(self.tabs[k]['value'])
         exp = self.tabs[k]['value']
         if k in conf['datasets'][self.reaction]['norm']:
             norm = conf['datasets'][self.reaction]['norm'][k]['value']
@@ -154,7 +153,7 @@ class _RESIDUALS:
             B = np.einsum('ki,i,i->k', beta, exp - thy, 1 / alpha**2)
             try:
                 r = np.einsum('kl,l->k', np.linalg.inv(A), B)
-            except:
+            except Exception:
                 r = np.zeros(len(beta))
             shift = np.einsum('k,ki->i', r, beta)
             for i in range(ncorr):
@@ -190,7 +189,6 @@ class _RESIDUALS:
 
     def get_theory(self):
         output = self.mproc.run()
-        THY = []
         for entry in output:
             k, i, thy = entry
             self.tabs[k]['thy'][i] = thy
@@ -221,7 +219,7 @@ class _RESIDUALS:
         verb = 0: Do not print on screen. Only return list of strings
         verv = 1: print on screen the report
         level= 0: only the total chi2s
-        level= 1: include point by point 
+        level= 1: include point by point
         """
 
         L = []
@@ -262,7 +260,8 @@ class _RESIDUALS:
                         chi2 = -res**2
                     else:
                         chi2 = res**2
-                    msg = '%7s %7s x=%10.3e Q2=%10.3e exp=%10.3e alpha=%10.3e thy=%10.3e shift=%10.3e chi2=%10.3f'
+                    msg = ("%7s %7s x=%10.3e Q2=%10.3e exp=%10.3e alpha=%10.3e"
+                           " thy=%10.3e shift=%10.3e chi2=%10.3f")
                     L.append(msg %
                              (col, obs, x, Q2, exp, alpha, thy, shift, chi2))
 
@@ -270,7 +269,7 @@ class _RESIDUALS:
             return L
         elif verb == 1:
             for l in L:
-                print l
+                print(l)
 
     def ___save_results(self, path):
         save(self.tabs, path)

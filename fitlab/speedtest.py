@@ -24,9 +24,9 @@ class SPEEDTEST:
             R = np.random.randn(len(parman.par))
             par = parman.par + 1e-3 * R
             res, rres, nres = resman.get_residuals(par)
-        print '\nt-elapsed (sec): ', (timer() - a) / 10
-        print 'npts=%d' % res.size
-        print 'chi2=%f' % np.sum(res**2)
-        print 'chi2/npts=%f' % (np.sum(res**2) / res.size)
-        print 'chi2(r)=%f' % np.sum(rres**2)
-        print 'chi2(norm)=%f' % np.sum(nres**2)
+        print('\nt-elapsed (sec): ', (timer() - a) / 10)
+        print('npts=%d' % res.size)
+        print('chi2=%f' % np.sum(res**2))
+        print('chi2/npts=%f' % (np.sum(res**2) / res.size))
+        print('chi2(r)=%f' % np.sum(rres**2))
+        print('chi2(norm)=%f' % np.sum(nres**2))

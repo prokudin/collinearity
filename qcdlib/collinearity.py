@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collections import namedtuple
+from functools import lru_cache
 import numpy as np
 
 _DEFAULTS = {
@@ -40,6 +41,7 @@ _Collinearity = namedtuple("_Collinearity",
 class Collinearity(_Collinearity):
     __slots__ = ()
 
+    @lru_cache(maxsize=None)
     def __new__(cls, **kwargs):
         diff = kwargs.keys() - _DEFAULTS.keys()
 

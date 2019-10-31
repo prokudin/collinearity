@@ -2,7 +2,7 @@
 from collections import namedtuple
 import numpy as np
 
-defaults = {
+_DEFAULTS = {
     "M": 0.938,
     "MJ": 0.3,
     "MX": 1.3,
@@ -18,7 +18,7 @@ defaults = {
     "ki": 0.3
 }
 
-derived = {
+_DERIVED = {
     "M2": lambda x: x["M"] ** 2,
     "MfT": lambda x: x["MfT2"] ** 0.5,
     "Mh2": lambda x: (0.135 ** 2 if x["hadron"] in ("pi+", "pi-", "pi0") else
@@ -34,22 +34,22 @@ derived = {
 # MfT = np.sqrt(kT ** 2 + MJ ** 2 + deltaM ** 2)  # XXX: use which?
 
 _Collinearity = namedtuple("_Collinearity",
-                           sorted(defaults.keys() | derived.keys()))
+                           sorted(_DEFAULTS.keys() | _DERIVED.keys()))
 
 
 class Collinearity(_Collinearity):
     __slots__ = ()
 
     def __new__(cls, **kwargs):
-        diff = kwargs.keys() - defaults.keys()
+        diff = kwargs.keys() - _DEFAULTS.keys()
 
         if diff:
             raise ValueError("Invalid Keyword: '{0}'".format(sorted(diff)[0]))
 
-        d = defaults.copy()
+        d = _DEFAULTS.copy()
         d.update(kwargs)
 
-        for key, func in derived.items():
+        for key, func in _DERIVED.items():
             d[key] = func(d)
 
         return super().__new__(Collinearity, **d)
@@ -127,6 +127,7 @@ class Collinearity(_Collinearity):
 
     # R2, Eq. (4.17)
     def get_R2(self, x, z, Q2, PhT):
+        """Collinearity ratio defined in the paper Eq. (4.17)"""
         zn = self.get_zn(x, z, Q2, PhT)
         znhat = zn / z
         qT = -PhT / zn

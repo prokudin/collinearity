@@ -40,7 +40,7 @@ if __name__=="__main__":
 	M_ki = np.random.uniform(0,0.1,N)
 	M_kf = np.random.uniform(0,0.1,N)
 	affinity = get_affinity(M,M_h,x_bj,z_h,eta,Q,q_t,xi,zeta,delta_k_t,k_i_t,M_ki,M_kf)
-	print affinity
+	print(affinity)
 
 
 

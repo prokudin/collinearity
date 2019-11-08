@@ -41,7 +41,7 @@ def get_tab():
         M_h=.14
 
 
-        N = 1000
+        N = 3
         xi = np.random.uniform(x-.1,x+.1,N)
         zeta = np.random.uniform(z-.1,z+.1,N)
         delta_k_t = np.random.uniform(0.3,0.4,N)

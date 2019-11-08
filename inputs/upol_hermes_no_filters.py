@@ -52,21 +52,17 @@ conf['datasets'] = {}
 conf['datasets']['sidis'] = {}
 
 conf['datasets']['sidis']['xlsx'] = {}
-conf['datasets']['sidis']['xlsx'][1000] = 'sidis/expdata/1000.xlsx'  # |  proton   | pi+   | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1001] = 'sidis/expdata/1001.xlsx'  # |  proton   | pi-   | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1004] = 'sidis/expdata/1004.xlsx'  # |  deuteron | pi+   | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1005] = 'sidis/expdata/1005.xlsx'  # |  deuteron | pi-   | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1002] = 'sidis/expdata/1002.xlsx'  # |  proton   | k+    | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1003] = 'sidis/expdata/1003.xlsx'  # |  proton   | k-    | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1006] = 'sidis/expdata/1006.xlsx'  # |  deuteron | k+    | M_Hermes | hermes 
-conf['datasets']['sidis']['xlsx'][1007] = 'sidis/expdata/1007.xlsx'  # |  deuteron | k-    | M_Hermes | hermes 
+conf['datasets']['sidis']['xlsx'][1000] = 'sidis/expdata/1000.xlsx'  # |  proton   | pi+   | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1001] = 'sidis/expdata/1001.xlsx'  # |  proton   | pi-   | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1004] = 'sidis/expdata/1004.xlsx'  # |  deuteron | pi+   | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1005] = 'sidis/expdata/1005.xlsx'  # |  deuteron | pi-   | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1002] = 'sidis/expdata/1002.xlsx'  # |  proton   | k+    | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1003] = 'sidis/expdata/1003.xlsx'  # |  proton   | k-    | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1006] = 'sidis/expdata/1006.xlsx'  # |  deuteron | k+    | M_Hermes | hermes
+conf['datasets']['sidis']['xlsx'][1007] = 'sidis/expdata/1007.xlsx'  # |  deuteron | k-    | M_Hermes | hermes
 
 conf['datasets']['sidis']['norm'] = {}
-for idx in conf['datasets']['sidis']['xlsx']: conf['datasets']['sidis']['norm'][idx] = {'value': 1, 'fixed': True, 'min': 0, 'max': 1} 
+for idx in conf['datasets']['sidis']['xlsx']: conf['datasets']['sidis']['norm'][idx] = {'value': 1, 'fixed': True, 'min': 0, 'max': 1}
 
-conf['datasets']['sidis']['filters'] = [""]
-
-
-
-
-
+# fake filter (all-inclusive)
+conf['datasets']['sidis']['filters'] = ["index == index"]

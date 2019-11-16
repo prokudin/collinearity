@@ -19,8 +19,17 @@ get_etamax=lambda M,M_h,x_bj,z_h,eta,Q,T_t,xi,zeta,delta_k_t,k_i_t,M_ki,M_kf: (l
 get_eta = lambda M,M_h,x_bj,z_h,Q,T_t: log(((Q*z_h*(Q**2 -(2*Q*x_bj/(Q + sqrt(4*M**2*x_bj**2 + Q**2)))**2*M**2))/(2*(2*Q*x_bj/(Q + sqrt(4*M**2*x_bj**2 + Q**2)))**2*sqrt(M_h**2 + T_t**2*z_h**2)))+(Q/((2*Q*x_bj/(Q + sqrt(4*M**2*x_bj**2 + Q**2)))*M))*(sqrt((z_h**2*(Q**2-(2*Q*x_bj/(Q + sqrt(4*M**2*x_bj**2 + Q**2)))**2*M**2)**2)/(4*(2*Q*x_bj/(Q + sqrt(4*M**2*x_bj**2 + Q**2)))**2*M**2*(M_h**2+z_h**2*T_t**2))-1)))
 
 
+# Nachtmann x
+def xnac(xb,Mpp,QQ):
+    val = 2*xb/(1+np.sqrt(1+4*xb**2*Mpp**2/((QQ)**2*1.0))) 
+    return val
 
-
+# Nachtmann z
+def zn(zh,xb,QQ,Mpp,Mhh,pt):
+    term1 = xnac(xb,Mpp,QQ)*zh/xb/2.0
+    term2 =np.sqrt(Mhh**2+pt**2)
+    term3 = 1+np.sqrt(1-(4*Mpp**2)*(term2**2)*xb**2/(zh**2*QQ**4))
+    return term1*term3
 
 
 

@@ -38,8 +38,8 @@ if __name__=="__main__":
     #M_ki = np.random.uniform(0,0.1,N)
     #M_kf = np.random.uniform(0,0.1,N)
    
-    
-    q_t = -P_t/z_h
+    z_N = rat.zn(z_h,x_bj,Q,M,M_h,P_t)
+    q_t = -P_t/z_N
     eta = .1
 
 

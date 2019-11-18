@@ -30,6 +30,3 @@ def zn(zh,xb,QQ,Mpp,Mhh,pt):
     term2 =np.sqrt(Mhh**2+pt**2)
     term3 = 1+np.sqrt(1-(4*Mpp**2)*(term2**2)*xb**2/(zh**2*QQ**4))
     return term1*term3
-
-
-

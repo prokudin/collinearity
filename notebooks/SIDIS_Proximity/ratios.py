@@ -8,14 +8,14 @@ Created on Sun Dec 29 18:26:56 2019
 
 from numpy import *
 
-def ratios(x,z,Q2,pT,Mh,M,zeta,xi,ki,kf,kT,kiT,deltakT,phi):
+def ratios(x,z,Q2,pT,Mh,M,zeta,xi,ki2,kf,kT,kiT,deltakT,phi):
     
-    R0 = (maximum(maximum(ki**2/Q2,kf**2/Q2),kT**2/Q2))
+    R0 = (maximum(maximum(-ki2/Q2,kf**2/Q2),kT**2/Q2))
     
     R1 = 2*Q2*x*xi*z*(Mh**2+zeta**2*(deltakT**2+kf**2))*(sqrt((-4*M**2*x**2*(Mh**2+pT**2)+Q2**2*z**2) \
          /(Q2**2*z**2))+1)/(zeta*(Q2**2*xi**2*z**2*(sqrt((-4*M**2*x**2*(Mh**2+pT**2)+Q2**2*z**2) \
          /(Q2**2*z**2))+1)**2 - 4*Q2*kiT*pT*x*xi*z*(sqrt((-4*M**2*x**2*(Mh**2+pT**2)+Q2**2*z**2) \
-         /(Q2**2*z**2))+1)*cos(phi)+4*x**2*(Mh**2+pT**2)*(kf**2+kiT**2)))
+         /(Q2**2*z**2))+1)*cos(phi)+4*x**2*(Mh**2+pT**2)*(ki2+kiT**2)))
     
     R2 = abs((Q2*z**2*(sqrt((-4.*M**2*x**2*(Mh**2+pT**2)+Q2**2*z**2)/(Q2**2*z**2))+1)**2-Q2*z*zeta \
          *(sqrt((4.*M**2*x**2+Q2)/Q2)+1)*(sqrt((-4.*M**2*x**2*(Mh**2+pT**2)+Q2**2*z**2)/(Q2**2*z**2))+1) \
